@@ -1,0 +1,122 @@
+---
+title: "Untitled"
+editor: visual
+---
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(ggiraph)
+library(tidyr)
+library(forcats)
+library(stringr)
+```
+
+
+```{r}
+byty_podily |>
+  filter(kraj_kod %in% c("CZ020", "CZ031")) |>
+  count(kraj_kod, wt = sum(`obvykle obydlen`)/sum(celkem))
+```
+
+```{r}
+vzdel_podily <- vzdel |>
+  filter(uzemi_cis == "43", !is.na(vzdelani_txt)) |>
+  select(hodnota, vzdelani_txt, uzemi_txt, uzemi_kod) |>
+  group_by(uzemi_txt, uzemi_kod) |>
+  mutate(podil = hodnota/sum(hodnota)) |>
+  filter(vzdelani_txt == "Vysokoškolské") |>
+  left_join(obyv) |>
+  mutate(pocob_kat = cut(pocob, breaks = c(0, 500, 1000, 10000, 100000, 1000000, 1e7))) |>
+  left_join(obcekraje |>
+              select(kraj_nazev = TEXT1,
+                     kraj_kod = CHODNOTA1,
+                     uzemi_kod = CHODNOTA2)) |>
+  left_join(obceorp |>
+              select(orp_nazev = TEXT1,
+                     orp_kod = CHODNOTA1,
+                     uzemi_kod = CHODNOTA2))
+```
+
+```{r}
+vzdel_podily |>
+  filter(orp_kod %in% c("4215", "3103")) |>
+  # filter(orp_nazev %in% c("Česká Lípa", "Český Krumlov")) |>
+  ggplot(aes(log(pocob), 1 - podil,
+             colour = orp_nazev)) +
+  geom_point(alpha = .8) +
+  geom_smooth(aes(colour = orp_nazev), method = "lm",) +
+  geom_smooth(aes(), method = "lm", colour = "black")
+```
+
+
+
+```{r}
+mdl <- vzdel_podily |>
+  drop_na(pocob, podil) |>
+  filter(pocob > 0) |>
+  group_by(orp_nazev, orp_kod) |>
+  nest() |>
+  mutate(mdl = map(data, ~lm(1 - podil ~ log(pocob), data = .))) |>
+  mutate(mdl_tidy = map(mdl, broom::tidy)) |>
+  unnest(mdl_tidy) |>
+  filter(term != "(Intercept)", estimate > 0) |>
+  arrange(desc(estimate))
+
+orp_slope_up <- mdl |> pull(orp_kod)
+
+```
+
+
+```{r}
+byty_podily |>
+  ggplot(aes(log(pocob), obydlenost_share)) +
+  geom_point(alpha = .3) +
+  geom_smooth(method = "lm") +
+  facet_wrap(~orp_nazev)
+```
+
+
+```{r}
+vzdel_podily |>
+  group_by(orp_nazev, orp_kod) |>
+  summarise(across(c(podil, pocob), mean)) |>
+  ggplot(aes(log(pocob), podil)) +
+  geom_point(alpha = .3) +
+  geom_label(aes(label = orp_kod))
+```
+
+
+```{r}
+vzdel_podily |>
+  group_by(orp_nazev, orp_kod) |>
+  summarise(across(c(podil, pocob), mean)) |>
+  ungroup() |>
+  mutate(dev_podil = podil/mean(podil),
+         dev_pocob = pocob/mean(pocob),
+         dev_all = dev_pocob + dev_podil) |>
+  filter(orp_kod %in% orp_slope_up) |>
+  arrange(dev_all) |>
+  ggplot(aes(podil, pocob)) +
+  geom_point() +
+  geom_label(aes(label = orp_kod))
+```
+
+
+```{r}
+ggg <- vzdel_podily |>
+  drop_na(pocob, podil) |>
+  filter(orp_kod %in% orp_slope_up) |>
+  ggplot(aes(log(pocob), 1 - podil)) +
+  geom_point(alpha = .4, aes(colour = orp_nazev)) +
+  geom_smooth_interactive(aes(colour = orp_nazev, 
+                              tooltip = paste0(orp_kod, "\n", orp_nazev)), 
+                          method = "lm", se = FALSE) +
+  guides(colour = "none") +
+  geom_smooth(method = "lm", colour = "black")
+```
+
+
+```{r}
+girafe(ggobj = ggg)
+```

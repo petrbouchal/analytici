@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "analytici"
+  title: "Analytici 2022"
   navbar:
     left:
       - href: index.qmd
