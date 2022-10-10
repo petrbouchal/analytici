@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "analytici"
@@ -12,7 +13,6 @@ website:
       - href: report.qml
         text: Příklad analýzy v R
       - zdroje.qmd
-
 
 format:
   html:
