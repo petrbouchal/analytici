@@ -1,0 +1,2 @@
+xkcd https://imgs.xkcd.com/comics/historical_dates.png
+tidy https://r4ds.hadley.nz/diagrams/data-science/whole-game.png
