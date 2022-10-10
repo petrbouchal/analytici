@@ -12,6 +12,8 @@ execute:
 
 > Toto je pouze ukázka, jak lze podobnou analýzu udělat tak, že kód je reprodukovatelný a generuje přímo grafy a čísla do textu.
 
+Využíváme [data ČSÚ ze SLDB o obydlenosti bytů v obcích](https://www.czso.cz/csu/czso/vysledky-scitani-2021-otevrena-data).
+
 ```{r}
 library(dplyr)
 library(tidyr)
