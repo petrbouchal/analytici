@@ -125,10 +125,6 @@ Technický ⨉ sociální rozměr
 
 ## principy - postupy - techniky
 
-##
-
-petrbouchal.xyz/analytici
-
 ### Jak budeme dnes pracovat 🙏
 
 ::: v-center-container
@@ -158,7 +154,7 @@ Otevřená data
 
 ČSÚ <=> data a metadata
 
-ČSÚ <> Eurostat
+ČSÚ <=> Eurostat (někdy lepší)
 
 Data o životním prostředí
 
@@ -169,6 +165,8 @@ Geodata a číselníky
 :::column
 
 "Ostatní data"
+
+Vaše tipy?
 
 
 :::
@@ -237,6 +235,8 @@ zdroj: https://r4ds.hadley.nz/whole-game.html
 :::
 
 # Na postupu a organizaci záleží
+
+## petrbouchal.xyz/analytici
 
 ## Co vás štve, když otevřete něčí starý Excel nebo složku s analýzou?
 
