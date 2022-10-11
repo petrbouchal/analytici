@@ -98,6 +98,13 @@
     "text": "Postup + dokumentace =\nzkontrolovatelnost\nopakovatelnost\nautomatizovatelnost"
   },
   {
+    "objectID": "slides/index.html#petrbouchal.xyzanalytici",
+    "href": "slides/index.html#petrbouchal.xyzanalytici",
+    "title": "Analýza dat",
+    "section": "petrbouchal.xyz/analytici",
+    "text": "petrbouchal.xyz/analytici"
+  },
+  {
     "objectID": "slides/index.html#co-vás-štve-když-otevřete-něčí-starý-excel-nebo-složku-s-analýzou",
     "href": "slides/index.html#co-vás-štve-když-otevřete-něčí-starý-excel-nebo-složku-s-analýzou",
     "title": "Analýza dat",
@@ -208,19 +215,5 @@
     "title": "Neobydlené byty: vstupní analýza",
     "section": "Vliv kraje vs. velikosti obce",
     "text": "Vliv kraje vs. velikosti obce\nAbychom odhadli samostatný “vliv” kraje na obydlenost bytů v obci, odhadneme lineární model vztahu mezi velikostí obce a obydleností.\n\n\n\nCall:\nlm(formula = obydlenost_share ~ pocob_log, data = byty_podily0)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-0.58920 -0.05371  0.00893  0.06005  0.37909 \n\nCoefficients:\n             Estimate Std. Error t value            Pr(>|t|)    \n(Intercept) 0.4268069  0.0062190   68.63 <0.0000000000000002 ***\npocob_log   0.0509893  0.0009846   51.79 <0.0000000000000002 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.09353 on 6251 degrees of freedom\nMultiple R-squared:  0.3002,    Adjusted R-squared:  0.3001 \nF-statistic:  2682 on 1 and 6251 DF,  p-value: < 0.00000000000000022\n\n\nModel zachycuje cca 30 % variability obydlenosti bytů v obcích.\nGraf níže ukazuje, jak se obydlenost bytů v obcích v jednotlivých krajích liší od očekávání, tj. od toho, jaká by měla být s ohledem na velikostní složení obcí.\n\n\n\n\n\nV některých krajích je tedy systematicky nižší obydlenost bytů, než by odpovídalo velikostnímu složení obcí v daném kraji."
-  },
-  {
-    "objectID": "slides/index.html#petrbouchal.xyzanalytici",
-    "href": "slides/index.html#petrbouchal.xyzanalytici",
-    "title": "Analýza dat",
-    "section": "petrbouchal.xyz/analytici",
-    "text": "petrbouchal.xyz/analytici"
-  },
-  {
-    "objectID": "slides/index.html#section-5",
-    "href": "slides/index.html#section-5",
-    "title": "Analýza dat",
-    "section": "",
-    "text": "Postup + dokumentace =\nzkontrolovatelnost\nopakovatelnost\nautomatizovatelnost"
   }
 ]

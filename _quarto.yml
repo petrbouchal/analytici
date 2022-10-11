@@ -10,7 +10,7 @@ website:
         text: Start
       - href: slides/index.qmd
         text: Prezentace
-      - href: report.qml
+      - href: report.qmd
         text: Příklad analýzy v R
       - zdroje.qmd
 
