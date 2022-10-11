@@ -1,0 +1,226 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Pilotní vzdělávací kurz pro analytiky 2022",
+    "section": "",
+    "text": "Materiály pro práci"
+  },
+  {
+    "objectID": "slides/index.html#proč-jste-tu-dnes-vy",
+    "href": "slides/index.html#proč-jste-tu-dnes-vy",
+    "title": "Analýza dat",
+    "section": "Proč jste tu dnes vy?",
+    "text": "Proč jste tu dnes vy?"
+  },
+  {
+    "objectID": "slides/index.html#co-si-chcete-odnést",
+    "href": "slides/index.html#co-si-chcete-odnést",
+    "title": "Analýza dat",
+    "section": "Co si chcete odnést??",
+    "text": "Co si chcete odnést??"
+  },
+  {
+    "objectID": "slides/index.html#co-vás-na-práci-s-daty-štve",
+    "href": "slides/index.html#co-vás-na-práci-s-daty-štve",
+    "title": "Analýza dat",
+    "section": "Co vás na práci s daty štve?",
+    "text": "Co vás na práci s daty štve?"
+  },
+  {
+    "objectID": "slides/index.html#cíle-aneb-co-si-dnes-odnesete",
+    "href": "slides/index.html#cíle-aneb-co-si-dnes-odnesete",
+    "title": "Analýza dat",
+    "section": "Cíle aneb co si dnes odnesete",
+    "text": "Cíle aneb co si dnes odnesete\n\n\n\nobrázek o stavu oboru analýzy dat\nprincipy použitelné s jakýmkoli problémem a nástrojem\nkde vzít veřejná data a jak si s nimi poradit\n\n\n\npraktické provedení některých konceptů z první části\ntipy a triky pro práci s Excelem\ntipy, kam dál"
+  },
+  {
+    "objectID": "slides/index.html#jak-na-to-půjdeme",
+    "href": "slides/index.html#jak-na-to-půjdeme",
+    "title": "Analýza dat",
+    "section": "Jak na to půjdeme",
+    "text": "Jak na to půjdeme"
+  },
+  {
+    "objectID": "slides/index.html#principy---postupy---techniky",
+    "href": "slides/index.html#principy---postupy---techniky",
+    "title": "Analýza dat",
+    "section": "principy - postupy - techniky",
+    "text": "principy - postupy - techniky"
+  },
+  {
+    "objectID": "slides/index.html#section",
+    "href": "slides/index.html#section",
+    "title": "Analýza dat",
+    "section": "",
+    "text": "Otevřená data\nČSÚ <=> otevřená data\nČSÚ <=> data a metadata\nČSÚ <=> Eurostat (někdy lepší)\nData o životním prostředí\nGeodata a číselníky\n\n“Ostatní data”\nVaše tipy?\n\n\n=> Co to je za data? Kde se vzala? Kde je dokumentace?"
+  },
+  {
+    "objectID": "slides/index.html#mentální-model",
+    "href": "slides/index.html#mentální-model",
+    "title": "Analýza dat",
+    "section": "Mentální model",
+    "text": "Mentální model\n\n\nzdroj: https://r4ds.hadley.nz/whole-game.html"
+  },
+  {
+    "objectID": "slides/index.html#neboli",
+    "href": "slides/index.html#neboli",
+    "title": "Analýza dat",
+    "section": "Neboli",
+    "text": "Neboli"
+  },
+  {
+    "objectID": "slides/index.html#section-1",
+    "href": "slides/index.html#section-1",
+    "title": "Analýza dat",
+    "section": "",
+    "text": "Není to lineární proces"
+  },
+  {
+    "objectID": "slides/index.html#section-2",
+    "href": "slides/index.html#section-2",
+    "title": "Analýza dat",
+    "section": "",
+    "text": "Spolupracujete se svým budoucím já.\nVaše budoucí já vám poděkuje\n(kolega*yně taky)"
+  },
+  {
+    "objectID": "slides/index.html#section-3",
+    "href": "slides/index.html#section-3",
+    "title": "Analýza dat",
+    "section": "",
+    "text": "Žádná analýza\nnení jednorázovka"
+  },
+  {
+    "objectID": "slides/index.html#section-4",
+    "href": "slides/index.html#section-4",
+    "title": "Analýza dat",
+    "section": "",
+    "text": "Postup + dokumentace =\nzkontrolovatelnost\nopakovatelnost\nautomatizovatelnost"
+  },
+  {
+    "objectID": "slides/index.html#co-vás-štve-když-otevřete-něčí-starý-excel-nebo-složku-s-analýzou",
+    "href": "slides/index.html#co-vás-štve-když-otevřete-něčí-starý-excel-nebo-složku-s-analýzou",
+    "title": "Analýza dat",
+    "section": "Co vás štve, když otevřete něčí starý Excel nebo složku s analýzou?",
+    "text": "Co vás štve, když otevřete něčí starý Excel nebo složku s analýzou?"
+  },
+  {
+    "objectID": "slides/index.html#jak-tedy-na-to",
+    "href": "slides/index.html#jak-tedy-na-to",
+    "title": "Analýza dat",
+    "section": "Jak tedy na to",
+    "text": "Jak tedy na to\n\n\n📋 Dokumentovat data, postup, soubory\n📥 Oddělit vstupní data od analýzy\n📂 Organizace projektu na disku\n(👩‍💻 Pracovat v kódu ideálně s open source nástroji)\n🔌 (Vytvářet kompletní opakovatelné workflow)\n\n🔢 Verzovat analýzu (kód) a pokud možno i výstupy\n✅ Využívat strojovou validaci vstupů a výstupů\n(📕 Používat nástroje na propojení textu a kódu: Jupyter, Rmarkdown, Quarto)\n(💽 Zaznamenat prostředí, kde kód běží)"
+  },
+  {
+    "objectID": "slides/index.html#jak-to-provést",
+    "href": "slides/index.html#jak-to-provést",
+    "title": "Analýza dat",
+    "section": "Jak to provést",
+    "text": "Jak to provést"
+  },
+  {
+    "objectID": "slides/index.html#načtení-dat",
+    "href": "slides/index.html#načtení-dat",
+    "title": "Analýza dat",
+    "section": "Načtení dat",
+    "text": "Načtení dat\n\n\n\nCSV / TSV / ; / ,\npozor na formáty (desetinné čárky, mezery)\ndatumy!\nznaková sada\nExcel: PowerQuery >> standard Excel\nNULL, –, -99, “_”"
+  },
+  {
+    "objectID": "slides/index.html#čištění-dat",
+    "href": "slides/index.html#čištění-dat",
+    "title": "Analýza dat",
+    "section": "Čištění dat",
+    "text": "Čištění dat\n\n\n\nCíl: data vhodná pro analýzu\n\nFormáty\nNepřesnosti?\nDuplicity?\nChybějící data?\nNesprávné hodnoty?\nExtrémní hodnoty?"
+  },
+  {
+    "objectID": "slides/index.html#transformace-dat",
+    "href": "slides/index.html#transformace-dat",
+    "title": "Analýza dat",
+    "section": "Transformace dat",
+    "text": "Transformace dat"
+  },
+  {
+    "objectID": "slides/index.html#výpočty-a-modelování",
+    "href": "slides/index.html#výpočty-a-modelování",
+    "title": "Analýza dat",
+    "section": "Výpočty a modelování",
+    "text": "Výpočty a modelování"
+  },
+  {
+    "objectID": "slides/index.html#další-nástroje",
+    "href": "slides/index.html#další-nástroje",
+    "title": "Analýza dat",
+    "section": "Další nástroje",
+    "text": "Další nástroje\n\nExtrakce dat: OpenRefine, Tabula\nVizualizace: Datawrapper, RawGraphs, Flourish\nInteraktivní: Google Data Studio, PowerBI\nRegulérní výrazy"
+  },
+  {
+    "objectID": "slides/index.html#práce-s-kódem",
+    "href": "slides/index.html#práce-s-kódem",
+    "title": "Analýza dat",
+    "section": "Práce s kódem",
+    "text": "Práce s kódem\nSQL a databáze\nR nebo Python?\n=> automatizace"
+  },
+  {
+    "objectID": "slides/index.html#literate-programming",
+    "href": "slides/index.html#literate-programming",
+    "title": "Analýza dat",
+    "section": "Literate programming",
+    "text": "Literate programming\nObservableJS\nJupyter Notebooks\nR Markdown / Quarto"
+  },
+  {
+    "objectID": "slides/index.html#verzování-git-github",
+    "href": "slides/index.html#verzování-git-github",
+    "title": "Analýza dat",
+    "section": "Verzování (git, Github)",
+    "text": "Verzování (git, Github)"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "report.html",
+    "href": "report.html",
+    "title": "Neobydlené byty: vstupní analýza",
+    "section": "",
+    "text": "Toto je pouze ukázka, jak lze podobnou analýzu udělat tak, že kód je reprodukovatelný a generuje přímo grafy a čísla do textu.\nVyužíváme data ČSÚ ze SLDB o obydlenosti bytů v obcích."
+  },
+  {
+    "objectID": "report.html#základní-náhled",
+    "href": "report.html#základní-náhled",
+    "title": "Neobydlené byty: vstupní analýza",
+    "section": "Základní náhled",
+    "text": "Základní náhled\n\n\n\n\n\nMediánový podíl obydlených bytů je 76 %. (Toto číslo se do věty doplňuje automaticky z živých dat)\n\n\n\n\n\nZde je deset obcí s nejvyšší obydleností bytů:\n\n\n\n\n\n\n  \n  \n    \n      uzemi_txt\n      obvykle obydlen\n      obvykle neobydlen\n      obydlenost_share\n      kraj_nazev\n      pocob\n    \n  \n  \n    Hněvnice\n49\n0\n1.0000000\nPlzeňský kraj\n114\n    Dobříč\n234\n0\n1.0000000\nStředočeský kraj\n499\n    Zhoř\n63\n0\n1.0000000\nPlzeňský kraj\n165\n    Vřesová\n106\n0\n1.0000000\nKarlovarský kraj\n409\n    Všehrdy\n67\n0\n1.0000000\nÚstecký kraj\n156\n    Odrovice\n97\n0\n1.0000000\nJihomoravský kraj\n247\n    Zlátenka\n19\n0\n1.0000000\nKraj Vysočina\n45\n    Uhersko\n143\n1\n0.9930556\nPardubický kraj\n292\n    Droužkovice\n337\n4\n0.9882698\nÚstecký kraj\n821\n    Modletice\n256\n4\n0.9846154\nStředočeský kraj\n528"
+  },
+  {
+    "objectID": "report.html#podle-krajů",
+    "href": "report.html#podle-krajů",
+    "title": "Neobydlené byty: vstupní analýza",
+    "section": "Podle krajů",
+    "text": "Podle krajů\n\n\n\n\n\n\nPodle krajů a velikosti obce\n\n\n\n\n\n\n\nJak je obydlenost bytů v obcích rozložena v krajích?\n\n\n\n\n\n\n\nKoreluje průměrná velikost obce v kraji a celková obydlenost bytů v kraji?"
+  },
+  {
+    "objectID": "report.html#vliv-kraje-vs.-velikosti-obce",
+    "href": "report.html#vliv-kraje-vs.-velikosti-obce",
+    "title": "Neobydlené byty: vstupní analýza",
+    "section": "Vliv kraje vs. velikosti obce",
+    "text": "Vliv kraje vs. velikosti obce\nAbychom odhadli samostatný “vliv” kraje na obydlenost bytů v obci, odhadneme lineární model vztahu mezi velikostí obce a obydleností.\n\n\n\nCall:\nlm(formula = obydlenost_share ~ pocob_log, data = byty_podily0)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-0.58920 -0.05371  0.00893  0.06005  0.37909 \n\nCoefficients:\n             Estimate Std. Error t value            Pr(>|t|)    \n(Intercept) 0.4268069  0.0062190   68.63 <0.0000000000000002 ***\npocob_log   0.0509893  0.0009846   51.79 <0.0000000000000002 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.09353 on 6251 degrees of freedom\nMultiple R-squared:  0.3002,    Adjusted R-squared:  0.3001 \nF-statistic:  2682 on 1 and 6251 DF,  p-value: < 0.00000000000000022\n\n\nModel zachycuje cca 30 % variability obydlenosti bytů v obcích.\nGraf níže ukazuje, jak se obydlenost bytů v obcích v jednotlivých krajích liší od očekávání, tj. od toho, jaká by měla být s ohledem na velikostní složení obcí.\n\n\n\n\n\nV některých krajích je tedy systematicky nižší obydlenost bytů, než by odpovídalo velikostnímu složení obcí v daném kraji."
+  },
+  {
+    "objectID": "slides/index.html#petrbouchal.xyzanalytici",
+    "href": "slides/index.html#petrbouchal.xyzanalytici",
+    "title": "Analýza dat",
+    "section": "petrbouchal.xyz/analytici",
+    "text": "petrbouchal.xyz/analytici"
+  },
+  {
+    "objectID": "slides/index.html#section-5",
+    "href": "slides/index.html#section-5",
+    "title": "Analýza dat",
+    "section": "",
+    "text": "Postup + dokumentace =\nzkontrolovatelnost\nopakovatelnost\nautomatizovatelnost"
+  }
+]
