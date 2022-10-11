@@ -2,4 +2,6 @@
 title: "Pilotní vzdělávací kurz pro analytiky 2022"
 ---
 
+[Prezentace](/slides/)
+
 [Materiály pro práci](https://github.com/petrbouchal/analytici/releases/download/v1/analyza.zip)
