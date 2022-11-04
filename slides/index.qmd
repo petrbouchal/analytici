@@ -21,9 +21,9 @@ editor: visual
 
 ## Co vás na práci s daty štve?
 
-## Cíle aneb co si dnes odnesete  {.center}
+## Cíle aneb co si dnes odnesete {.center}
 
-:::: columns
+::: columns
 ::: {.column .fragment}
 -   obrázek o stavu oboru analýzy dat
 -   principy použitelné s jakýmkoli problémem a nástrojem
@@ -35,14 +35,12 @@ editor: visual
 -   tipy a triky pro práci s Excelem
 -   tipy, kam dál
 :::
-
-::::
+:::
 
 ### Co není cíl
 
 ::: v-center-container
 ::: incremental
-
 ⨉ naučit se do hloubky statistiku
 
 ⨉ naučit se R, Python a git
@@ -50,16 +48,14 @@ editor: visual
 ⨉ pouštět se do nestandardních typů dat
 
 ⨉ zabrat vše od popisné statistiky po strojové učení
-
 :::
 :::
 
 ### Analytická práce dnes
 
-<br>
+<br />
 
 . . .
-
 
 Důvěra v analýzy díky
 
@@ -97,29 +93,25 @@ Získat si důvěru: proces, kontrola kvality, transparentnost
 
 ### 📊 Analýza dat a 🏢 veřejné hodnoty
 
-<br>
-<br>
+<br> <br>
 
-:::: {.columns}
+::: columns
 ::: column
 Transparentnost
 
-Integrita 
+Integrita
 
 Kontrola kvality
-
 :::
 
 ::: column
-
 Zkontrolovatelnost
 
 Replikovatelnost
 
 Technický ⨉ sociální rozměr
-
 :::
-::::
+:::
 
 ## Jak na to půjdeme
 
@@ -129,14 +121,11 @@ Technický ⨉ sociální rozměr
 
 ::: v-center-container
 ::: incremental
-
-
 Bezpečné prostředí
 
 Všichni se učíme (pilot!)
 
 Je OK nevědět
-
 :::
 :::
 
@@ -144,36 +133,29 @@ Je OK nevědět
 
 ## 
 
-:::columns
-
+::: columns
 ::: column
-
 Otevřená data
 
-ČSÚ <=> otevřená data
+ČSÚ \<=\> otevřená data
 
-ČSÚ <=> data a metadata
+ČSÚ \<=\> data a metadata
 
-ČSÚ <=> Eurostat (někdy lepší)
+ČSÚ \<=\> Eurostat (někdy lepší)
 
 Data o životním prostředí
 
 Geodata a číselníky
-
 :::
 
-:::column
-
+::: column
 "Ostatní data"
 
 Vaše tipy?
-
-
+:::
 :::
 
-:::
-
-=> **Co to je za data? Kde se vzala? Kde je dokumentace?**
+=\> **Co to je za data? Kde se vzala? Kde je dokumentace?**
 
 # Co s daty dělat
 
@@ -209,7 +191,7 @@ zdroj: https://r4ds.hadley.nz/whole-game.html
 ::: r-fit-text
 > Spolupracujete se svým budoucím já.
 >
-> Vaše budoucí já vám poděkuje 
+> Vaše budoucí já vám poděkuje
 >
 > (kolega\*yně taky)
 :::
@@ -303,8 +285,7 @@ Ideálně konzistentní napříč projekty
 
 ### Názvy proměnných, sloupců aj.
 
-<br>
-<br>
+<br> <br>
 
 -   konzistentně (CamelCase, snake_case, cesky, Česky)
 -   strojová vs. lidská čitelnost
@@ -317,8 +298,8 @@ Data mají různé tvary: dlouhá, široká, něco mezi
 
 Různé tvary pro různé účely
 
-- "dlouhá" data často lepší pro analýzy
-- široká pro čtení/srovnání očima
+-   "dlouhá" data často lepší pro analýzy
+-   široká pro čtení/srovnání očima
 
 Dostat data do správného tvaru je úkol sám o sobě
 
@@ -327,9 +308,7 @@ Co identifukuje jednu řádku?
 ### Organizace dat: tvary
 
 ::: center
-
-<br>
-Základ:
+<br> Základ:
 
 -   co informace, to buňka/sloupec
 -   co řádek, to pozorování
@@ -339,56 +318,56 @@ Základ:
 `pivot` - `unpivot`
 
 `databázová normalizace`
-
 :::
 
 ### Organizace dat: dobré praxe
 
 <br>
 
-- co informace, to buňka/sloupec
-- Excel: co list, to tabulka
-- Excel: data = text, ne formát
-- Excel: přímá napojení na zdroje
-- Excel: použít funkci tabulky
-- dokumentace (metadata / codebook) blízko dat
-- data ukládat nefiltrovaná, kurzor na začátku atd.
-- udržovat informaci o původu dat (jasné ID zdroje; URL)
+-   co informace, to buňka/sloupec
+-   Excel: co list, to tabulka
+-   Excel: data = text, ne formát
+-   Excel: přímá napojení na zdroje
+-   Excel: použít funkci tabulky
+-   dokumentace (metadata / codebook) blízko dat
+-   data ukládat nefiltrovaná, kurzor na začátku atd.
+-   udržovat informaci o původu dat (jasné ID zdroje; URL)
+
+## 
+
+![](images/whole-game.png)
 
 ## Načtení dat
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
-- CSV / TSV / ; / ,
-- pozor na formáty (desetinné čárky, mezery)
-- datumy!
-- znaková sada
-- Excel: PowerQuery >> standard Excel
-- NULL, --, -99, "_"
+-   CSV / TSV / ; / ,
+-   pozor na formáty (desetinné čárky, mezery)
+-   datumy!
+-   znaková sada
+-   Excel: PowerQuery \>\> standard Excel
+-   NULL, --, -99, "\_"
 :::
 
 ::: {.column width="50%"}
-
 ![](images/historical_dates.png)
-
+:::
 :::
 
-::::
+## 
 
+![](images/whole-game.png)
 
 ## Čištění dat
 
 <br>
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
 Cíl: data vhodná pro analýzu
 :::
 
 ::: {.column width="50%"}
-
 Formáty
 
 Nepřesnosti?
@@ -400,10 +379,12 @@ Chybějící data?
 Nesprávné hodnoty?
 
 Extrémní hodnoty?
-
+:::
 :::
 
-::::
+## 
+
+![](images/whole-game.png)
 
 ## Transformace dat
 
@@ -434,7 +415,6 @@ Extrémní hodnoty?
 ### Transformace
 
 ![](images/tidyr-pivoting.gif)
-
 
 ::: footer
 zdroj: https://www.garrickadenbuie.com/project/tidyexplain/
@@ -467,10 +447,10 @@ zdroj: https://www.garrickadenbuie.com/project/tidyexplain/
 ### Proč se propojování nedaří
 
 <br>
-  
-- mezery na začátku a konci
-- velká a malá písmena
-- dvojité mezery
+
+-   mezery na začátku a konci
+-   velká a malá písmena
+-   dvojité mezery
 
 ### Číselníky, klasifikace atd.
 
@@ -484,7 +464,7 @@ zdroj: https://www.garrickadenbuie.com/project/tidyexplain/
 
 https://apl.czso.cz/iSMS/
 
-https://www.cuzk.cz/ruian/Poskytovani-udaju-ISUI-RUIAN-VDP/Ciselniky-ISUI.aspx 
+https://www.cuzk.cz/ruian/Poskytovani-udaju-ISUI-RUIAN-VDP/Ciselniky-ISUI.aspx
 
 ![](images/ciselnik-kraje.png)
 
@@ -492,43 +472,41 @@ https://www.cuzk.cz/ruian/Poskytovani-udaju-ISUI-RUIAN-VDP/Ciselniky-ISUI.aspx
 
 <br>
 
-- jiný číselník
-- jiná verze číselníků
-- neshody mezi tvůrcem dat a tvůrcem číselníku
-  - je Praha okres?
-  - jsou městské části Prahy ORP?
+-   jiný číselník
+-   jiná verze číselníků
+-   neshody mezi tvůrcem dat a tvůrcem číselníku
+    -   je Praha okres?
+    -   jsou městské části Prahy ORP?
 
 ### Číselníky, klasifikace atd.
 
 <br>
 
-- pozor na platnost (ke kterému datu?)
-- pozor na verze (kraje, NUTS kraje, staré NUTS kraje)
-- každý číselník správně má jednoho správce
-- ale jsou tu překryvy, správci různých dat občas zveřejňují duplicitní číselníky (např. MPSV k datům o nezaměstnanosti)
+-   pozor na platnost (ke kterému datu?)
+-   pozor na verze (kraje, NUTS kraje, staré NUTS kraje)
+-   každý číselník správně má jednoho správce
+-   ale jsou tu překryvy, správci různých dat občas zveřejňují duplicitní číselníky (např. MPSV k datům o nezaměstnanosti)
+
+## 
+
+![](images/whole-game.png)
 
 ## Výpočty a modelování
 
----
+------------------------------------------------------------------------
 
-:::r-fit-text
-
-<br>
-<br>
+::: r-fit-text
+<br> <br>
 
 > Exploratorní datová analýza
-
 :::
 
 ### Explorace a poznávání dat
 
-<br>
-<br>
+<br> <br>
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
-
 #### Proč
 
 Poznat data
@@ -541,7 +519,6 @@ Detekovat pravidelnosti
 :::
 
 ::: {.column width="50%"}
-
 #### Jak
 
 Koukat na data
@@ -554,9 +531,7 @@ Sčítat a porovnávat
 
 Zkoumat výseky dat
 :::
-
-::::
-
+:::
 
 ### Co lze v Excelu
 
@@ -584,27 +559,35 @@ Korelace, regrese, t-testy
 
 ## Další nástroje
 
-- Extrakce dat: OpenRefine, Tabula
-- Vizualizace: Datawrapper, RawGraphs, Flourish
-- Interaktivní: Google Data Studio, PowerBI
-- Regulérní výrazy
-  
+-   Extrakce dat: OpenRefine, Tabula
+-   Vizualizace: Datawrapper, RawGraphs, Flourish
+-   Interaktivní: Google Data Studio, PowerBI
+-   Regulérní výrazy
+
 ## Práce s kódem
 
 SQL a databáze
 
 R nebo Python?
 
-=> automatizace
+=\> automatizace
 
-## Literate programming
+### Literate programming
 
+::: vertical-center
 ObservableJS
 
 Jupyter Notebooks
 
 R Markdown / Quarto
+:::
 
 ## Verzování (git, Github)
 
+# Reflexe
 
+# Díky!
+
+pbouchal@gmail.com
+
+petrbouchal.xyz

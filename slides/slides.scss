@@ -24,3 +24,11 @@ $font-family-mono: "IBM Plex Mono; monospace";
   align-items: center;
   height: 80%;
 }
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%)
+}
