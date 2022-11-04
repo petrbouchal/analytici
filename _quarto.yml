@@ -19,6 +19,15 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
+    link-external-newwindow: true
+    html-math-method: plain
+    fig-cap-location: margin
+    tab-cap-location: margin
+    footnotes-hover: true
+    reference-location: margin
+    lang: cs
 
 editor: visual
+filters:
+  - pandoc-quotes.lua
 

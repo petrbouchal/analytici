@@ -3,18 +3,24 @@ title: "Neobydlené byty: vstupní analýza"
 date: 2022-10-01
 editor: visual
 format: 
-  html
+  html:
+    code-fold: true
+    code-summary: "Kód"
+    code-copy: true
+    code-tools: true
+    lang: cs
 execute: 
-  echo: false
+  echo: true
   warning: false
   message: false
+bibliography: references.bib
 ---
 
 > Toto je pouze ukázka, jak lze podobnou analýzu udělat tak, že kód je reprodukovatelný a generuje přímo grafy a čísla do textu.
 
-Využíváme [data ČSÚ ze SLDB o obydlenosti bytů v obcích](https://www.czso.cz/csu/czso/vysledky-scitani-2021-otevrena-data).
+Využíváme [data ČSÚ ze SLDB o obydlenosti bytů v obcích](https://www.czso.cz/csu/czso/vysledky-scitani-2021-otevrena-data) [@ceskystatistickyuradVysledkyScitani20212021]
 
-```{r}
+```{r, echo = FALSE}
 library(dplyr)
 library(tidyr)
 library(ggplot2)
@@ -28,11 +34,10 @@ options(czso.dest_dir = "data-input/czso",
         scipen = 99)
 ```
 
-
-```{r}
-kkk <- czso::czso_get_catalogue()
+```{r echo=FALSE}
+ptrr::set_geom_defaults()
+ptrr::set_ptrr_ggplot_fonts()
 ```
-
 
 ```{r}
 byty <- czso::czso_get_table("sldb2021_byty_obydlenost")
@@ -43,7 +48,6 @@ obyv <- czso::czso_get_table("130149") |>
   filter(rok == max(rok), is.na(pohlavi_txt)) |>
   select(uzemi_kod = vuzemi_kod, pocob = hodnota)
 ```
-
 
 ```{r}
 byty_podily <- byty |>
@@ -66,6 +70,7 @@ byty_podily <- byty |>
                      orp_kod = CHODNOTA1,
                      uzemi_kod = CHODNOTA2))
 ```
+
 ## Základní náhled
 
 ```{r}
@@ -80,7 +85,10 @@ byty_podily |>
   scale_y_log10() +
   theme_ptrr("scatter")
 ```
-Mediánový podíl obydlených bytů je `r round(median(byty_podily$obydlenost_share) * 100)` %. (*Toto číslo se do věty doplňuje automaticky z živých dat*)
+
+Mediánový podíl obydlených bytů je `r round(median(byty_podily$obydlenost_share) * 100)` %.[^1]
+
+[^1]: Toto číslo se do věty doplňuje automaticky z živých dat
 
 ```{r}
 byty_podily |>
@@ -101,6 +109,7 @@ byty_podily |>
   select(uzemi_txt, `obvykle obydlen`, `obvykle neobydlen`, obydlenost_share, kraj_nazev, pocob) |> 
   gt::gt()
 ```
+
 ## Podle krajů
 
 ```{r}
@@ -143,6 +152,7 @@ byty_podily |>
   theme_ptrr(multiplot = TRUE)
 
 ```
+
 ### Koreluje průměrná velikost obce v kraji a celková obydlenost bytů v kraji?
 
 ```{r}
@@ -154,8 +164,12 @@ byty_podily |>
             mean_obydl = mean(obydlenost_share),
             obydl_mean = sum(`obvykle neobydlen`)/sum(celkem)) |> 
   ggplot(aes(pocob_median, mean_obydl)) +
-  geom_smooth(method = "lm") +
-  geom_label(aes(label = kraj_nazev_short))
+  geom_smooth(method = "lm", colour = "darkblue", fill = ptrr:::ptclr_d, 
+              formula = y ~ x) +
+  geom_point(colour = "blue") +
+  geom_label(aes(label = kraj_nazev_short), nudge_y = .01) +
+  scale_y_percent_cz() +
+  theme_ptrr(gridlines = "both")
 ```
 
 ## Vliv kraje vs. velikosti obce
@@ -175,9 +189,11 @@ summary(mdl)
 mdl_tidy <- broom::tidy(mdl)
 byty_podily_au <- broom::augment(mdl, data = byty_podily0)
 ```
+
 Model zachycuje cca 30 % variability obydlenosti bytů v obcích.
 
-Graf níže ukazuje, jak se obydlenost bytů v obcích v jednotlivých krajích liší od očekávání, tj. od toho, jaká by měla být s ohledem na velikostní složení obcí.
+Graf níže ukazuje, jak se obydlenost bytů v obcích v jednotlivých krajích liší od očekávání, tj.
+od toho, jaká by měla být s ohledem na velikostní složení obcí.
 
 ```{r}
 byty_podily_au |> 
