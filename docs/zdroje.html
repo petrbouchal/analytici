@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="cs" xml:lang="cs"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.313">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,6 +19,26 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
 }
 </style>
 
@@ -44,23 +64,22 @@ ul.task-list li input[type="checkbox"] {
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
-  "type": "overlay",
+  "type": "textbox",
   "limit": 20,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-no-results-text": "Žádný výsledek",
+    "search-matching-documents-text": "Nalezené výsledky",
+    "search-copy-link-title": "Zkopírovat odkaz pro vyhledávání",
+    "search-hide-matches-text": "Skrýt další výsledky",
+    "search-more-match-text": "další výsledek v tomto dokumentu",
+    "search-more-matches-text": "dalších výsledků v tomto dokumentu",
+    "search-clear-button-title": "Vymazat",
+    "search-detached-cancel-button-title": "Zrušit",
+    "search-submit-button-title": "Odeslat"
   }
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -80,17 +99,35 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">Start</a>
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text">Start</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./slides/index.html">Prezentace</a>
+    <a class="nav-link" href="./slides/index.html">
+ <span class="menu-text">Prezentace</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./report.html">Příklad analýzy v R</a>
+    <a class="nav-link" href="./report.html">
+ <span class="menu-text">Příklad analýzy v R</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./zdroje.html" aria-current="page">Další zdroje</a>
+    <a class="nav-link active" href="./zdroje.html" aria-current="page">
+ <span class="menu-text">Další zdroje</span></a>
   </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/petrbouchal/msmt"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://petrbouchal.xyz"><i class="bi bi-asterisk" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="dropdown-header">
+ <span class="menu-text"> </span></li>
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
@@ -102,7 +139,44 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Na této stránce</h2>
+   
+  <ul>
+  <li><a href="#jak-použít-materiály-z-kurzu" id="toc-jak-použít-materiály-z-kurzu" class="nav-link active" data-scroll-target="#jak-použít-materiály-z-kurzu">Jak použít materiály z kurzu</a></li>
+  <li><a href="#proces-analytické-práce" id="toc-proces-analytické-práce" class="nav-link" data-scroll-target="#proces-analytické-práce">Proces analytické práce</a>
+  <ul class="collapse">
+  <li><a href="#organizace-projektu" id="toc-organizace-projektu" class="nav-link" data-scroll-target="#organizace-projektu">Organizace projektu</a></li>
+  <li><a href="#názvy" id="toc-názvy" class="nav-link" data-scroll-target="#názvy">Názvy</a></li>
+  <li><a href="#organizace-tabulkových-souborů" id="toc-organizace-tabulkových-souborů" class="nav-link" data-scroll-target="#organizace-tabulkových-souborů">Organizace tabulkových souborů</a>
+  <ul class="collapse">
+  <li><a href="#organizace-dat-v-souborech" id="toc-organizace-dat-v-souborech" class="nav-link" data-scroll-target="#organizace-dat-v-souborech">Organizace dat v souborech</a></li>
+  <li><a href="#zveřejňování-a-předávání-excelových-souborů" id="toc-zveřejňování-a-předávání-excelových-souborů" class="nav-link" data-scroll-target="#zveřejňování-a-předávání-excelových-souborů">Zveřejňování a předávání Excelových souborů</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#kontrola-kvality" id="toc-kontrola-kvality" class="nav-link" data-scroll-target="#kontrola-kvality">Kontrola kvality</a></li>
+  <li><a href="#jednotlivé-kroky" id="toc-jednotlivé-kroky" class="nav-link" data-scroll-target="#jednotlivé-kroky">Jednotlivé kroky</a>
+  <ul class="collapse">
+  <li><a href="#načtení-dat" id="toc-načtení-dat" class="nav-link" data-scroll-target="#načtení-dat">Načtení dat</a></li>
+  <li><a href="#excel-powerquery-a-reprodukovatelná-analýza" id="toc-excel-powerquery-a-reprodukovatelná-analýza" class="nav-link" data-scroll-target="#excel-powerquery-a-reprodukovatelná-analýza">Excel PowerQuery a reprodukovatelná analýza</a>
+  <ul class="collapse">
+  <li><a href="#čím-se-liší-od-běžné-práce-v-excelu" id="toc-čím-se-liší-od-běžné-práce-v-excelu" class="nav-link" data-scroll-target="#čím-se-liší-od-běžné-práce-v-excelu">Čím se liší od běžné práce v Excelu</a></li>
+  <li><a href="#proč-powerquery-používat" id="toc-proč-powerquery-používat" class="nav-link" data-scroll-target="#proč-powerquery-používat">Proč PowerQuery používat</a></li>
+  <li><a href="#jak-tedy-o-práci-s-powerquery-přemýšlet" id="toc-jak-tedy-o-práci-s-powerquery-přemýšlet" class="nav-link" data-scroll-target="#jak-tedy-o-práci-s-powerquery-přemýšlet">Jak tedy o práci s PowerQuery přemýšlet</a></li>
+  <li><a href="#tipy-pro-práci-s-powerquery" id="toc-tipy-pro-práci-s-powerquery" class="nav-link" data-scroll-target="#tipy-pro-práci-s-powerquery">Tipy pro práci s PowerQuery</a></li>
+  </ul></li>
+  <li><a href="#co-ještě-v-excelu" id="toc-co-ještě-v-excelu" class="nav-link" data-scroll-target="#co-ještě-v-excelu">Co ještě v Excelu</a></li>
+  </ul></li>
+  <li><a href="#kde-hledat-pomoc" id="toc-kde-hledat-pomoc" class="nav-link" data-scroll-target="#kde-hledat-pomoc">Kde hledat pomoc</a></li>
+  <li><a href="#excel-a-dál" id="toc-excel-a-dál" class="nav-link" data-scroll-target="#excel-a-dál">Excel a dál</a>
+  <ul class="collapse">
+  <li><a href="#r-a-python" id="toc-r-a-python" class="nav-link" data-scroll-target="#r-a-python">R a Python</a></li>
+  <li><a href="#verzování-kódu-git-a-github" id="toc-verzování-kódu-git-a-github" class="nav-link" data-scroll-target="#verzování-kódu-git-a-github">Verzování kódu: Git a Github</a></li>
+  </ul></li>
+  <li><a href="#zdroje" id="toc-zdroje" class="nav-link" data-scroll-target="#zdroje">Zdroje</a></li>
+  <li><a href="#all-links-to-sort" id="toc-all-links-to-sort" class="nav-link" data-scroll-target="#all-links-to-sort">All links to sort</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/petrbouchal/msmt/edit/main/zdroje.qmd" class="toc-action">Upravit stránku</a></p><p><a href="https://github.com/petrbouchal/msmt/issues/new" class="toc-action">Nahlásit problém</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -117,16 +191,207 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
 
 </header>
 
+<section id="jak-použít-materiály-z-kurzu" class="level1">
+<h1>Jak použít materiály z kurzu</h1>
+</section>
+<section id="proces-analytické-práce" class="level1">
+<h1>Proces analytické práce</h1>
+<section id="organizace-projektu" class="level2">
+<h2 class="anchored" data-anchor-id="organizace-projektu">Organizace projektu</h2>
+</section>
+<section id="názvy" class="level2">
+<h2 class="anchored" data-anchor-id="názvy">Názvy</h2>
+</section>
+<section id="organizace-tabulkových-souborů" class="level2">
+<h2 class="anchored" data-anchor-id="organizace-tabulkových-souborů">Organizace tabulkových souborů</h2>
+<section id="organizace-dat-v-souborech" class="level3">
+<h3 class="anchored" data-anchor-id="organizace-dat-v-souborech">Organizace dat v souborech</h3>
+<p><span class="citation" data-cites="bromanDataOrganizationSpreadsheets2018">Broman a Woo (<a href="#ref-bromanDataOrganizationSpreadsheets2018" role="doc-biblioref">2018</a>)</span></p>
+</section>
+<section id="zveřejňování-a-předávání-excelových-souborů" class="level3">
+<h3 class="anchored" data-anchor-id="zveřejňování-a-předávání-excelových-souborů">Zveřejňování a předávání Excelových souborů</h3>
+<p><span class="citation" data-cites="analysisfunctioncentralteamonsCreatingSharingSpreadsheets2021">Analysis Function Central Team, ONS (<a href="#ref-analysisfunctioncentralteamonsCreatingSharingSpreadsheets2021" role="doc-biblioref">2021a</a>)</span></p>
+<p><span class="citation" data-cites="analysisfunctioncentralteamonsReleasingStatisticsSpreadsheets2021">Analysis Function Central Team, ONS (<a href="#ref-analysisfunctioncentralteamonsReleasingStatisticsSpreadsheets2021" role="doc-biblioref">2021b</a>)</span></p>
+</section>
+</section>
+</section>
+<section id="kontrola-kvality" class="level1">
+<h1>Kontrola kvality</h1>
+<p><span class="citation" data-cites="AquaBookGuidance2015"><span>„The <span>Aqua Book</span>: Guidance on Producing Quality Analysis for Government"</span> (<a href="#ref-AquaBookGuidance2015" role="doc-biblioref">2015</a>)</span></p>
+<p><span class="citation" data-cites="QualityAssuranceCode2022"><span>„Quality assurance of code for analysis and research"</span> (<a href="#ref-QualityAssuranceCode2022" role="doc-biblioref">2022</a>)</span></p>
+</section>
+<section id="jednotlivé-kroky" class="level1">
+<h1>Jednotlivé kroky</h1>
+<section id="načtení-dat" class="level3">
+<h3 class="anchored" data-anchor-id="načtení-dat">Načtení dat</h3>
+<p><a href="https://support.microsoft.com/en-us/office/import-or-export-text-txt-or-csv-files-5250ac4c-663c-47ce-937b-339e391393ba#ID0EBBN=Newer_versions">Vysvětlení rozdílu</a> načtení dat „přímo“ versus přes PowerQuery od Microsoftu</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Poznámka
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Power Query se v novějších verzích Excelu <a href="https://exceloffthegrid.com/power-query-introduction/">postupně přejmenovává</a> na „Načíst a Transformovat data“, ale v některých částech rozhrani název PowerQuery zůstává:</p>
+<blockquote class="blockquote">
+<p>The average user doesn’t use the word „Query“ to describe the tasks they undertake. Put the word „Power“ in front and nothing is any clearer.</p>
+<p>Maybe this is why Microsoft changed the name to Get &amp; Transform in Excel 2016 and placed it in the Data ribbon. I am sure they were trying to give the user more clarity. While it may be labelled Get and Transform in Excel 2016 and later, the name Power Query appears to have stuck with the Excel community.</p>
+</blockquote>
+</div>
+</div>
+</section>
+<section id="excel-powerquery-a-reprodukovatelná-analýza" class="level2">
+<h2 class="anchored" data-anchor-id="excel-powerquery-a-reprodukovatelná-analýza">Excel PowerQuery a reprodukovatelná analýza</h2>
+<section id="čím-se-liší-od-běžné-práce-v-excelu" class="level3">
+<h3 class="anchored" data-anchor-id="čím-se-liší-od-běžné-práce-v-excelu">Čím se liší od běžné práce v Excelu</h3>
+<ul>
+<li>umožňují načíst externí data; v Excelu je pouze jejich odraz po transformaci a čištění. Např. na disku leží CSV soubor, excelový soubor obsahuje popis toho, jak se data načtou a upraví</li>
+<li>v listu v excelovém souboru uvidíte výsledek této transformace</li>
+<li>máte přístup k širšímu spektru formátů</li>
+<li>každý datový soubor</li>
+</ul>
+<p>Hrubá data v tom stejném nebo jiném Excelovém souboru mohou sloužit jako zdraj dat pro PowerQuery</p>
+<p>Analogické funkce existují i v PowerBI - pokud se tedy naučíte s PowerQuery v Excelu, bude pro Vás snadná práce při načítání a úpravě dat v PowerBI.</p>
+<p><a href="https://exceloffthegrid.com/power-query-introduction/">Úvod do PowerQuery</a></p>
+<p><a href="https://support.microsoft.com/en-us/office/about-power-query-in-excel-7104fbee-9e62-4cb9-a02e-5bfb1a6c536a">Úvod do PowerQuery of Microsoftu</a></p>
+<p>Základní úvody do PowerQuery česky</p>
+<ul>
+<li>(http://home.zcu.cz/~kryl/DBM2/power-bi-3-transformace.html)</li>
+</ul>
+</section>
+<section id="proč-powerquery-používat" class="level3">
+<h3 class="anchored" data-anchor-id="proč-powerquery-používat">Proč PowerQuery používat</h3>
+<ul>
+<li>máme popsaný postup úpravy dat</li>
+<li>můžete vytvářet podskupiny a transformované verze jedné tabulky, které se aktualizují, pokud se změní zdrojová data nebo proces úpravy</li>
+<li>při načtení dat můžete explicitně popsat datové typy, je tedy menší riziko, že dojde např. k chybnému formátování čísel jako datumů</li>
+<li>některé operace těžko proveditelné v běžném Excelu jsou v PowerQuery snadné (Unpivot (kontingenční sloupec); pokročilá extrakce částí textových řetězců)</li>
+<li>tvorba derivovaných sloupců je v PowerQuery intuitivnější</li>
+<li>operace, které v Excelu provádíte kontingenční tabulkou, jsou v PowerQuery proeditelné intuitivněji a jejich výsledkem je normální datová tabulka, se kterou lze (narozdíl od kontingenční tabulky) snadno dál pracovat bez potřeby speciálních vzorců a kopírování dat</li>
+<li>propojování dat (např. napojení číslelníků) je v PowerQuery uživatelsky snadnější a výpočetně rychlejší; navíc můžete opravdu propojit dvě tabulky namísto postupného připojování jednotlivých sloupců, jak je nutné s využitím funkce <code>SVYHLEDAT</code>/<code>XVYHLEDAT</code></li>
+<li>máte možnost vidět a editovat přímo strojový kód, který transformace dat provádí (Excel zaznamenává jednak jednotlivé kroky ve formě tlačítek, která můžete mazat nebo upravovat, jednak ve formě kódu, který můžete přímo editovat)</li>
+<li>pokud máte několik souborů stejné struktury, které chcete analyzovat společně (např. výkazy z různých resortů), můžete je snadno načíst společně, bez kopírování a vkládání</li>
+</ul>
+</section>
+<section id="jak-tedy-o-práci-s-powerquery-přemýšlet" class="level3">
+<h3 class="anchored" data-anchor-id="jak-tedy-o-práci-s-powerquery-přemýšlet">Jak tedy o práci s PowerQuery přemýšlet</h3>
+<ol type="1">
+<li>Někde na disku nebo jinde sedí datový zdroj</li>
+<li>Excelový soubor obsahuje instrukce, díky kterým Excel data načte, vyčistí a upraví. Každý datový zdroj má v levé části svou ikonu; když na ni kliknete, zobrazí se náhled dat a v pravém sloupci posloupnost kroků úpravy dat</li>
+<li>Stejně tak v PowerQuery můžete data spojovat nebo vytvářet podvýběry či transformované verze jednotlivých datových tabulek (klikněte pravým na krok úpravy v pravé liště a vyberte „Extract Previous“) nebo klikněte pravým na dotaz (Query) v levé liště a vyberte „Odkaz“. V obou případech vznikne nový Dotaz, jehož kroky končí, resp. začínají tam, kde jste klikli. Znamená to, že můžete používat data vzniklá v různé fázi transformace z datového zdroje. Podobně můžete dotaz <em>duplikovat</em>.</li>
+<li>Výsledek každého procesu můžete načíst do listu v Excelu. Pokud se změní zdrojová data nebo postup jejich úpravy, aktualizují se i data načtená do listu v Excelu.</li>
+<li>S daty v listu v Excelu můžete dál pracovat</li>
+</ol>
+<p>Pozn.: pokud datový zdroj (např. CSV soubor na disku) bude nedostupný, Excel sice nebude schopen data z něj znovu načíst/aktualizovat, ale výsledek načtení a transformace dat bude stále dostupný.</p>
+<ul>
+<li>Některé operace lze udělat dvěma způsoby:
+<ul>
+<li>v PowerQuery jako součást procesu načtení a transformace</li>
+<li>následně v Excelu v listu s načtenými daty pomocí vzorečků</li>
+</ul></li>
+</ul>
+<p><span class="citation" data-cites="kadukTarasKadukPower2018">Kaduk (<a href="#ref-kadukTarasKadukPower2018" role="doc-biblioref">2018</a>)</span></p>
+</section>
+<section id="tipy-pro-práci-s-powerquery" class="level3">
+<h3 class="anchored" data-anchor-id="tipy-pro-práci-s-powerquery">Tipy pro práci s PowerQuery</h3>
+<ul>
+<li>jednotlivé Dotazy (levá lišta) a kroky (pravá lišta) můžete přejmenovávat (dvojklik) a doplňovat k nim poppisky (pravý klik =&gt; Vlastnosti)</li>
+<li>stejně tak se přejmenovávají sloupce</li>
+<li>místo Zpět (Ctrl+Z) jednoduše zrušte poslední krok v pravé liště</li>
+<li>v novějších verzích Excelu jde zobrazit celá síť vztahů mezi Dotazy (jejich propojení, vzájemné odvození): <code>Zobrazit &gt; Diagram</code></li>
+</ul>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+PowerQuery a PowerPivot
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://www.google.com/search?client=firefox-b-d&amp;q=powerpivot">PowerPivot</a> je nástroj na modelování dat. Je součástí novějších verzí Excelu. Umožňuje explicitně popsat vztahy mezi tabulkami a pracovat s několika tabulkami jako s databází.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="co-ještě-v-excelu" class="level2">
+<h2 class="anchored" data-anchor-id="co-ještě-v-excelu">Co ještě v Excelu</h2>
+</section>
+</section>
+<section id="kde-hledat-pomoc" class="level1">
+<h1>Kde hledat pomoc</h1>
+</section>
+<section id="excel-a-dál" class="level1">
+<h1>Excel a dál</h1>
+<section id="r-a-python" class="level2">
+<h2 class="anchored" data-anchor-id="r-a-python">R a Python</h2>
+</section>
+<section id="verzování-kódu-git-a-github" class="level2">
+<h2 class="anchored" data-anchor-id="verzování-kódu-git-a-github">Verzování kódu: Git a Github</h2>
+</section>
+</section>
+<section id="zdroje" class="level1">
+<h1>Zdroje</h1>
+</section>
+<section id="all-links-to-sort" class="level1">
+<h1>All links to sort</h1>
+<p>https://support.microsoft.com/en-us/office/about-power-query-in-excel-7104fbee-9e62-4cb9-a02e-5bfb1a6c536a</p>
+<p>https://exceloffthegrid.com/power-query-introduction/</p>
+<p>https://support.microsoft.com/en-us/office/import-or-export-text-txt-or-csv-files-5250ac4c-663c-47ce-937b-339e391393ba#ID0EBBN=Newer_versions</p>
+<p>https://support.microsoft.com/cs-cz/office/nau%C4%8Dte-se-kombinovat-v%C3%ADce-zdroj%C5%AF-dat-power-query-70cfe661-5a2a-4d9d-a4fe-586cc7878c7d</p>
+<p>https://support.microsoft.com/cs-cz/office/vytvo%C5%99en%C3%AD-parametrizovan%C3%A9ho-dotazu-power-query-5eb365bc-3982-4ab2-8830-b205a69e0f33</p>
+<p>https://office.lasakovi.com/excel/Query-editor/Dynamicke-nacitani-PowerQuery-jazyk-M/</p>
+<p>https://office.lasakovi.com/excel/Query-editor/jak-na-power-query-editor-Excel-serial/</p>
+<p>https://office.lasakovi.com/excel/Query-editor/Teoreticky-uvod-do-Power-Query-Excel/</p>
+<p>https://office.lasakovi.com/excel/Query-editor/Power-Query-editor-popis-okna/</p>
+<p>https://analysisfunction.civilservice.gov.uk/blog/transforming-energy-data-pipelines/</p>
+<p>https://best-practice-and-impact.github.io/qa-of-code-guidance/tools.html</p>
+<p>https://best-practice-and-impact.github.io/qa-of-code-guidance/checklist_lower.html</p>
+<p>https://best-practice-and-impact.github.io/qa-of-code-guidance/checklist_higher.html</p>
+<p>https://best-practice-and-impact.github.io/qa-of-code-guidance/checklist_moderate.html</p>
+<p>https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government</p>
+<p>https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/416478/aqua_book_final_web.pdf</p>
+<p>https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/#section-2</p>
+<p>https://blog.ldodds.com/2022/10/18/its-just-a-spreadsheet-but-its-still-data-infrastructure/</p>
+<p>https://rstudio-conf-2020.github.io/r-for-excel/collaborating.html</p>
+<p>https://www.gov.uk/guidance/creating-and-sharing-spreadsheets</p>
+<p>https://analysisfunction.civilservice.gov.uk/blog/launching-the-reproducible-analytical-pipelines-strategy/</p>
 
 
 
-</main> <!-- /main -->
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Reference</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-analysisfunctioncentralteamonsCreatingSharingSpreadsheets2021" class="csl-entry" role="doc-biblioentry">
+Analysis Function Central Team, ONS. 2021a. <span>„Creating and Sharing Spreadsheets"</span>. <a href="https://www.gov.uk/guidance/creating-and-sharing-spreadsheets">https://www.gov.uk/guidance/creating-and-sharing-spreadsheets</a>.
+</div>
+<div id="ref-analysisfunctioncentralteamonsReleasingStatisticsSpreadsheets2021" class="csl-entry" role="doc-biblioentry">
+Analysis Function Central Team, ONS. 2021b. <span>„Releasing Statistics in Spreadsheets"</span>. <a href="https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/#section-14">https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/#section-14</a>.
+</div>
+<div id="ref-bromanDataOrganizationSpreadsheets2018" class="csl-entry" role="doc-biblioentry">
+Broman, Karl W., a Kara H. Woo. 2018. <span>„Data Organization in Spreadsheets"</span>. <em>The American Statistician</em> 72 (1): 2–10. <a href="https://doi.org/10.1080/00031305.2017.1375989">https://doi.org/10.1080/00031305.2017.1375989</a>.
+</div>
+<div id="ref-kadukTarasKadukPower2018" class="csl-entry" role="doc-biblioentry">
+Kaduk, Taras. 2018. <span>„Taras Kaduk: Power Query: Excel’s gateway to reproducible analysis"</span>, březen. <a href="https://taraskaduk.com/posts/2018-03-29-power-query/">https://taraskaduk.com/posts/2018-03-29-power-query/</a>.
+</div>
+<div id="ref-QualityAssuranceCode2022" class="csl-entry" role="doc-biblioentry">
+<span>„Quality assurance of code for analysis and research"</span>. 2022. <a href="https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html">https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html</a>.
+</div>
+<div id="ref-AquaBookGuidance2015" class="csl-entry" role="doc-biblioentry">
+<span>„The <span>Aqua Book</span>: Guidance on Producing Quality Analysis for Government"</span>. 2015. <em>GOV.UK</em>. <a href="https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government">https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -167,8 +432,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Zkopírováno!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Zkopírováno!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -204,28 +486,65 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center">Petr Bouchal pro Ministerstvo vnitra, 2023</div>
+  </div>
+</footer>
 
 
 

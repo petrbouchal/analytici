@@ -1,10 +1,66 @@
 [
   {
+    "objectID": "reflexe.html",
+    "href": "reflexe.html",
+    "title": "Analytici 2022",
+    "section": "",
+    "text": "Na začátku ukázat, kam se dobereme\nSesekat tak, aby\nvyhodit slide o veřejných hodnotách, nějak integrovat jinam?\nPřidat Anscombe Quartet\nPřidat koncept mental bandwidth: aby se mohli soustředit na přemýšlení, ne na vyznání se v procesu - investovat na začátku - offloadovat metadata do zaznamenané podoby - offloadovat znalost o postupu do\nKde vzít data?\n\nZ běhu 2 2022-11-05\n\njste správci dat\nubrat úvod, opět\ntake aways na konci\nschéma power query\nschéma vlookup\nkonverze standard x power pivot\nproč power pivot\núkol a otázky na slide\nsladit hotový projekt s pracovním - kraje, ne ORP\n\nukázat i moment stažení dat ukázat interakci s dokumentací datové sady (JSON schema)"
+  },
+  {
+    "objectID": "zdroje.html#organizace-projektu",
+    "href": "zdroje.html#organizace-projektu",
+    "title": "Další zdroje",
+    "section": "Organizace projektu",
+    "text": "Organizace projektu"
+  },
+  {
+    "objectID": "zdroje.html#názvy",
+    "href": "zdroje.html#názvy",
+    "title": "Další zdroje",
+    "section": "Názvy",
+    "text": "Názvy"
+  },
+  {
+    "objectID": "zdroje.html#organizace-tabulkových-souborů",
+    "href": "zdroje.html#organizace-tabulkových-souborů",
+    "title": "Další zdroje",
+    "section": "Organizace tabulkových souborů",
+    "text": "Organizace tabulkových souborů\n\nOrganizace dat v souborech\nBroman a Woo (2018)\n\n\nZveřejňování a předávání Excelových souborů\nAnalysis Function Central Team, ONS (2021a)\nAnalysis Function Central Team, ONS (2021b)"
+  },
+  {
+    "objectID": "zdroje.html#excel-powerquery-a-reprodukovatelná-analýza",
+    "href": "zdroje.html#excel-powerquery-a-reprodukovatelná-analýza",
+    "title": "Další zdroje",
+    "section": "Excel PowerQuery a reprodukovatelná analýza",
+    "text": "Excel PowerQuery a reprodukovatelná analýza\n\nČím se liší od běžné práce v Excelu\n\numožňují načíst externí data; v Excelu je pouze jejich odraz po transformaci a čištění. Např. na disku leží CSV soubor, excelový soubor obsahuje popis toho, jak se data načtou a upraví\nv listu v excelovém souboru uvidíte výsledek této transformace\nmáte přístup k širšímu spektru formátů\nkaždý datový soubor\n\nHrubá data v tom stejném nebo jiném Excelovém souboru mohou sloužit jako zdraj dat pro PowerQuery\nAnalogické funkce existují i v PowerBI - pokud se tedy naučíte s PowerQuery v Excelu, bude pro Vás snadná práce při načítání a úpravě dat v PowerBI.\nÚvod do PowerQuery\nÚvod do PowerQuery of Microsoftu\nZákladní úvody do PowerQuery česky\n\n(http://home.zcu.cz/~kryl/DBM2/power-bi-3-transformace.html)\n\n\n\nProč PowerQuery používat\n\nmáme popsaný postup úpravy dat\nmůžete vytvářet podskupiny a transformované verze jedné tabulky, které se aktualizují, pokud se změní zdrojová data nebo proces úpravy\npři načtení dat můžete explicitně popsat datové typy, je tedy menší riziko, že dojde např. k chybnému formátování čísel jako datumů\nněkteré operace těžko proveditelné v běžném Excelu jsou v PowerQuery snadné (Unpivot (kontingenční sloupec); pokročilá extrakce částí textových řetězců)\ntvorba derivovaných sloupců je v PowerQuery intuitivnější\noperace, které v Excelu provádíte kontingenční tabulkou, jsou v PowerQuery proeditelné intuitivněji a jejich výsledkem je normální datová tabulka, se kterou lze (narozdíl od kontingenční tabulky) snadno dál pracovat bez potřeby speciálních vzorců a kopírování dat\npropojování dat (např. napojení číslelníků) je v PowerQuery uživatelsky snadnější a výpočetně rychlejší; navíc můžete opravdu propojit dvě tabulky namísto postupného připojování jednotlivých sloupců, jak je nutné s využitím funkce SVYHLEDAT/XVYHLEDAT\nmáte možnost vidět a editovat přímo strojový kód, který transformace dat provádí (Excel zaznamenává jednak jednotlivé kroky ve formě tlačítek, která můžete mazat nebo upravovat, jednak ve formě kódu, který můžete přímo editovat)\npokud máte několik souborů stejné struktury, které chcete analyzovat společně (např. výkazy z různých resortů), můžete je snadno načíst společně, bez kopírování a vkládání\n\n\n\nJak tedy o práci s PowerQuery přemýšlet\n\nNěkde na disku nebo jinde sedí datový zdroj\nExcelový soubor obsahuje instrukce, díky kterým Excel data načte, vyčistí a upraví. Každý datový zdroj má v levé části svou ikonu; když na ni kliknete, zobrazí se náhled dat a v pravém sloupci posloupnost kroků úpravy dat\nStejně tak v PowerQuery můžete data spojovat nebo vytvářet podvýběry či transformované verze jednotlivých datových tabulek (klikněte pravým na krok úpravy v pravé liště a vyberte „Extract Previous“) nebo klikněte pravým na dotaz (Query) v levé liště a vyberte „Odkaz“. V obou případech vznikne nový Dotaz, jehož kroky končí, resp. začínají tam, kde jste klikli. Znamená to, že můžete používat data vzniklá v různé fázi transformace z datového zdroje. Podobně můžete dotaz duplikovat.\nVýsledek každého procesu můžete načíst do listu v Excelu. Pokud se změní zdrojová data nebo postup jejich úpravy, aktualizují se i data načtená do listu v Excelu.\nS daty v listu v Excelu můžete dál pracovat\n\nPozn.: pokud datový zdroj (např. CSV soubor na disku) bude nedostupný, Excel sice nebude schopen data z něj znovu načíst/aktualizovat, ale výsledek načtení a transformace dat bude stále dostupný.\n\nNěkteré operace lze udělat dvěma způsoby:\n\nv PowerQuery jako součást procesu načtení a transformace\nnásledně v Excelu v listu s načtenými daty pomocí vzorečků\n\n\nKaduk (2018)\n\n\nTipy pro práci s PowerQuery\n\njednotlivé Dotazy (levá lišta) a kroky (pravá lišta) můžete přejmenovávat (dvojklik) a doplňovat k nim poppisky (pravý klik => Vlastnosti)\nstejně tak se přejmenovávají sloupce\nmísto Zpět (Ctrl+Z) jednoduše zrušte poslední krok v pravé liště\nv novějších verzích Excelu jde zobrazit celá síť vztahů mezi Dotazy (jejich propojení, vzájemné odvození): Zobrazit > Diagram\n\n\n\n\n\n\n\nPowerQuery a PowerPivot\n\n\n\nPowerPivot je nástroj na modelování dat. Je součástí novějších verzí Excelu. Umožňuje explicitně popsat vztahy mezi tabulkami a pracovat s několika tabulkami jako s databází."
+  },
+  {
+    "objectID": "zdroje.html#co-ještě-v-excelu",
+    "href": "zdroje.html#co-ještě-v-excelu",
+    "title": "Další zdroje",
+    "section": "Co ještě v Excelu",
+    "text": "Co ještě v Excelu"
+  },
+  {
+    "objectID": "zdroje.html#r-a-python",
+    "href": "zdroje.html#r-a-python",
+    "title": "Další zdroje",
+    "section": "R a Python",
+    "text": "R a Python"
+  },
+  {
+    "objectID": "zdroje.html#verzování-kódu-git-a-github",
+    "href": "zdroje.html#verzování-kódu-git-a-github",
+    "title": "Další zdroje",
+    "section": "Verzování kódu: Git a Github",
+    "text": "Verzování kódu: Git a Github"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Pilotní vzdělávací kurz pro analytiky 2022",
     "section": "",
-    "text": "Materiály pro práci"
+    "text": "Prezentace\nMateriály pro práci"
   },
   {
     "objectID": "slides/index.html#proč-jste-tu-dnes-vy",
@@ -168,13 +224,6 @@
     "text": "Práce s kódem\nSQL a databáze\nR nebo Python?\n=> automatizace"
   },
   {
-    "objectID": "slides/index.html#literate-programming",
-    "href": "slides/index.html#literate-programming",
-    "title": "Analýza dat",
-    "section": "Literate programming",
-    "text": "Literate programming\nObservableJS\nJupyter Notebooks\nR Markdown / Quarto"
-  },
-  {
     "objectID": "slides/index.html#verzování-git-github",
     "href": "slides/index.html#verzování-git-github",
     "title": "Analýza dat",
@@ -186,34 +235,34 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "1 + 1\n\n[1] 2"
+    "text": "About this site\n\n\n#> [1] 2"
   },
   {
     "objectID": "report.html",
     "href": "report.html",
     "title": "Neobydlené byty: vstupní analýza",
     "section": "",
-    "text": "Toto je pouze ukázka, jak lze podobnou analýzu udělat tak, že kód je reprodukovatelný a generuje přímo grafy a čísla do textu.\nVyužíváme data ČSÚ ze SLDB o obydlenosti bytů v obcích."
+    "text": "Toto je pouze ukázka, jak lze podobnou analýzu udělat tak, že kód je reprodukovatelný a generuje přímo grafy a čísla do textu.\nVyužíváme data ČSÚ ze SLDB o obydlenosti bytů v obcích (Český statistický úřad 2021)"
   },
   {
     "objectID": "report.html#základní-náhled",
     "href": "report.html#základní-náhled",
     "title": "Neobydlené byty: vstupní analýza",
     "section": "Základní náhled",
-    "text": "Základní náhled\n\n\n\n\n\nMediánový podíl obydlených bytů je 76 %. (Toto číslo se do věty doplňuje automaticky z živých dat)\n\n\n\n\n\nZde je deset obcí s nejvyšší obydleností bytů:\n\n\n\n\n\n\n  \n  \n    \n      uzemi_txt\n      obvykle obydlen\n      obvykle neobydlen\n      obydlenost_share\n      kraj_nazev\n      pocob\n    \n  \n  \n    Hněvnice\n49\n0\n1.0000000\nPlzeňský kraj\n114\n    Dobříč\n234\n0\n1.0000000\nStředočeský kraj\n499\n    Zhoř\n63\n0\n1.0000000\nPlzeňský kraj\n165\n    Vřesová\n106\n0\n1.0000000\nKarlovarský kraj\n409\n    Všehrdy\n67\n0\n1.0000000\nÚstecký kraj\n156\n    Odrovice\n97\n0\n1.0000000\nJihomoravský kraj\n247\n    Zlátenka\n19\n0\n1.0000000\nKraj Vysočina\n45\n    Uhersko\n143\n1\n0.9930556\nPardubický kraj\n292\n    Droužkovice\n337\n4\n0.9882698\nÚstecký kraj\n821\n    Modletice\n256\n4\n0.9846154\nStředočeský kraj\n528"
+    "text": "Základní náhled\n\n\nKód\nbyty_podily |>\n  # filter(kraj_kod %in% c(\"CZ020\", \"CZ054\", \"CZ080\")) |>\n  ggplot(aes(1 - obydlenost_share, pocob)) +\n  geom_point(alpha = .2) +\n  coord_flip() +\n  labs(title = \"Podíl obydlených bytů a velikost obce\",\n       x = \"Podíl obydlených bytů\", y = \"Počet obyvatel obce (log. měřítko)\") +\n  scale_x_percent_cz() +\n  scale_y_log10() +\n  theme_ptrr(\"scatter\")\n\n\n\n\n\nMediánový podíl obydlených bytů je 76 %.11 Toto číslo se do věty doplňuje automaticky z živých dat\n\n\nKód\nbyty_podily |>\n  drop_na(pocob_kat) |>\n  count(pocob_kat, wt = 1 - mean(obydlenost_share)) |>\n  ggplot(aes(pocob_kat, n)) +\n  scale_y_percent_cz() +\n  theme_ptrr() +\n  geom_col() +\n  labs(title = \"Podíl neobydlených bytů podle velikostní skupiny obce\")\n\n\n\n\n\nZde je deset obcí s nejvyšší obydleností bytů:\n\n\nKód\nbyty_podily |> \n  slice_max(obydlenost_share, n = 10) |> \n  select(uzemi_txt, `obvykle obydlen`, `obvykle neobydlen`, obydlenost_share, kraj_nazev, pocob) |> \n  gt::gt()\n\n\n\n\n\n\n  \n  \n    \n      uzemi_txt\n      obvykle obydlen\n      obvykle neobydlen\n      obydlenost_share\n      kraj_nazev\n      pocob\n    \n  \n  \n    Hněvnice\n49\n0\n1.0000000\nPlzeňský kraj\n114\n    Dobříč\n234\n0\n1.0000000\nStředočeský kraj\n499\n    Zhoř\n63\n0\n1.0000000\nPlzeňský kraj\n165\n    Vřesová\n106\n0\n1.0000000\nKarlovarský kraj\n409\n    Všehrdy\n67\n0\n1.0000000\nÚstecký kraj\n156\n    Odrovice\n97\n0\n1.0000000\nJihomoravský kraj\n247\n    Zlátenka\n19\n0\n1.0000000\nKraj Vysočina\n45\n    Uhersko\n143\n1\n0.9930556\nPardubický kraj\n292\n    Droužkovice\n337\n4\n0.9882698\nÚstecký kraj\n821\n    Modletice\n256\n4\n0.9846154\nStředočeský kraj\n528"
   },
   {
     "objectID": "report.html#podle-krajů",
     "href": "report.html#podle-krajů",
     "title": "Neobydlené byty: vstupní analýza",
     "section": "Podle krajů",
-    "text": "Podle krajů\n\n\n\n\n\n\nPodle krajů a velikosti obce\n\n\n\n\n\n\n\nJak je obydlenost bytů v obcích rozložena v krajích?\n\n\n\n\n\n\n\nKoreluje průměrná velikost obce v kraji a celková obydlenost bytů v kraji?"
+    "text": "Podle krajů\n\n\nKód\nbyty_podily |>\n  drop_na(pocob_kat) |>\n  count(kraj_nazev, wt = 1 - mean(obydlenost_share)) |>\n  mutate(kraj_nazev = as.factor(kraj_nazev) |> fct_reorder(n)) |> \n  ggplot(aes(n, kraj_nazev)) +\n  scale_x_percent_cz() +\n  geom_col() +\n  theme_ptrr(\"x\")\n\n\n\n\n\n\nPodle krajů a velikosti obce\n\n\nKód\nbyty_podily |> \n  drop_na(pocob_kat) |>\n  filter(kraj_kod != \"CZ010\") |> \n  count(pocob_kat, kraj_nazev) |> \n  group_by(kraj_nazev) |> \n  mutate(podil = n/sum(n)) |> \n  ggplot(aes(pocob_kat, kraj_nazev)) +\n  theme_ptrr(\"none\") +\n  scale_fill_viridis_b(n.breaks = 6, labels = label_percent_cz()) +\n  guides(fill = guide_bins(reverse = T)) +\n  geom_tile(aes(fill = podil), colour = \"white\", size = .6)\n\n\n\n\n\n\n\nJak je obydlenost bytů v obcích rozložena v krajích?\n\n\nKód\nbyty_podily |>\n  drop_na(pocob_kat) |>\n  filter(pocob < 1e6) |>\n  ggplot(aes(obydlenost_share)) +\n  geom_histogram(aes(fill = pocob_kat)) +\n  facet_wrap(~ kraj_nazev) +\n  theme_ptrr(multiplot = TRUE)\n\n\n\n\n\n\n\nKoreluje průměrná velikost obce v kraji a celková obydlenost bytů v kraji?\n\n\nKód\nbyty_podily |> \n  filter(kraj_kod != \"CZ010\") |> \n  mutate(kraj_nazev_short = str_remove(kraj_nazev, \"\\\\s?[Kk]raj\\\\s?\")) |> \n  group_by(kraj_nazev_short) |> \n  summarise(pocob_median = median(pocob), \n            mean_obydl = mean(obydlenost_share),\n            obydl_mean = sum(`obvykle neobydlen`)/sum(celkem)) |> \n  ggplot(aes(pocob_median, mean_obydl)) +\n  geom_smooth(method = \"lm\", colour = \"darkblue\", fill = ptrr:::ptclr_d, \n              formula = y ~ x) +\n  geom_point(colour = \"blue\") +\n  geom_label(aes(label = kraj_nazev_short), nudge_y = .01) +\n  scale_y_percent_cz() +\n  theme_ptrr(gridlines = \"both\")"
   },
   {
     "objectID": "report.html#vliv-kraje-vs.-velikosti-obce",
     "href": "report.html#vliv-kraje-vs.-velikosti-obce",
     "title": "Neobydlené byty: vstupní analýza",
     "section": "Vliv kraje vs. velikosti obce",
-    "text": "Vliv kraje vs. velikosti obce\nAbychom odhadli samostatný “vliv” kraje na obydlenost bytů v obci, odhadneme lineární model vztahu mezi velikostí obce a obydleností.\n\n\n\nCall:\nlm(formula = obydlenost_share ~ pocob_log, data = byty_podily0)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-0.58920 -0.05371  0.00893  0.06005  0.37909 \n\nCoefficients:\n             Estimate Std. Error t value            Pr(>|t|)    \n(Intercept) 0.4268069  0.0062190   68.63 <0.0000000000000002 ***\npocob_log   0.0509893  0.0009846   51.79 <0.0000000000000002 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.09353 on 6251 degrees of freedom\nMultiple R-squared:  0.3002,    Adjusted R-squared:  0.3001 \nF-statistic:  2682 on 1 and 6251 DF,  p-value: < 0.00000000000000022\n\n\nModel zachycuje cca 30 % variability obydlenosti bytů v obcích.\nGraf níže ukazuje, jak se obydlenost bytů v obcích v jednotlivých krajích liší od očekávání, tj. od toho, jaká by měla být s ohledem na velikostní složení obcí.\n\n\n\n\n\nV některých krajích je tedy systematicky nižší obydlenost bytů, než by odpovídalo velikostnímu složení obcí v daném kraji."
+    "text": "Vliv kraje vs. velikosti obce\nAbychom odhadli samostatný „vliv“ kraje na obydlenost bytů v obci, odhadneme lineární model vztahu mezi velikostí obce a obydleností.\n\n\nKód\nbyty_podily0 <- byty_podily |> \n  filter(!is.na(pocob), \n         pocob > 0,\n         kraj_kod != \"CZ010\") |> \n  mutate(pocob_log = log(pocob))\n\nmdl <- lm(obydlenost_share ~ pocob_log, data = byty_podily0)\n\nsummary(mdl)\n\n\n#> \n#> Call:\n#> lm(formula = obydlenost_share ~ pocob_log, data = byty_podily0)\n#> \n#> Residuals:\n#>      Min       1Q   Median       3Q      Max \n#> -0.58920 -0.05371  0.00893  0.06005  0.37909 \n#> \n#> Coefficients:\n#>              Estimate Std. Error t value            Pr(>|t|)    \n#> (Intercept) 0.4268069  0.0062190   68.63 <0.0000000000000002 ***\n#> pocob_log   0.0509893  0.0009846   51.79 <0.0000000000000002 ***\n#> ---\n#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n#> \n#> Residual standard error: 0.09353 on 6251 degrees of freedom\n#> Multiple R-squared:  0.3002, Adjusted R-squared:  0.3001 \n#> F-statistic:  2682 on 1 and 6251 DF,  p-value: < 0.00000000000000022\n\n\nKód\nmdl_tidy <- broom::tidy(mdl)\nbyty_podily_au <- broom::augment(mdl, data = byty_podily0)\n\n\nModel zachycuje cca 30 % variability obydlenosti bytů v obcích.\nGraf níže ukazuje, jak se obydlenost bytů v obcích v jednotlivých krajích liší od očekávání, tj. od toho, jaká by měla být s ohledem na velikostní složení obcí.\n\n\nKód\nbyty_podily_au |> \n  mutate(kraj_nazev = as.factor(kraj_nazev) |> fct_reorder(.resid)) |> \n  ggplot(aes(.resid, y = kraj_nazev)) +\n  # geom_jitter(alpha = .2) +\n  geom_vline(xintercept = 0) +\n  geom_violin(colour = \"darkblue\", fill = ptrr:::ptclr_l, alpha = .8) +\n  scale_x_percent_cz() +\n  theme_ptrr(\"both\") +\n  labs(title = \"Rozdíl reality a predikce modelu\")\n\n\n\n\n\nV některých krajích je tedy systematicky nižší obydlenost bytů, než by odpovídalo velikostnímu složení obcí v daném kraji."
   }
 ]
