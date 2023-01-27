@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="cs" xml:lang="cs"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Analytici 2022 - Neobydlené byty: vstupní analýza</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Žádný výsledek",
+    "search-matching-documents-text": "Nalezené výsledky",
+    "search-copy-link-title": "Zkopírovat odkaz pro vyhledávání",
+    "search-hide-matches-text": "Skrýt další výsledky",
+    "search-more-match-text": "další výsledek v tomto dokumentu",
+    "search-more-matches-text": "dalších výsledků v tomto dokumentu",
+    "search-clear-button-title": "Vymazat",
+    "search-detached-cancel-button-title": "Zrušit",
+    "search-submit-button-title": "Odeslat"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Analytici 2022</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text">Start</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./slides/index.html">
+ <span class="menu-text">Prezentace</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./report.html" aria-current="page">
+ <span class="menu-text">Příklad analýzy v R</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./zdroje.html">
+ <span class="menu-text">Další zdroje</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/petrbouchal/msmt"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://petrbouchal.xyz"><i class="bi bi-asterisk" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="dropdown-header">
+ <span class="menu-text"> </span></li>
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Na této stránce</h2>
+   
+  <ul>
+  <li><a href="#základní-náhled" id="toc-základní-náhled" class="nav-link active" data-scroll-target="#základní-náhled">Základní náhled</a></li>
+  <li><a href="#podle-krajů" id="toc-podle-krajů" class="nav-link" data-scroll-target="#podle-krajů">Podle krajů</a>
+  <ul class="collapse">
+  <li><a href="#podle-krajů-a-velikosti-obce" id="toc-podle-krajů-a-velikosti-obce" class="nav-link" data-scroll-target="#podle-krajů-a-velikosti-obce">Podle krajů a velikosti obce</a></li>
+  <li><a href="#jak-je-obydlenost-bytů-v-obcích-rozložena-v-krajích" id="toc-jak-je-obydlenost-bytů-v-obcích-rozložena-v-krajích" class="nav-link" data-scroll-target="#jak-je-obydlenost-bytů-v-obcích-rozložena-v-krajích">Jak je obydlenost bytů v obcích rozložena v krajích?</a></li>
+  <li><a href="#koreluje-průměrná-velikost-obce-v-kraji-a-celková-obydlenost-bytů-v-kraji" id="toc-koreluje-průměrná-velikost-obce-v-kraji-a-celková-obydlenost-bytů-v-kraji" class="nav-link" data-scroll-target="#koreluje-průměrná-velikost-obce-v-kraji-a-celková-obydlenost-bytů-v-kraji">Koreluje průměrná velikost obce v kraji a celková obydlenost bytů v kraji?</a></li>
+  </ul></li>
+  <li><a href="#vliv-kraje-vs.-velikosti-obce" id="toc-vliv-kraje-vs.-velikosti-obce" class="nav-link" data-scroll-target="#vliv-kraje-vs.-velikosti-obce">Vliv kraje vs.&nbsp;velikosti obce</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/petrbouchal/msmt/edit/main/report.qmd" class="toc-action">Upravit stránku</a></p><p><a href="https://github.com/petrbouchal/msmt/issues/new" class="toc-action">Nahlásit problém</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Neobydlené byty: vstupní analýza</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Kód</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Zobrazit celý kód</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Skrýt celý kód</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">Zobrazit zdrojový kód</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Publikováno</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">1. října 2022</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<blockquote class="blockquote">
+<p>Toto je pouze ukázka, jak lze podobnou analýzu udělat tak, že kód je reprodukovatelný a generuje přímo grafy a čísla do textu.</p>
+</blockquote>
+<p>Využíváme <a href="https://www.czso.cz/csu/czso/vysledky-scitani-2021-otevrena-data">data ČSÚ ze SLDB o obydlenosti bytů v obcích</a> <span class="citation" data-cites="ceskystatistickyuradVysledkyScitani20212021">(<a href="#ref-ceskystatistickyuradVysledkyScitani20212021" role="doc-biblioref">Český statistický úřad 2021</a>)</span></p>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+<details>
+<summary>Kód</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>byty <span class="ot">&lt;-</span> czso<span class="sc">::</span><span class="fu">czso_get_table</span>(<span class="st">"sldb2021_byty_obydlenost"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>vzdel <span class="ot">&lt;-</span> czso<span class="sc">::</span><span class="fu">czso_get_table</span>(<span class="st">"sldb2021_vzdelani"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>obcekraje <span class="ot">&lt;-</span> czso<span class="sc">::</span><span class="fu">czso_get_codelist</span>(<span class="st">"cis108vaz43"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>obceorp <span class="ot">&lt;-</span> czso<span class="sc">::</span><span class="fu">czso_get_codelist</span>(<span class="st">"cis65vaz43"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>obyv <span class="ot">&lt;-</span> czso<span class="sc">::</span><span class="fu">czso_get_table</span>(<span class="st">"130149"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(rok <span class="sc">==</span> <span class="fu">max</span>(rok), <span class="fu">is.na</span>(pohlavi_txt)) <span class="sc">|&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">uzemi_kod =</span> vuzemi_kod, <span class="at">pocob =</span> hodnota)</span></code><button title="Zkopírovat do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Kód</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>byty_podily <span class="ot">&lt;-</span> byty <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(uzemi_cis <span class="sc">==</span> <span class="st">"43"</span>, <span class="sc">!</span><span class="fu">is.na</span>(obydlenost_txt)) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(hodnota, obydlenost_txt, uzemi_txt, uzemi_kod) <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> obydlenost_txt, <span class="at">values_from =</span> hodnota) <span class="sc">|&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">celkem =</span> <span class="st">`</span><span class="at">obvykle obydlen</span><span class="st">`</span> <span class="sc">+</span> <span class="st">`</span><span class="at">obvykle neobydlen</span><span class="st">`</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">obydlenost_share =</span> <span class="st">`</span><span class="at">obvykle obydlen</span><span class="st">`</span><span class="sc">/</span>celkem) <span class="sc">|&gt;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(obyv) <span class="sc">|&gt;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pocob_kat =</span> <span class="fu">cut</span>(pocob, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">500</span>, <span class="dv">1000</span>, <span class="dv">10000</span>, </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                                           <span class="dv">100000</span>, <span class="dv">1000000</span>, <span class="fl">1e7</span>),</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"do 500"</span>, <span class="st">"500-1000"</span>, <span class="st">"1000-10000"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"10000-100000"</span>, <span class="st">"nad 100 tis."</span>, <span class="st">"nad 1 mil."</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(obcekraje <span class="sc">|&gt;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>              <span class="fu">select</span>(<span class="at">kraj_nazev =</span> TEXT1,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>                     <span class="at">kraj_kod =</span> CHODNOTA1,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>                     <span class="at">uzemi_kod =</span> CHODNOTA2)) <span class="sc">|&gt;</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(obceorp <span class="sc">|&gt;</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>              <span class="fu">select</span>(<span class="at">orp_nazev =</span> TEXT1,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>                     <span class="at">orp_kod =</span> CHODNOTA1,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>                     <span class="at">uzemi_kod =</span> CHODNOTA2))</span></code><button title="Zkopírovat do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<section id="základní-náhled" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="základní-náhled">Základní náhled</h2>
+<div class="cell">
+<details>
+<summary>Kód</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>byty_podily <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># filter(kraj_kod %in% c("CZ020", "CZ054", "CZ080")) |&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="dv">1</span> <span class="sc">-</span> obydlenost_share, pocob)) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Podíl obydlených bytů a velikost obce"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Podíl obydlených bytů"</span>, <span class="at">y =</span> <span class="st">"Počet obyvatel obce (log. měřítko)"</span>) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_percent_cz</span>() <span class="sc">+</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>() <span class="sc">+</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ptrr</span>(<span class="st">"scatter"</span>)</span></code><button title="Zkopírovat do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="page-columns page-full"><p>Mediánový podíl obydlených bytů je 76 %.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Toto číslo se do věty doplňuje automaticky z živých dat</p></li></div></div>
+<div class="cell">
+<details>
+<summary>Kód</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>byty_podily <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(pocob_kat) <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(pocob_kat, <span class="at">wt =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">mean</span>(obydlenost_share)) <span class="sc">|&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(pocob_kat, n)) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_percent_cz</span>() <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ptrr</span>() <span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Podíl neobydlených bytů podle velikostní skupiny obce"</span>)</span></code><button title="Zkopírovat do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Zde je deset obcí s nejvyšší obydleností bytů:</p>
+<div class="cell">
+<details>
+<summary>Kód</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>byty_podily <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(obydlenost_share, <span class="at">n =</span> <span class="dv">10</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(uzemi_txt, <span class="st">`</span><span class="at">obvykle obydlen</span><span class="st">`</span>, <span class="st">`</span><span class="at">obvykle neobydlen</span><span class="st">`</span>, obydlenost_share, kraj_nazev, pocob) <span class="sc">|&gt;</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>()</span></code><button title="Zkopírovat do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+
+<div id="nupknrthsa" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+:where(#nupknrthsa) .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+:where(#nupknrthsa) .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#nupknrthsa) .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+:where(#nupknrthsa) .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+:where(#nupknrthsa) .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#nupknrthsa) .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#nupknrthsa) .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+:where(#nupknrthsa) .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+:where(#nupknrthsa) .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+:where(#nupknrthsa) .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+:where(#nupknrthsa) .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+:where(#nupknrthsa) .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+:where(#nupknrthsa) .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+:where(#nupknrthsa) .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+:where(#nupknrthsa) .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+:where(#nupknrthsa) .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+:where(#nupknrthsa) .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#nupknrthsa) .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+:where(#nupknrthsa) .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+:where(#nupknrthsa) .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#nupknrthsa) .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+:where(#nupknrthsa) .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+:where(#nupknrthsa) .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#nupknrthsa) .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#nupknrthsa) .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+:where(#nupknrthsa) .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+:where(#nupknrthsa) .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#nupknrthsa) .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#nupknrthsa) .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#nupknrthsa) .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#nupknrthsa) .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#nupknrthsa) .gt_left {
+  text-align: left;
+}
+
+:where(#nupknrthsa) .gt_center {
+  text-align: center;
+}
+
+:where(#nupknrthsa) .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+:where(#nupknrthsa) .gt_font_normal {
+  font-weight: normal;
+}
+
+:where(#nupknrthsa) .gt_font_bold {
+  font-weight: bold;
+}
+
+:where(#nupknrthsa) .gt_font_italic {
+  font-style: italic;
+}
+
+:where(#nupknrthsa) .gt_super {
+  font-size: 65%;
+}
+
+:where(#nupknrthsa) .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+:where(#nupknrthsa) .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+:where(#nupknrthsa) .gt_indent_1 {
+  text-indent: 5px;
+}
+
+:where(#nupknrthsa) .gt_indent_2 {
+  text-indent: 10px;
+}
+
+:where(#nupknrthsa) .gt_indent_3 {
+  text-indent: 15px;
+}
+
+:where(#nupknrthsa) .gt_indent_4 {
+  text-indent: 20px;
+}
+
+:where(#nupknrthsa) .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">uzemi_txt</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">obvykle obydlen</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">obvykle neobydlen</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">obydlenost_share</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col">kraj_nazev</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col">pocob</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">Hněvnice</td>
+<td class="gt_row gt_right">49</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">1.0000000</td>
+<td class="gt_row gt_left">Plzeňský kraj</td>
+<td class="gt_row gt_right">114</td></tr>
+    <tr><td class="gt_row gt_left">Dobříč</td>
+<td class="gt_row gt_right">234</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">1.0000000</td>
+<td class="gt_row gt_left">Středočeský kraj</td>
+<td class="gt_row gt_right">499</td></tr>
+    <tr><td class="gt_row gt_left">Zhoř</td>
+<td class="gt_row gt_right">63</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">1.0000000</td>
+<td class="gt_row gt_left">Plzeňský kraj</td>
+<td class="gt_row gt_right">165</td></tr>
+    <tr><td class="gt_row gt_left">Vřesová</td>
+<td class="gt_row gt_right">106</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">1.0000000</td>
+<td class="gt_row gt_left">Karlovarský kraj</td>
+<td class="gt_row gt_right">409</td></tr>
+    <tr><td class="gt_row gt_left">Všehrdy</td>
+<td class="gt_row gt_right">67</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">1.0000000</td>
+<td class="gt_row gt_left">Ústecký kraj</td>
+<td class="gt_row gt_right">156</td></tr>
+    <tr><td class="gt_row gt_left">Odrovice</td>
+<td class="gt_row gt_right">97</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">1.0000000</td>
+<td class="gt_row gt_left">Jihomoravský kraj</td>
+<td class="gt_row gt_right">247</td></tr>
+    <tr><td class="gt_row gt_left">Zlátenka</td>
+<td class="gt_row gt_right">19</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">1.0000000</td>
+<td class="gt_row gt_left">Kraj Vysočina</td>
+<td class="gt_row gt_right">45</td></tr>
+    <tr><td class="gt_row gt_left">Uhersko</td>
+<td class="gt_row gt_right">143</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">0.9930556</td>
+<td class="gt_row gt_left">Pardubický kraj</td>
+<td class="gt_row gt_right">292</td></tr>
+    <tr><td class="gt_row gt_left">Droužkovice</td>
+<td class="gt_row gt_right">337</td>
+<td class="gt_row gt_right">4</td>
+<td class="gt_row gt_right">0.9882698</td>
+<td class="gt_row gt_left">Ústecký kraj</td>
+<td class="gt_row gt_right">821</td></tr>
+    <tr><td class="gt_row gt_left">Modletice</td>
+<td class="gt_row gt_right">256</td>
+<td class="gt_row gt_right">4</td>
+<td class="gt_row gt_right">0.9846154</td>
+<td class="gt_row gt_left">Středočeský kraj</td>
+<td class="gt_row gt_right">528</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="podle-krajů" class="level2">
+<h2 class="anchored" data-anchor-id="podle-krajů">Podle krajů</h2>
+<div class="cell">
+<details>
+<summary>Kód</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>byty_podily <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(pocob_kat) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(kraj_nazev, <span class="at">wt =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">mean</span>(obydlenost_share)) <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">kraj_nazev =</span> <span class="fu">as.factor</span>(kraj_nazev) <span class="sc">|&gt;</span> <span class="fu">fct_reorder</span>(n)) <span class="sc">|&gt;</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(n, kraj_nazev)) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_percent_cz</span>() <span class="sc">+</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ptrr</span>(<span class="st">"x"</span>)</span></code><button title="Zkopírovat do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<section id="podle-krajů-a-velikosti-obce" class="level3">
+<h3 class="anchored" data-anchor-id="podle-krajů-a-velikosti-obce">Podle krajů a velikosti obce</h3>
+<div class="cell">
+<details>
+<summary>Kód</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>byty_podily <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(pocob_kat) <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(kraj_kod <span class="sc">!=</span> <span class="st">"CZ010"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(pocob_kat, kraj_nazev) <span class="sc">|&gt;</span> </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(kraj_nazev) <span class="sc">|&gt;</span> </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">podil =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">|&gt;</span> </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(pocob_kat, kraj_nazev)) <span class="sc">+</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ptrr</span>(<span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_b</span>(<span class="at">n.breaks =</span> <span class="dv">6</span>, <span class="at">labels =</span> <span class="fu">label_percent_cz</span>()) <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_bins</span>(<span class="at">reverse =</span> T)) <span class="sc">+</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="fu">aes</span>(<span class="at">fill =</span> podil), <span class="at">colour =</span> <span class="st">"white"</span>, <span class="at">size =</span> .<span class="dv">6</span>)</span></code><button title="Zkopírovat do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="jak-je-obydlenost-bytů-v-obcích-rozložena-v-krajích" class="level3">
+<h3 class="anchored" data-anchor-id="jak-je-obydlenost-bytů-v-obcích-rozložena-v-krajích">Jak je obydlenost bytů v obcích rozložena v krajích?</h3>
+<div class="cell">
+<details>
+<summary>Kód</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>byty_podily <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(pocob_kat) <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(pocob <span class="sc">&lt;</span> <span class="fl">1e6</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(obydlenost_share)) <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">fill =</span> pocob_kat)) <span class="sc">+</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> kraj_nazev) <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ptrr</span>(<span class="at">multiplot =</span> <span class="cn">TRUE</span>)</span></code><button title="Zkopírovat do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="koreluje-průměrná-velikost-obce-v-kraji-a-celková-obydlenost-bytů-v-kraji" class="level3">
+<h3 class="anchored" data-anchor-id="koreluje-průměrná-velikost-obce-v-kraji-a-celková-obydlenost-bytů-v-kraji">Koreluje průměrná velikost obce v kraji a celková obydlenost bytů v kraji?</h3>
+<div class="cell">
+<details>
+<summary>Kód</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>byty_podily <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(kraj_kod <span class="sc">!=</span> <span class="st">"CZ010"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">kraj_nazev_short =</span> <span class="fu">str_remove</span>(kraj_nazev, <span class="st">"</span><span class="sc">\\</span><span class="st">s?[Kk]raj</span><span class="sc">\\</span><span class="st">s?"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(kraj_nazev_short) <span class="sc">|&gt;</span> </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">pocob_median =</span> <span class="fu">median</span>(pocob), </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_obydl =</span> <span class="fu">mean</span>(obydlenost_share),</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">obydl_mean =</span> <span class="fu">sum</span>(<span class="st">`</span><span class="at">obvykle neobydlen</span><span class="st">`</span>)<span class="sc">/</span><span class="fu">sum</span>(celkem)) <span class="sc">|&gt;</span> </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(pocob_median, mean_obydl)) <span class="sc">+</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">colour =</span> <span class="st">"darkblue"</span>, <span class="at">fill =</span> ptrr<span class="sc">:::</span>ptclr_d, </span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">formula =</span> y <span class="sc">~</span> x) <span class="sc">+</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> kraj_nazev_short), <span class="at">nudge_y =</span> .<span class="dv">01</span>) <span class="sc">+</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_percent_cz</span>() <span class="sc">+</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ptrr</span>(<span class="at">gridlines =</span> <span class="st">"both"</span>)</span></code><button title="Zkopírovat do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="vliv-kraje-vs.-velikosti-obce" class="level2">
+<h2 class="anchored" data-anchor-id="vliv-kraje-vs.-velikosti-obce">Vliv kraje vs.&nbsp;velikosti obce</h2>
+<p>Abychom odhadli samostatný „vliv“ kraje na obydlenost bytů v obci, odhadneme lineární model vztahu mezi velikostí obce a obydleností.</p>
+<div class="cell">
+<details>
+<summary>Kód</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>byty_podily0 <span class="ot">&lt;-</span> byty_podily <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(pocob), </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>         pocob <span class="sc">&gt;</span> <span class="dv">0</span>,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>         kraj_kod <span class="sc">!=</span> <span class="st">"CZ010"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pocob_log =</span> <span class="fu">log</span>(pocob))</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(obydlenost_share <span class="sc">~</span> pocob_log, <span class="at">data =</span> byty_podily0)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mdl)</span></code><button title="Zkopírovat do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>#&gt; 
+#&gt; Call:
+#&gt; lm(formula = obydlenost_share ~ pocob_log, data = byty_podily0)
+#&gt; 
+#&gt; Residuals:
+#&gt;      Min       1Q   Median       3Q      Max 
+#&gt; -0.58920 -0.05371  0.00893  0.06005  0.37909 
+#&gt; 
+#&gt; Coefficients:
+#&gt;              Estimate Std. Error t value            Pr(&gt;|t|)    
+#&gt; (Intercept) 0.4268069  0.0062190   68.63 &lt;0.0000000000000002 ***
+#&gt; pocob_log   0.0509893  0.0009846   51.79 &lt;0.0000000000000002 ***
+#&gt; ---
+#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+#&gt; 
+#&gt; Residual standard error: 0.09353 on 6251 degrees of freedom
+#&gt; Multiple R-squared:  0.3002, Adjusted R-squared:  0.3001 
+#&gt; F-statistic:  2682 on 1 and 6251 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+</div>
+<details>
+<summary>Kód</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>mdl_tidy <span class="ot">&lt;-</span> broom<span class="sc">::</span><span class="fu">tidy</span>(mdl)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>byty_podily_au <span class="ot">&lt;-</span> broom<span class="sc">::</span><span class="fu">augment</span>(mdl, <span class="at">data =</span> byty_podily0)</span></code><button title="Zkopírovat do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Model zachycuje cca 30 % variability obydlenosti bytů v obcích.</p>
+<p>Graf níže ukazuje, jak se obydlenost bytů v obcích v jednotlivých krajích liší od očekávání, tj. od toho, jaká by měla být s ohledem na velikostní složení obcí.</p>
+<div class="cell">
+<details>
+<summary>Kód</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>byty_podily_au <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">kraj_nazev =</span> <span class="fu">as.factor</span>(kraj_nazev) <span class="sc">|&gt;</span> <span class="fu">fct_reorder</span>(.resid)) <span class="sc">|&gt;</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(.resid, <span class="at">y =</span> kraj_nazev)) <span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># geom_jitter(alpha = .2) +</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">colour =</span> <span class="st">"darkblue"</span>, <span class="at">fill =</span> ptrr<span class="sc">:::</span>ptclr_l, <span class="at">alpha =</span> .<span class="dv">8</span>) <span class="sc">+</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_percent_cz</span>() <span class="sc">+</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ptrr</span>(<span class="st">"both"</span>) <span class="sc">+</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Rozdíl reality a predikce modelu"</span>)</span></code><button title="Zkopírovat do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>V některých krajích je tedy systematicky nižší obydlenost bytů, než by odpovídalo velikostnímu složení obcí v daném kraji.</p>
+
+
+<!-- -->
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Reference</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-ceskystatistickyuradVysledkyScitani20212021" class="csl-entry" role="doc-biblioentry">
+Český statistický úřad. 2021. <span>„<span>Výsledky sčítání 2021 - otevřená data</span>"</span>. <em>Výsledky sčítání 2021 - otevřená data</em>. <a href="https://www.czso.cz/csu/czso/vysledky-scitani-2021-otevrena-data">https://www.czso.cz/csu/czso/vysledky-scitani-2021-otevrena-data</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Zkopírováno!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Zkopírováno!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Zdrojový kód</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb14" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Neobydlené byty: vstupní analýza"</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2022-10-01</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">    code-summary: "Kód"</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-copy: true</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">    lang: cs</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span><span class="co"> </span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: true</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="co">  freeze: auto</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> references.bib</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Toto je pouze ukázka, jak lze podobnou analýzu udělat tak, že kód je reprodukovatelný a generuje přímo grafy a čísla do textu.</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>Využíváme <span class="co">[</span><span class="ot">data ČSÚ ze SLDB o obydlenosti bytů v obcích</span><span class="co">](https://www.czso.cz/csu/czso/vysledky-scitani-2021-otevrena-data)</span> <span class="co">[</span><span class="ot">@ceskystatistickyuradVysledkyScitani20212021</span><span class="co">]</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo = FALSE}</span></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggiraph)</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ptrr)</span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">czso.dest_dir =</span> <span class="st">"data-input/czso"</span>,</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>        <span class="at">scipen =</span> <span class="dv">99</span>)</span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{r echo=FALSE}</span></span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>ptrr<span class="sc">::</span><span class="fu">set_geom_defaults</span>()</span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>ptrr<span class="sc">::</span><span class="fu">set_ptrr_ggplot_fonts</span>()</span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>byty <span class="ot">&lt;-</span> czso<span class="sc">::</span><span class="fu">czso_get_table</span>(<span class="st">"sldb2021_byty_obydlenost"</span>)</span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a>vzdel <span class="ot">&lt;-</span> czso<span class="sc">::</span><span class="fu">czso_get_table</span>(<span class="st">"sldb2021_vzdelani"</span>)</span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a>obcekraje <span class="ot">&lt;-</span> czso<span class="sc">::</span><span class="fu">czso_get_codelist</span>(<span class="st">"cis108vaz43"</span>)</span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a>obceorp <span class="ot">&lt;-</span> czso<span class="sc">::</span><span class="fu">czso_get_codelist</span>(<span class="st">"cis65vaz43"</span>)</span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a>obyv <span class="ot">&lt;-</span> czso<span class="sc">::</span><span class="fu">czso_get_table</span>(<span class="st">"130149"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(rok <span class="sc">==</span> <span class="fu">max</span>(rok), <span class="fu">is.na</span>(pohlavi_txt)) <span class="sc">|&gt;</span></span>
+<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">uzemi_kod =</span> vuzemi_kod, <span class="at">pocob =</span> hodnota)</span>
+<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a>byty_podily <span class="ot">&lt;-</span> byty <span class="sc">|&gt;</span></span>
+<span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(uzemi_cis <span class="sc">==</span> <span class="st">"43"</span>, <span class="sc">!</span><span class="fu">is.na</span>(obydlenost_txt)) <span class="sc">|&gt;</span></span>
+<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(hodnota, obydlenost_txt, uzemi_txt, uzemi_kod) <span class="sc">|&gt;</span></span>
+<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> obydlenost_txt, <span class="at">values_from =</span> hodnota) <span class="sc">|&gt;</span></span>
+<span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">celkem =</span> <span class="st">`</span><span class="at">obvykle obydlen</span><span class="st">`</span> <span class="sc">+</span> <span class="st">`</span><span class="at">obvykle neobydlen</span><span class="st">`</span>,</span>
+<span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a>         <span class="at">obydlenost_share =</span> <span class="st">`</span><span class="at">obvykle obydlen</span><span class="st">`</span><span class="sc">/</span>celkem) <span class="sc">|&gt;</span></span>
+<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(obyv) <span class="sc">|&gt;</span></span>
+<span id="cb14-65"><a href="#cb14-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pocob_kat =</span> <span class="fu">cut</span>(pocob, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">500</span>, <span class="dv">1000</span>, <span class="dv">10000</span>, </span>
+<span id="cb14-66"><a href="#cb14-66" aria-hidden="true" tabindex="-1"></a>                                           <span class="dv">100000</span>, <span class="dv">1000000</span>, <span class="fl">1e7</span>),</span>
+<span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a>                         <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"do 500"</span>, <span class="st">"500-1000"</span>, <span class="st">"1000-10000"</span>,</span>
+<span id="cb14-68"><a href="#cb14-68" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"10000-100000"</span>, <span class="st">"nad 100 tis."</span>, <span class="st">"nad 1 mil."</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb14-69"><a href="#cb14-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(obcekraje <span class="sc">|&gt;</span></span>
+<span id="cb14-70"><a href="#cb14-70" aria-hidden="true" tabindex="-1"></a>              <span class="fu">select</span>(<span class="at">kraj_nazev =</span> TEXT1,</span>
+<span id="cb14-71"><a href="#cb14-71" aria-hidden="true" tabindex="-1"></a>                     <span class="at">kraj_kod =</span> CHODNOTA1,</span>
+<span id="cb14-72"><a href="#cb14-72" aria-hidden="true" tabindex="-1"></a>                     <span class="at">uzemi_kod =</span> CHODNOTA2)) <span class="sc">|&gt;</span></span>
+<span id="cb14-73"><a href="#cb14-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(obceorp <span class="sc">|&gt;</span></span>
+<span id="cb14-74"><a href="#cb14-74" aria-hidden="true" tabindex="-1"></a>              <span class="fu">select</span>(<span class="at">orp_nazev =</span> TEXT1,</span>
+<span id="cb14-75"><a href="#cb14-75" aria-hidden="true" tabindex="-1"></a>                     <span class="at">orp_kod =</span> CHODNOTA1,</span>
+<span id="cb14-76"><a href="#cb14-76" aria-hidden="true" tabindex="-1"></a>                     <span class="at">uzemi_kod =</span> CHODNOTA2))</span>
+<span id="cb14-77"><a href="#cb14-77" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-78"><a href="#cb14-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-79"><a href="#cb14-79" aria-hidden="true" tabindex="-1"></a><span class="fu">## Základní náhled</span></span>
+<span id="cb14-80"><a href="#cb14-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-83"><a href="#cb14-83" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-84"><a href="#cb14-84" aria-hidden="true" tabindex="-1"></a>byty_podily <span class="sc">|&gt;</span></span>
+<span id="cb14-85"><a href="#cb14-85" aria-hidden="true" tabindex="-1"></a>  <span class="co"># filter(kraj_kod %in% c("CZ020", "CZ054", "CZ080")) |&gt;</span></span>
+<span id="cb14-86"><a href="#cb14-86" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="dv">1</span> <span class="sc">-</span> obydlenost_share, pocob)) <span class="sc">+</span></span>
+<span id="cb14-87"><a href="#cb14-87" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> .<span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb14-88"><a href="#cb14-88" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb14-89"><a href="#cb14-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Podíl obydlených bytů a velikost obce"</span>,</span>
+<span id="cb14-90"><a href="#cb14-90" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Podíl obydlených bytů"</span>, <span class="at">y =</span> <span class="st">"Počet obyvatel obce (log. měřítko)"</span>) <span class="sc">+</span></span>
+<span id="cb14-91"><a href="#cb14-91" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_percent_cz</span>() <span class="sc">+</span></span>
+<span id="cb14-92"><a href="#cb14-92" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>() <span class="sc">+</span></span>
+<span id="cb14-93"><a href="#cb14-93" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ptrr</span>(<span class="st">"scatter"</span>)</span>
+<span id="cb14-94"><a href="#cb14-94" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-95"><a href="#cb14-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-96"><a href="#cb14-96" aria-hidden="true" tabindex="-1"></a>Mediánový podíl obydlených bytů je <span class="in">`r round(median(byty_podily$obydlenost_share) * 100)`</span> %.<span class="ot">[^1]</span></span>
+<span id="cb14-97"><a href="#cb14-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-98"><a href="#cb14-98" aria-hidden="true" tabindex="-1"></a><span class="ot">[^1]: </span>Toto číslo se do věty doplňuje automaticky z živých dat</span>
+<span id="cb14-99"><a href="#cb14-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-102"><a href="#cb14-102" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-103"><a href="#cb14-103" aria-hidden="true" tabindex="-1"></a>byty_podily <span class="sc">|&gt;</span></span>
+<span id="cb14-104"><a href="#cb14-104" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(pocob_kat) <span class="sc">|&gt;</span></span>
+<span id="cb14-105"><a href="#cb14-105" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(pocob_kat, <span class="at">wt =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">mean</span>(obydlenost_share)) <span class="sc">|&gt;</span></span>
+<span id="cb14-106"><a href="#cb14-106" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(pocob_kat, n)) <span class="sc">+</span></span>
+<span id="cb14-107"><a href="#cb14-107" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_percent_cz</span>() <span class="sc">+</span></span>
+<span id="cb14-108"><a href="#cb14-108" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ptrr</span>() <span class="sc">+</span></span>
+<span id="cb14-109"><a href="#cb14-109" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb14-110"><a href="#cb14-110" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Podíl neobydlených bytů podle velikostní skupiny obce"</span>)</span>
+<span id="cb14-111"><a href="#cb14-111" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-112"><a href="#cb14-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-113"><a href="#cb14-113" aria-hidden="true" tabindex="-1"></a>Zde je deset obcí s nejvyšší obydleností bytů:</span>
+<span id="cb14-114"><a href="#cb14-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-117"><a href="#cb14-117" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-118"><a href="#cb14-118" aria-hidden="true" tabindex="-1"></a>byty_podily <span class="sc">|&gt;</span> </span>
+<span id="cb14-119"><a href="#cb14-119" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(obydlenost_share, <span class="at">n =</span> <span class="dv">10</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb14-120"><a href="#cb14-120" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(uzemi_txt, <span class="st">`</span><span class="at">obvykle obydlen</span><span class="st">`</span>, <span class="st">`</span><span class="at">obvykle neobydlen</span><span class="st">`</span>, obydlenost_share, kraj_nazev, pocob) <span class="sc">|&gt;</span> </span>
+<span id="cb14-121"><a href="#cb14-121" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>()</span>
+<span id="cb14-122"><a href="#cb14-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-123"><a href="#cb14-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-124"><a href="#cb14-124" aria-hidden="true" tabindex="-1"></a><span class="fu">## Podle krajů</span></span>
+<span id="cb14-125"><a href="#cb14-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-128"><a href="#cb14-128" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-129"><a href="#cb14-129" aria-hidden="true" tabindex="-1"></a>byty_podily <span class="sc">|&gt;</span></span>
+<span id="cb14-130"><a href="#cb14-130" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(pocob_kat) <span class="sc">|&gt;</span></span>
+<span id="cb14-131"><a href="#cb14-131" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(kraj_nazev, <span class="at">wt =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">mean</span>(obydlenost_share)) <span class="sc">|&gt;</span></span>
+<span id="cb14-132"><a href="#cb14-132" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">kraj_nazev =</span> <span class="fu">as.factor</span>(kraj_nazev) <span class="sc">|&gt;</span> <span class="fu">fct_reorder</span>(n)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-133"><a href="#cb14-133" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(n, kraj_nazev)) <span class="sc">+</span></span>
+<span id="cb14-134"><a href="#cb14-134" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_percent_cz</span>() <span class="sc">+</span></span>
+<span id="cb14-135"><a href="#cb14-135" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb14-136"><a href="#cb14-136" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ptrr</span>(<span class="st">"x"</span>)</span>
+<span id="cb14-137"><a href="#cb14-137" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-138"><a href="#cb14-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-139"><a href="#cb14-139" aria-hidden="true" tabindex="-1"></a><span class="fu">### Podle krajů a velikosti obce</span></span>
+<span id="cb14-140"><a href="#cb14-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-143"><a href="#cb14-143" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-144"><a href="#cb14-144" aria-hidden="true" tabindex="-1"></a>byty_podily <span class="sc">|&gt;</span> </span>
+<span id="cb14-145"><a href="#cb14-145" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(pocob_kat) <span class="sc">|&gt;</span></span>
+<span id="cb14-146"><a href="#cb14-146" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(kraj_kod <span class="sc">!=</span> <span class="st">"CZ010"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb14-147"><a href="#cb14-147" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(pocob_kat, kraj_nazev) <span class="sc">|&gt;</span> </span>
+<span id="cb14-148"><a href="#cb14-148" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(kraj_nazev) <span class="sc">|&gt;</span> </span>
+<span id="cb14-149"><a href="#cb14-149" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">podil =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-150"><a href="#cb14-150" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(pocob_kat, kraj_nazev)) <span class="sc">+</span></span>
+<span id="cb14-151"><a href="#cb14-151" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ptrr</span>(<span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb14-152"><a href="#cb14-152" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_b</span>(<span class="at">n.breaks =</span> <span class="dv">6</span>, <span class="at">labels =</span> <span class="fu">label_percent_cz</span>()) <span class="sc">+</span></span>
+<span id="cb14-153"><a href="#cb14-153" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_bins</span>(<span class="at">reverse =</span> T)) <span class="sc">+</span></span>
+<span id="cb14-154"><a href="#cb14-154" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="fu">aes</span>(<span class="at">fill =</span> podil), <span class="at">colour =</span> <span class="st">"white"</span>, <span class="at">size =</span> .<span class="dv">6</span>)</span>
+<span id="cb14-155"><a href="#cb14-155" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-156"><a href="#cb14-156" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-157"><a href="#cb14-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-158"><a href="#cb14-158" aria-hidden="true" tabindex="-1"></a><span class="fu">### Jak je obydlenost bytů v obcích rozložena v krajích?</span></span>
+<span id="cb14-159"><a href="#cb14-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-162"><a href="#cb14-162" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-163"><a href="#cb14-163" aria-hidden="true" tabindex="-1"></a>byty_podily <span class="sc">|&gt;</span></span>
+<span id="cb14-164"><a href="#cb14-164" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(pocob_kat) <span class="sc">|&gt;</span></span>
+<span id="cb14-165"><a href="#cb14-165" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(pocob <span class="sc">&lt;</span> <span class="fl">1e6</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-166"><a href="#cb14-166" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(obydlenost_share)) <span class="sc">+</span></span>
+<span id="cb14-167"><a href="#cb14-167" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">fill =</span> pocob_kat)) <span class="sc">+</span></span>
+<span id="cb14-168"><a href="#cb14-168" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> kraj_nazev) <span class="sc">+</span></span>
+<span id="cb14-169"><a href="#cb14-169" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ptrr</span>(<span class="at">multiplot =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-170"><a href="#cb14-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-171"><a href="#cb14-171" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-172"><a href="#cb14-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-173"><a href="#cb14-173" aria-hidden="true" tabindex="-1"></a><span class="fu">### Koreluje průměrná velikost obce v kraji a celková obydlenost bytů v kraji?</span></span>
+<span id="cb14-174"><a href="#cb14-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-177"><a href="#cb14-177" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-178"><a href="#cb14-178" aria-hidden="true" tabindex="-1"></a>byty_podily <span class="sc">|&gt;</span> </span>
+<span id="cb14-179"><a href="#cb14-179" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(kraj_kod <span class="sc">!=</span> <span class="st">"CZ010"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb14-180"><a href="#cb14-180" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">kraj_nazev_short =</span> <span class="fu">str_remove</span>(kraj_nazev, <span class="st">"</span><span class="sc">\\</span><span class="st">s?[Kk]raj</span><span class="sc">\\</span><span class="st">s?"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-181"><a href="#cb14-181" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(kraj_nazev_short) <span class="sc">|&gt;</span> </span>
+<span id="cb14-182"><a href="#cb14-182" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">pocob_median =</span> <span class="fu">median</span>(pocob), </span>
+<span id="cb14-183"><a href="#cb14-183" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_obydl =</span> <span class="fu">mean</span>(obydlenost_share),</span>
+<span id="cb14-184"><a href="#cb14-184" aria-hidden="true" tabindex="-1"></a>            <span class="at">obydl_mean =</span> <span class="fu">sum</span>(<span class="st">`</span><span class="at">obvykle neobydlen</span><span class="st">`</span>)<span class="sc">/</span><span class="fu">sum</span>(celkem)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-185"><a href="#cb14-185" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(pocob_median, mean_obydl)) <span class="sc">+</span></span>
+<span id="cb14-186"><a href="#cb14-186" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">colour =</span> <span class="st">"darkblue"</span>, <span class="at">fill =</span> ptrr<span class="sc">:::</span>ptclr_d, </span>
+<span id="cb14-187"><a href="#cb14-187" aria-hidden="true" tabindex="-1"></a>              <span class="at">formula =</span> y <span class="sc">~</span> x) <span class="sc">+</span></span>
+<span id="cb14-188"><a href="#cb14-188" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb14-189"><a href="#cb14-189" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> kraj_nazev_short), <span class="at">nudge_y =</span> .<span class="dv">01</span>) <span class="sc">+</span></span>
+<span id="cb14-190"><a href="#cb14-190" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_percent_cz</span>() <span class="sc">+</span></span>
+<span id="cb14-191"><a href="#cb14-191" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ptrr</span>(<span class="at">gridlines =</span> <span class="st">"both"</span>)</span>
+<span id="cb14-192"><a href="#cb14-192" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-193"><a href="#cb14-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-194"><a href="#cb14-194" aria-hidden="true" tabindex="-1"></a><span class="fu">## Vliv kraje vs. velikosti obce</span></span>
+<span id="cb14-195"><a href="#cb14-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-196"><a href="#cb14-196" aria-hidden="true" tabindex="-1"></a>Abychom odhadli samostatný "vliv" kraje na obydlenost bytů v obci, odhadneme lineární model vztahu mezi velikostí obce a obydleností.</span>
+<span id="cb14-197"><a href="#cb14-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-200"><a href="#cb14-200" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-201"><a href="#cb14-201" aria-hidden="true" tabindex="-1"></a>byty_podily0 <span class="ot">&lt;-</span> byty_podily <span class="sc">|&gt;</span> </span>
+<span id="cb14-202"><a href="#cb14-202" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(pocob), </span>
+<span id="cb14-203"><a href="#cb14-203" aria-hidden="true" tabindex="-1"></a>         pocob <span class="sc">&gt;</span> <span class="dv">0</span>,</span>
+<span id="cb14-204"><a href="#cb14-204" aria-hidden="true" tabindex="-1"></a>         kraj_kod <span class="sc">!=</span> <span class="st">"CZ010"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb14-205"><a href="#cb14-205" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pocob_log =</span> <span class="fu">log</span>(pocob))</span>
+<span id="cb14-206"><a href="#cb14-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-207"><a href="#cb14-207" aria-hidden="true" tabindex="-1"></a>mdl <span class="ot">&lt;-</span> <span class="fu">lm</span>(obydlenost_share <span class="sc">~</span> pocob_log, <span class="at">data =</span> byty_podily0)</span>
+<span id="cb14-208"><a href="#cb14-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-209"><a href="#cb14-209" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mdl)</span>
+<span id="cb14-210"><a href="#cb14-210" aria-hidden="true" tabindex="-1"></a>mdl_tidy <span class="ot">&lt;-</span> broom<span class="sc">::</span><span class="fu">tidy</span>(mdl)</span>
+<span id="cb14-211"><a href="#cb14-211" aria-hidden="true" tabindex="-1"></a>byty_podily_au <span class="ot">&lt;-</span> broom<span class="sc">::</span><span class="fu">augment</span>(mdl, <span class="at">data =</span> byty_podily0)</span>
+<span id="cb14-212"><a href="#cb14-212" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-213"><a href="#cb14-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-214"><a href="#cb14-214" aria-hidden="true" tabindex="-1"></a>Model zachycuje cca 30 % variability obydlenosti bytů v obcích.</span>
+<span id="cb14-215"><a href="#cb14-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-216"><a href="#cb14-216" aria-hidden="true" tabindex="-1"></a>Graf níže ukazuje, jak se obydlenost bytů v obcích v jednotlivých krajích liší od očekávání, tj.</span>
+<span id="cb14-217"><a href="#cb14-217" aria-hidden="true" tabindex="-1"></a>od toho, jaká by měla být s ohledem na velikostní složení obcí.</span>
+<span id="cb14-218"><a href="#cb14-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-221"><a href="#cb14-221" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-222"><a href="#cb14-222" aria-hidden="true" tabindex="-1"></a>byty_podily_au <span class="sc">|&gt;</span> </span>
+<span id="cb14-223"><a href="#cb14-223" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">kraj_nazev =</span> <span class="fu">as.factor</span>(kraj_nazev) <span class="sc">|&gt;</span> <span class="fu">fct_reorder</span>(.resid)) <span class="sc">|&gt;</span> </span>
+<span id="cb14-224"><a href="#cb14-224" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(.resid, <span class="at">y =</span> kraj_nazev)) <span class="sc">+</span></span>
+<span id="cb14-225"><a href="#cb14-225" aria-hidden="true" tabindex="-1"></a>  <span class="co"># geom_jitter(alpha = .2) +</span></span>
+<span id="cb14-226"><a href="#cb14-226" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb14-227"><a href="#cb14-227" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">colour =</span> <span class="st">"darkblue"</span>, <span class="at">fill =</span> ptrr<span class="sc">:::</span>ptclr_l, <span class="at">alpha =</span> .<span class="dv">8</span>) <span class="sc">+</span></span>
+<span id="cb14-228"><a href="#cb14-228" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_percent_cz</span>() <span class="sc">+</span></span>
+<span id="cb14-229"><a href="#cb14-229" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ptrr</span>(<span class="st">"both"</span>) <span class="sc">+</span></span>
+<span id="cb14-230"><a href="#cb14-230" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Rozdíl reality a predikce modelu"</span>)</span>
+<span id="cb14-231"><a href="#cb14-231" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-232"><a href="#cb14-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-233"><a href="#cb14-233" aria-hidden="true" tabindex="-1"></a>V některých krajích je tedy systematicky nižší obydlenost bytů, než by odpovídalo velikostnímu složení obcí v daném kraji.</span>
+</code><button title="Zkopírovat do schránky" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center">Petr Bouchal pro Ministerstvo vnitra, 2023</div>
+  </div>
+</footer>
+
+
+
+</body></html>
