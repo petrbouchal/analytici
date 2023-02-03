@@ -1,7 +1,7 @@
 ---
 title: "Analýza dat"
 subtitle: "Pilotní program školení analytiků 2022"
-author: říjen 2022
+author: únor 2023
 format: 
   revealjs:
     theme: [dark, slides.scss]
@@ -90,28 +90,6 @@ Dobře komunikovat: v průběhu i výsledek
 Sám/sama datům dobře rozumět
 
 Získat si důvěru: proces, kontrola kvality, transparentnost
-
-### 📊 Analýza dat a 🏢 veřejné hodnoty
-
-<br> <br>
-
-::: columns
-::: column
-Transparentnost
-
-Integrita
-
-Kontrola kvality
-:::
-
-::: column
-Zkontrolovatelnost
-
-Replikovatelnost
-
-Technický ⨉ sociální rozměr
-:::
-:::
 
 ## Jak na to půjdeme
 
