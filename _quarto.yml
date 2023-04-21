@@ -10,7 +10,7 @@ website:
   page-navigation: true
   search:
     location: navbar
-    type: textbox
+    type: overlay
   navbar:
     background: blue
     left:

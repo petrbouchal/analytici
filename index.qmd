@@ -2,6 +2,19 @@
 title: "Pilotní vzdělávací kurz pro analytiky 2022"
 ---
 
+## Ke stažení {#ke-stažení}
+
 [Prezentace](/slides/)
 
-[Materiály pro práci](https://github.com/petrbouchal/analytici/releases/download/v1/analyza.zip)
+[Soubory pro práci](https://github.com/petrbouchal/analytici/releases/download/v1/analyza.zip)
+
+## Odkazy pro práci {#odkazy-pro-práci}
+
+-   [Národní katalog otevřených dat](https://data.gov.cz/datov%C3%A9-sady)
+    -   [Výstupy ze sčítání](https://data.gov.cz/datov%C3%A9-sady?dotaz=s%C4%8D%C3%ADt%C3%A1n%C3%AD%202021) - podle hledání, zřejmě neúplný výčet
+    -   [Číselník obcí - vazba ORP-obec](https://data.gov.cz/datov%C3%A1-sada?iri=https://data.gov.cz/zdroj/datov%C3%A9-sady/00025593/7b485c941ba02c4b85a90124cab347dd)
+-   [Katalog produktů ČSÚ](https://www.czso.cz/csu/czso/katalog-produktu)
+    -   [otevřená data ze sčítání - filtr](https://www.czso.cz/csu/czso/katalog-produktu?filtr=true&skupiny=17&vlastnosti=22)
+    -   [otevřená data ze sčítání - "katalogový list"](https://www.czso.cz/csu/czso/vysledky-scitani-2021-otevrena-data) - [dokumentace](https://www.czso.cz/csu/czso/vysledky-scitani-2021-otevrena-data-dokumentace) + [jak načíst do Excelu](https://www.czso.cz/documents/62353418/184669633/navod_csv-excel.pdf/e4add676-74f9-431f-9885-4540ccce36d3?version=1.1)
+    -   data: [obydlené a neobydlené byty podle obcí](https://www.czso.cz/documents/62353418/189978989/sldb2021_byty_obydlenost.csv/c5f6dfc1-a647-401d-8a1a-b9f53ceb2e9a?version=1.1) + [schéma (JSON)](https://www.czso.cz/documents/62353418/189978989/sldb2021_byty_obydlenost-metadata.json/4006659f-30b0-4aaa-87bd-90b20762b555?version=1.1)
+-   [Databáze metainformací ČSÚ](https://www.czso.cz/csu/czso/databaze_metainformaci): zdroj číselníků a dalších metadat

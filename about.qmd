@@ -1,5 +1,7 @@
 ---
 title: "About"
+execute: 
+  freeze: true
 ---
 
 About this site
@@ -7,3 +9,4 @@ About this site
 ```{r}
 1 + 1
 ```
+

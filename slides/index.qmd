@@ -1,7 +1,7 @@
 ---
 title: "Analýza dat"
 subtitle: "Pilotní program školení analytiků 2022"
-author: únor 2023
+author: březen 2023
 format: 
   revealjs:
     theme: [dark, slides.scss]
@@ -15,13 +15,13 @@ editor: visual
 
 # Proč a jak
 
-## Proč jste tu dnes vy?
-
-## Co si chcete odnést??
+## Proč jste tu dnes vy a co si chcete odnést??
 
 ## Co vás na práci s daty štve?
 
 ## Cíle aneb co si dnes odnesete {.center}
+
+### Proč - Co - *Jak*
 
 ::: columns
 ::: {.column .fragment}
@@ -48,6 +48,22 @@ editor: visual
 ⨉ pouštět se do nestandardních typů dat
 
 ⨉ zabrat vše od popisné statistiky po strojové učení
+:::
+:::
+
+## Jak na to půjdeme
+
+## principy - postupy - techniky
+
+### Jak budeme dnes pracovat 🙏
+
+::: v-center-container
+::: incremental
+Bezpečné prostředí
+
+Všichni se učíme (pilot!)
+
+Je OK nevědět
 :::
 :::
 
@@ -91,22 +107,6 @@ Sám/sama datům dobře rozumět
 
 Získat si důvěru: proces, kontrola kvality, transparentnost
 
-## Jak na to půjdeme
-
-## principy - postupy - techniky
-
-### Jak budeme dnes pracovat 🙏
-
-::: v-center-container
-::: incremental
-Bezpečné prostředí
-
-Všichni se učíme (pilot!)
-
-Je OK nevědět
-:::
-:::
-
 # Kde data vzít
 
 ## 
@@ -135,6 +135,8 @@ Vaše tipy?
 
 =\> **Co to je za data? Kde se vzala? Kde je dokumentace?**
 
+# Krok stranou: ČSÚ, katalogy, číselníky
+
 # Co s daty dělat
 
 ## Mentální model
@@ -155,6 +157,11 @@ zdroj: https://r4ds.hadley.nz/whole-game.html
 -   **Vizualizace** nejen jako výstup, ale jako nástroj analýzy
 :::
 :::
+
+### Vizualizace
+
+![](images/anscombe.svg)
+
 
 ## Neboli
 
@@ -315,6 +322,11 @@ Co identifukuje jednu řádku?
 
 ![](images/whole-game.png)
 
+# Krok stranou: náš datový úkol
+
+## "Hledá se obec s největším podílem neobydlených bytů v každém ORP ČR."
+
+
 ## Načtení dat
 
 ::: columns
@@ -331,6 +343,14 @@ Co identifukuje jednu řádku?
 ![](images/historical_dates.png)
 :::
 :::
+
+# Krok stranou: nástroj PowerQuery
+
+## Co
+
+## Proč
+
+## Jak
 
 ## 
 

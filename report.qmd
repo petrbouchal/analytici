@@ -13,6 +13,7 @@ execute:
   echo: true
   warning: false
   message: false
+  freeze: auto
 bibliography: references.bib
 ---
 
@@ -71,7 +72,7 @@ byty_podily <- byty |>
                      uzemi_kod = CHODNOTA2))
 ```
 
-## Základní náhled
+## Základní náhled {#základní-náhled}
 
 ```{r}
 byty_podily |>
@@ -110,7 +111,7 @@ byty_podily |>
   gt::gt()
 ```
 
-## Podle krajů
+## Podle krajů {#podle-krajů}
 
 ```{r}
 byty_podily |>
@@ -123,7 +124,7 @@ byty_podily |>
   theme_ptrr("x")
 ```
 
-### Podle krajů a velikosti obce
+### Podle krajů a velikosti obce {#podle-krajů-a-velikosti-obce}
 
 ```{r}
 byty_podily |> 
@@ -140,7 +141,7 @@ byty_podily |>
   
 ```
 
-### Jak je obydlenost bytů v obcích rozložena v krajích?
+### Jak je obydlenost bytů v obcích rozložena v krajích? {#jak-je-obydlenost-bytů-v-obcích-rozložena-v-krajích}
 
 ```{r}
 byty_podily |>
@@ -153,7 +154,7 @@ byty_podily |>
 
 ```
 
-### Koreluje průměrná velikost obce v kraji a celková obydlenost bytů v kraji?
+### Koreluje průměrná velikost obce v kraji a celková obydlenost bytů v kraji? {#koreluje-průměrná-velikost-obce-v-kraji-a-celková-obydlenost-bytů-v-kraji}
 
 ```{r}
 byty_podily |> 
@@ -172,7 +173,7 @@ byty_podily |>
   theme_ptrr(gridlines = "both")
 ```
 
-## Vliv kraje vs. velikosti obce
+## Vliv kraje vs. velikosti obce {#vliv-kraje-vs.-velikosti-obce}
 
 Abychom odhadli samostatný "vliv" kraje na obydlenost bytů v obci, odhadneme lineární model vztahu mezi velikostí obce a obydleností.
 

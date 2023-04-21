@@ -1,4 +1,4 @@
-# analytici
+# analytici {#analytici}
 
 Tento repozitář obsahuje materiály k "datařské" části pilotního vzdělávacího kurzu pro analytiky ve veřejné správě, organizovaného Ministerstvem vnitra.
 

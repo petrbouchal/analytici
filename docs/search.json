@@ -95,7 +95,7 @@
     "href": "slides/index.html#cíle-aneb-co-si-dnes-odnesete",
     "title": "Analýza dat",
     "section": "Cíle aneb co si dnes odnesete",
-    "text": "Cíle aneb co si dnes odnesete\n\n\n\nobrázek o stavu oboru analýzy dat\nprincipy použitelné s jakýmkoli problémem a nástrojem\nkde vzít veřejná data a jak si s nimi poradit\n\n\n\npraktické provedení některých konceptů z první části\ntipy a triky pro práci s Excelem\ntipy, kam dál"
+    "text": "Cíle aneb co si dnes odnesete"
   },
   {
     "objectID": "slides/index.html#jak-na-to-půjdeme",
@@ -116,7 +116,7 @@
     "href": "slides/index.html#section",
     "title": "Analýza dat",
     "section": "",
-    "text": "Otevřená data\nČSÚ <=> otevřená data\nČSÚ <=> data a metadata\nČSÚ <=> Eurostat (někdy lepší)\nData o životním prostředí\nGeodata a číselníky\n\n“Ostatní data”\nVaše tipy?\n\n\n=> Co to je za data? Kde se vzala? Kde je dokumentace?"
+    "text": "Otevřená data\nČSÚ &lt;=&gt; otevřená data\nČSÚ &lt;=&gt; data a metadata\nČSÚ &lt;=&gt; Eurostat (někdy lepší)\nData o životním prostředí\nGeodata a číselníky\n\n“Ostatní data”\nVaše tipy?\n\n\n=&gt; Co to je za data? Kde se vzala? Kde je dokumentace?"
   },
   {
     "objectID": "slides/index.html#mentální-model",
@@ -193,7 +193,7 @@
     "href": "slides/index.html#načtení-dat",
     "title": "Analýza dat",
     "section": "Načtení dat",
-    "text": "Načtení dat\n\n\n\nCSV / TSV / ; / ,\npozor na formáty (desetinné čárky, mezery)\ndatumy!\nznaková sada\nExcel: PowerQuery >> standard Excel\nNULL, –, -99, “_”"
+    "text": "Načtení dat\n\n\n\nCSV / TSV / ; / ,\npozor na formáty (desetinné čárky, mezery)\ndatumy!\nznaková sada\nExcel: PowerQuery &gt;&gt; standard Excel\nNULL, –, -99, “_”"
   },
   {
     "objectID": "slides/index.html#čištění-dat",
@@ -228,7 +228,7 @@
     "href": "slides/index.html#práce-s-kódem",
     "title": "Analýza dat",
     "section": "Práce s kódem",
-    "text": "Práce s kódem\nSQL a databáze\nR nebo Python?\n=> automatizace"
+    "text": "Práce s kódem\nSQL a databáze\nR nebo Python?\n=&gt; automatizace"
   },
   {
     "objectID": "slides/index.html#verzování-git-github",
@@ -271,5 +271,47 @@
     "title": "Neobydlené byty: vstupní analýza",
     "section": "Vliv kraje vs. velikosti obce",
     "text": "Vliv kraje vs. velikosti obce\nAbychom odhadli samostatný „vliv“ kraje na obydlenost bytů v obci, odhadneme lineární model vztahu mezi velikostí obce a obydleností.\n\n\nKód\nbyty_podily0 <- byty_podily |> \n  filter(!is.na(pocob), \n         pocob > 0,\n         kraj_kod != \"CZ010\") |> \n  mutate(pocob_log = log(pocob))\n\nmdl <- lm(obydlenost_share ~ pocob_log, data = byty_podily0)\n\nsummary(mdl)\n\n\n#> \n#> Call:\n#> lm(formula = obydlenost_share ~ pocob_log, data = byty_podily0)\n#> \n#> Residuals:\n#>      Min       1Q   Median       3Q      Max \n#> -0.58920 -0.05371  0.00893  0.06005  0.37909 \n#> \n#> Coefficients:\n#>              Estimate Std. Error t value            Pr(>|t|)    \n#> (Intercept) 0.4268069  0.0062190   68.63 <0.0000000000000002 ***\n#> pocob_log   0.0509893  0.0009846   51.79 <0.0000000000000002 ***\n#> ---\n#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n#> \n#> Residual standard error: 0.09353 on 6251 degrees of freedom\n#> Multiple R-squared:  0.3002, Adjusted R-squared:  0.3001 \n#> F-statistic:  2682 on 1 and 6251 DF,  p-value: < 0.00000000000000022\n\n\nKód\nmdl_tidy <- broom::tidy(mdl)\nbyty_podily_au <- broom::augment(mdl, data = byty_podily0)\n\n\nModel zachycuje cca 30 % variability obydlenosti bytů v obcích.\nGraf níže ukazuje, jak se obydlenost bytů v obcích v jednotlivých krajích liší od očekávání, tj. od toho, jaká by měla být s ohledem na velikostní složení obcí.\n\n\nKód\nbyty_podily_au |> \n  mutate(kraj_nazev = as.factor(kraj_nazev) |> fct_reorder(.resid)) |> \n  ggplot(aes(.resid, y = kraj_nazev)) +\n  # geom_jitter(alpha = .2) +\n  geom_vline(xintercept = 0) +\n  geom_violin(colour = \"darkblue\", fill = ptrr:::ptclr_l, alpha = .8) +\n  scale_x_percent_cz() +\n  theme_ptrr(\"both\") +\n  labs(title = \"Rozdíl reality a predikce modelu\")\n\n\n\n\n\nV některých krajích je tedy systematicky nižší obydlenost bytů, než by odpovídalo velikostnímu složení obcí v daném kraji."
+  },
+  {
+    "objectID": "slides/index.html#hledá-se-obec-s-největším-podílem-neobydlených-bytů-v-každém-orp-čr.",
+    "href": "slides/index.html#hledá-se-obec-s-největším-podílem-neobydlených-bytů-v-každém-orp-čr.",
+    "title": "Analýza dat",
+    "section": "“Hledá se obec s největším podílem neobydlených bytů v každém ORP ČR.”",
+    "text": "“Hledá se obec s největším podílem neobydlených bytů v každém ORP ČR.”"
+  },
+  {
+    "objectID": "slides/index.html#co---proč---jak",
+    "href": "slides/index.html#co---proč---jak",
+    "title": "Analýza dat",
+    "section": "Co - Proč - Jak",
+    "text": "Co - Proč - Jak"
+  },
+  {
+    "objectID": "slides/index.html#co",
+    "href": "slides/index.html#co",
+    "title": "Analýza dat",
+    "section": "Co",
+    "text": "Co"
+  },
+  {
+    "objectID": "slides/index.html#proč",
+    "href": "slides/index.html#proč",
+    "title": "Analýza dat",
+    "section": "Proč",
+    "text": "Proč"
+  },
+  {
+    "objectID": "slides/index.html#jak",
+    "href": "slides/index.html#jak",
+    "title": "Analýza dat",
+    "section": "Jak",
+    "text": "Jak"
+  },
+  {
+    "objectID": "slides/index.html#proč-jste-tu-dnes-vy-a-co-si-chcete-odnést",
+    "href": "slides/index.html#proč-jste-tu-dnes-vy-a-co-si-chcete-odnést",
+    "title": "Analýza dat",
+    "section": "Proč jste tu dnes vy a co si chcete odnést??",
+    "text": "Proč jste tu dnes vy a co si chcete odnést??"
   }
 ]
