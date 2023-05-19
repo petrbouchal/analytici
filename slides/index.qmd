@@ -1,7 +1,7 @@
 ---
 title: "Analýza dat"
 subtitle: "Pilotní program školení analytiků 2022"
-author: březen 2023
+author: květen 2023
 format: 
   revealjs:
     theme: [dark, slides.scss]
@@ -47,7 +47,6 @@ editor: visual
 
 ⨉ pouštět se do nestandardních typů dat
 
-⨉ zabrat vše od popisné statistiky po strojové učení
 :::
 :::
 
