@@ -1,6 +1,6 @@
 ---
 title: "Analýza dat"
-subtitle: "Pilotní program školení analytiků 2022"
+subtitle: "Pilotní program vzdělávání analytiků 2022"
 author: květen 2023
 format: 
   revealjs:
