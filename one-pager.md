@@ -52,8 +52,15 @@ Pro analytickou práci využívejte data ve standardizovaných formátech: u ČS
 
 Spolu s daty stahujte (a čtětě!) dokumentaci a metadata, abyste rozuměli, jak data vznikla, co v nich je a není, na co se v nich dá a nedá spolehnout.
 
+Pokud pracujete s daty o území, může vám pomoct:
+
+- [Databáze KROK](https://www.czso.cz/csu/czso/databaze-krok-otevrena-data): krajská data zkompilovaná do jedné velké sady ve formě otevřených dat
+- [Databáze MOS]()https://www.czso.cz/csu/czso/databaze-mos-otevrena-data: obecní data zkompilovaná do jedné velké sady ve formě otevřených dat
+- [Struktura území](https://www.czso.cz/csu/czso/uzemi-sidelni-struktura): v excelové i strojově čitelné formě (otevřená data)
+
 Pokud sbíráte data nebo vytváříte nové datové sady spojováním a transformací jiných, stáváte se [de facto správci dat](https://www.gov.uk/guidance/creating-and-sharing-spreadsheets) (v praktickém smyslu, ne právním). Dokumentujte, jak data vznikla, odkud pocházejí, co v nich je, jak je použít. Tak, abyste je mohli snadno a bez velkého vysvětlování někomu předat.
 
+Pokud pro vás analytickou práci dělá někdo jiný - dodavatel, resortní výzkumák, jiný tým - je rozumné po něm chtít dokumentaci a předávku dat a projektu na podobné úrovni.
 
 ## Proč na to zkusit vzít PowerQuery (a kdy vzít do ruky něco jiného)
 
