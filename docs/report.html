@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="cs" xml:lang="cs"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.203">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,9 +17,11 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -46,49 +48,19 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -102,8 +74,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -138,7 +109,8 @@ div.csl-indent {
     "search-more-matches-text": "dalších výsledků v tomto dokumentu",
     "search-clear-button-title": "Vymazat",
     "search-detached-cancel-button-title": "Zrušit",
-    "search-submit-button-title": "Odeslat"
+    "search-submit-button-title": "Odeslat",
+    "search-label": "Hledat"
   }
 }</script>
 
@@ -156,8 +128,8 @@ div.csl-indent {
     <span class="navbar-title">Analytici 2022</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Hledat"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Přepnout navigaci" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -339,12 +311,12 @@ div.csl-indent {
 </details>
 <div class="cell-output-display">
 
-<div id="nupknrthsa" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="rdamrpkazs" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#nupknrthsa .gt_table {
+#rdamrpkazs .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -369,7 +341,7 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#nupknrthsa .gt_heading {
+#rdamrpkazs .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -381,7 +353,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#nupknrthsa .gt_title {
+#rdamrpkazs .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -393,7 +365,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#nupknrthsa .gt_subtitle {
+#rdamrpkazs .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -405,13 +377,13 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#nupknrthsa .gt_bottom_border {
+#rdamrpkazs .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#nupknrthsa .gt_col_headings {
+#rdamrpkazs .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -426,7 +398,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#nupknrthsa .gt_col_heading {
+#rdamrpkazs .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -446,7 +418,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#nupknrthsa .gt_column_spanner_outer {
+#rdamrpkazs .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -458,15 +430,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#nupknrthsa .gt_column_spanner_outer:first-child {
+#rdamrpkazs .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nupknrthsa .gt_column_spanner_outer:last-child {
+#rdamrpkazs .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nupknrthsa .gt_column_spanner {
+#rdamrpkazs .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -478,7 +450,7 @@ div.csl-indent {
   width: 100%;
 }
 
-#nupknrthsa .gt_group_heading {
+#rdamrpkazs .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -503,7 +475,7 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#nupknrthsa .gt_empty_group_heading {
+#rdamrpkazs .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -518,15 +490,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#nupknrthsa .gt_from_md > :first-child {
+#rdamrpkazs .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nupknrthsa .gt_from_md > :last-child {
+#rdamrpkazs .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nupknrthsa .gt_row {
+#rdamrpkazs .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -545,7 +517,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#nupknrthsa .gt_stub {
+#rdamrpkazs .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -558,7 +530,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#nupknrthsa .gt_stub_row_group {
+#rdamrpkazs .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -572,11 +544,11 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#nupknrthsa .gt_row_group_first td {
+#rdamrpkazs .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nupknrthsa .gt_summary_row {
+#rdamrpkazs .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -586,16 +558,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#nupknrthsa .gt_first_summary_row {
+#rdamrpkazs .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#nupknrthsa .gt_first_summary_row.thick {
+#rdamrpkazs .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nupknrthsa .gt_last_summary_row {
+#rdamrpkazs .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -605,7 +577,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#nupknrthsa .gt_grand_summary_row {
+#rdamrpkazs .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -615,7 +587,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#nupknrthsa .gt_first_grand_summary_row {
+#rdamrpkazs .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -625,11 +597,11 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#nupknrthsa .gt_striped {
+#rdamrpkazs .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nupknrthsa .gt_table_body {
+#rdamrpkazs .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -638,7 +610,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#nupknrthsa .gt_footnotes {
+#rdamrpkazs .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -652,7 +624,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#nupknrthsa .gt_footnote {
+#rdamrpkazs .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -661,7 +633,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#nupknrthsa .gt_sourcenotes {
+#rdamrpkazs .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -675,7 +647,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#nupknrthsa .gt_sourcenote {
+#rdamrpkazs .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -683,77 +655,77 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#nupknrthsa .gt_left {
+#rdamrpkazs .gt_left {
   text-align: left;
 }
 
-#nupknrthsa .gt_center {
+#rdamrpkazs .gt_center {
   text-align: center;
 }
 
-#nupknrthsa .gt_right {
+#rdamrpkazs .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nupknrthsa .gt_font_normal {
+#rdamrpkazs .gt_font_normal {
   font-weight: normal;
 }
 
-#nupknrthsa .gt_font_bold {
+#rdamrpkazs .gt_font_bold {
   font-weight: bold;
 }
 
-#nupknrthsa .gt_font_italic {
+#rdamrpkazs .gt_font_italic {
   font-style: italic;
 }
 
-#nupknrthsa .gt_super {
+#rdamrpkazs .gt_super {
   font-size: 65%;
 }
 
-#nupknrthsa .gt_footnote_marks {
+#rdamrpkazs .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#nupknrthsa .gt_asterisk {
+#rdamrpkazs .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nupknrthsa .gt_indent_1 {
+#rdamrpkazs .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nupknrthsa .gt_indent_2 {
+#rdamrpkazs .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nupknrthsa .gt_indent_3 {
+#rdamrpkazs .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nupknrthsa .gt_indent_4 {
+#rdamrpkazs .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nupknrthsa .gt_indent_5 {
+#rdamrpkazs .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
 
-<table class="gt_table table table-sm table-striped">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true">
 <thead class="gt_col_headings">
 <tr class="header">
-<th class="gt_col_heading gt_columns_bottom_border gt_left" scope="col">uzemi_txt</th>
-<th class="gt_col_heading gt_columns_bottom_border gt_right" scope="col">obvykle obydlen</th>
-<th class="gt_col_heading gt_columns_bottom_border gt_right" scope="col">obvykle neobydlen</th>
-<th class="gt_col_heading gt_columns_bottom_border gt_right" scope="col">obydlenost_share</th>
-<th class="gt_col_heading gt_columns_bottom_border gt_left" scope="col">kraj_nazev</th>
-<th class="gt_col_heading gt_columns_bottom_border gt_right" scope="col">pocob</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">uzemi_txt</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">obvykle obydlen</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">obvykle neobydlen</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">obydlenost_share</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">kraj_nazev</th>
+<th class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">pocob</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
@@ -998,8 +970,8 @@ div.csl-indent {
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Reference</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-ceskystatistickyuradVysledkyScitani20212021" class="csl-entry" role="doc-biblioentry">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Reference</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-ceskystatistickyuradVysledkyScitani20212021" class="csl-entry" role="listitem">
 Český statistický úřad. 2021. <span>„<span>Výsledky sčítání 2021 - otevřená data</span>"</span>. <em>Výsledky sčítání 2021 - otevřená data</em>. <a href="https://www.czso.cz/csu/czso/vysledky-scitani-2021-otevrena-data">https://www.czso.cz/csu/czso/vysledky-scitani-2021-otevrena-data</a>.
 </div>
 </div></section></div></main> <!-- /main -->
@@ -1030,9 +1002,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1277,7 +1263,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -1361,7 +1347,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-76"><a href="#cb14-76" aria-hidden="true" tabindex="-1"></a>                     <span class="at">uzemi_kod =</span> CHODNOTA2))</span>
 <span id="cb14-77"><a href="#cb14-77" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb14-78"><a href="#cb14-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-79"><a href="#cb14-79" aria-hidden="true" tabindex="-1"></a><span class="fu">## Základní náhled</span></span>
+<span id="cb14-79"><a href="#cb14-79" aria-hidden="true" tabindex="-1"></a><span class="fu">## Základní náhled {#základní-náhled}</span></span>
 <span id="cb14-80"><a href="#cb14-80" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-83"><a href="#cb14-83" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb14-84"><a href="#cb14-84" aria-hidden="true" tabindex="-1"></a>byty_podily <span class="sc">|&gt;</span></span>
@@ -1400,7 +1386,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-121"><a href="#cb14-121" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gt</span>()</span>
 <span id="cb14-122"><a href="#cb14-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb14-123"><a href="#cb14-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-124"><a href="#cb14-124" aria-hidden="true" tabindex="-1"></a><span class="fu">## Podle krajů</span></span>
+<span id="cb14-124"><a href="#cb14-124" aria-hidden="true" tabindex="-1"></a><span class="fu">## Podle krajů {#podle-krajů}</span></span>
 <span id="cb14-125"><a href="#cb14-125" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-128"><a href="#cb14-128" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb14-129"><a href="#cb14-129" aria-hidden="true" tabindex="-1"></a>byty_podily <span class="sc">|&gt;</span></span>
@@ -1413,7 +1399,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-136"><a href="#cb14-136" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ptrr</span>(<span class="st">"x"</span>)</span>
 <span id="cb14-137"><a href="#cb14-137" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb14-138"><a href="#cb14-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-139"><a href="#cb14-139" aria-hidden="true" tabindex="-1"></a><span class="fu">### Podle krajů a velikosti obce</span></span>
+<span id="cb14-139"><a href="#cb14-139" aria-hidden="true" tabindex="-1"></a><span class="fu">### Podle krajů a velikosti obce {#podle-krajů-a-velikosti-obce}</span></span>
 <span id="cb14-140"><a href="#cb14-140" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-143"><a href="#cb14-143" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb14-144"><a href="#cb14-144" aria-hidden="true" tabindex="-1"></a>byty_podily <span class="sc">|&gt;</span> </span>
@@ -1430,7 +1416,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-155"><a href="#cb14-155" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb14-156"><a href="#cb14-156" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb14-157"><a href="#cb14-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-158"><a href="#cb14-158" aria-hidden="true" tabindex="-1"></a><span class="fu">### Jak je obydlenost bytů v obcích rozložena v krajích?</span></span>
+<span id="cb14-158"><a href="#cb14-158" aria-hidden="true" tabindex="-1"></a><span class="fu">### Jak je obydlenost bytů v obcích rozložena v krajích? {#jak-je-obydlenost-bytů-v-obcích-rozložena-v-krajích}</span></span>
 <span id="cb14-159"><a href="#cb14-159" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-162"><a href="#cb14-162" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb14-163"><a href="#cb14-163" aria-hidden="true" tabindex="-1"></a>byty_podily <span class="sc">|&gt;</span></span>
@@ -1443,7 +1429,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-170"><a href="#cb14-170" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-171"><a href="#cb14-171" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb14-172"><a href="#cb14-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-173"><a href="#cb14-173" aria-hidden="true" tabindex="-1"></a><span class="fu">### Koreluje průměrná velikost obce v kraji a celková obydlenost bytů v kraji?</span></span>
+<span id="cb14-173"><a href="#cb14-173" aria-hidden="true" tabindex="-1"></a><span class="fu">### Koreluje průměrná velikost obce v kraji a celková obydlenost bytů v kraji? {#koreluje-průměrná-velikost-obce-v-kraji-a-celková-obydlenost-bytů-v-kraji}</span></span>
 <span id="cb14-174"><a href="#cb14-174" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-177"><a href="#cb14-177" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb14-178"><a href="#cb14-178" aria-hidden="true" tabindex="-1"></a>byty_podily <span class="sc">|&gt;</span> </span>
@@ -1462,7 +1448,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-191"><a href="#cb14-191" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_ptrr</span>(<span class="at">gridlines =</span> <span class="st">"both"</span>)</span>
 <span id="cb14-192"><a href="#cb14-192" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb14-193"><a href="#cb14-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-194"><a href="#cb14-194" aria-hidden="true" tabindex="-1"></a><span class="fu">## Vliv kraje vs. velikosti obce</span></span>
+<span id="cb14-194"><a href="#cb14-194" aria-hidden="true" tabindex="-1"></a><span class="fu">## Vliv kraje vs. velikosti obce {#vliv-kraje-vs.-velikosti-obce}</span></span>
 <span id="cb14-195"><a href="#cb14-195" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-196"><a href="#cb14-196" aria-hidden="true" tabindex="-1"></a>Abychom odhadli samostatný "vliv" kraje na obydlenost bytů v obci, odhadneme lineární model vztahu mezi velikostí obce a obydleností.</span>
 <span id="cb14-197"><a href="#cb14-197" aria-hidden="true" tabindex="-1"></a></span>
@@ -1503,7 +1489,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center">Petr Bouchal pro Ministerstvo vnitra, 2023</div>
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">Petr Bouchal pro Ministerstvo vnitra, 2023</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 

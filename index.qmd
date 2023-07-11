@@ -8,6 +8,8 @@ title: "Pilotní vzdělávací kurz pro analytiky 2022"
 
 [Soubory pro práci](https://github.com/petrbouchal/analytici/releases/download/v1/analyza.zip)
 
+One-pager pro účastníky: shrnutí hlavních tezí této části kurzu ([web](https://petrbouchal.xyz/analytici/one-pager.html), [PDF](https://petrbouchal.xyz/analytici/one-pager.pdf), [Word](https://petrbouchal.xyz/analytici/one-pager.docx))
+
 ## Odkazy pro práci {#odkazy-pro-práci}
 
 -   [Národní katalog otevřených dat](https://data.gov.cz/datov%C3%A9-sady)

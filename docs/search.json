@@ -4,7 +4,7 @@
     "href": "reflexe.html",
     "title": "Běh 2",
     "section": "",
-    "text": "Běh 2\nNa začátku ukázat, kam se dobereme\nSesekat tak, aby\nvyhodit slide o veřejných hodnotách, nějak integrovat jinam?\nPřidat Anscombe Quartet\nPřidat koncept mental bandwidth: aby se mohli soustředit na přemýšlení, ne na vyznání se v procesu - investovat na začátku - offloadovat metadata do zaznamenané podoby - offloadovat znalost o postupu do\nKde vzít data?\n\n\nZ běhu 2 2022-11-05\n\njste správci dat\nubrat úvod, opět\ntake aways na konci\nschéma power query\nschéma vlookup\nkonverze standard x power pivot\nproč power pivot\núkol a otázky na slide\nsladit hotový projekt s pracovním - kraje, ne ORP\n\nukázat i moment stažení dat ukázat interakci s dokumentací datové sady (JSON schema)\n\n\nBěh 3\n\nnavázat na proč-co-jak\nzeštíhlit slides k moderní analýze dat, důvěře atd. - opakuje se to\ndalší zdroje dat: ČNB, národní a regionální účty, ECFIN - tj. makro\n\nOD katalog ČSÚ\n\nvysvětlit data pro stroj (typicky i OD v tomto formátu) x data pro lidi - příklady ČSÚ\nukázat nalezení stejné datové sady v katalogu ČSÚ a v katalogu NKOD\n„avoid irritating micro-decisions“\n\n\n\nBěh 4\n\nproč nepředělat pořadí tak, abych na ně na začátku 40 minut nemluvil, a neházet principy a postupy jako důsledek toho, co uvidí na příkladu? Např. otevřou soubor, chybí dokumentace => princip\ntabulkovej král - doplnit do zdrojů"
+    "text": "Na začátku ukázat, kam se dobereme\nSesekat tak, aby\nvyhodit slide o veřejných hodnotách, nějak integrovat jinam?\nPřidat Anscombe Quartet [x]\nPřidat koncept mental bandwidth: aby se mohli soustředit na přemýšlení, ne na vyznání se v procesu - investovat na začátku - offloadovat metadata do zaznamenané podoby - offloadovat znalost o postupu do záznamu - offloadovat rozhodování\nKde vzít data?"
   },
   {
     "objectID": "zdroje.html#organizace-projektu",
@@ -60,14 +60,14 @@
     "href": "index.html",
     "title": "Pilotní vzdělávací kurz pro analytiky 2022",
     "section": "",
-    "text": "Prezentace\nSoubory pro práci"
+    "text": "Prezentace\nSoubory pro práci\nOne-pager pro účastníky: shrnutí hlavních tezí této části kurzu (web, PDF, Word)"
   },
   {
     "objectID": "index.html#odkazy-pro-práci",
     "href": "index.html#odkazy-pro-práci",
     "title": "Pilotní vzdělávací kurz pro analytiky 2022",
     "section": "Odkazy pro práci",
-    "text": "Odkazy pro práci\n\nNárodní katalog otevřených dat\n\nVýstupy ze sčítání - podle hledání, zřejmě neúplný výčet\nČíselník obcí - vazba ORP-obec\n\nKatalog produktů ČSÚ\n\notevřená data ze sčítání - filtr\notevřená data ze sčítání - „katalogový list“ - dokumentace + jak načíst do Excelu\ndata: obydlené a neobydlené byty podle obcí + schéma (JSON)\n\nDatabáze metainformací ČSÚ"
+    "text": "Odkazy pro práci\n\nNárodní katalog otevřených dat\n\nVýstupy ze sčítání - podle hledání, zřejmě neúplný výčet\nČíselník obcí - vazba ORP-obec\n\nKatalog produktů ČSÚ\n\notevřená data ze sčítání - filtr\notevřená data ze sčítání - „katalogový list“ - dokumentace + jak načíst do Excelu\ndata: obydlené a neobydlené byty podle obcí + schéma (JSON)\n\nDatabáze metainformací ČSÚ: zdroj číselníků a dalších metadat"
   },
   {
     "objectID": "slides/index.html#proč-jste-tu-dnes-vy",
@@ -249,28 +249,28 @@
     "href": "report.html",
     "title": "Neobydlené byty: vstupní analýza",
     "section": "",
-    "text": "Toto je pouze ukázka, jak lze podobnou analýzu udělat tak, že kód je reprodukovatelný a generuje přímo grafy a čísla do textu.\nVyužíváme data ČSÚ ze SLDB o obydlenosti bytů v obcích (Český statistický úřad 2021)\nKód\nbyty <- czso::czso_get_table(\"sldb2021_byty_obydlenost\")\nvzdel <- czso::czso_get_table(\"sldb2021_vzdelani\")\nobcekraje <- czso::czso_get_codelist(\"cis108vaz43\")\nobceorp <- czso::czso_get_codelist(\"cis65vaz43\")\nobyv <- czso::czso_get_table(\"130149\") |>\n  filter(rok == max(rok), is.na(pohlavi_txt)) |>\n  select(uzemi_kod = vuzemi_kod, pocob = hodnota)\nKód\nbyty_podily <- byty |>\n  filter(uzemi_cis == \"43\", !is.na(obydlenost_txt)) |>\n  select(hodnota, obydlenost_txt, uzemi_txt, uzemi_kod) |>\n  pivot_wider(names_from = obydlenost_txt, values_from = hodnota) |>\n  mutate(celkem = `obvykle obydlen` + `obvykle neobydlen`,\n         obydlenost_share = `obvykle obydlen`/celkem) |>\n  left_join(obyv) |>\n  mutate(pocob_kat = cut(pocob, breaks = c(0, 500, 1000, 10000, \n                                           100000, 1000000, 1e7),\n                         labels = c(\"do 500\", \"500-1000\", \"1000-10000\",\n                                    \"10000-100000\", \"nad 100 tis.\", \"nad 1 mil.\"))) |>\n  left_join(obcekraje |>\n              select(kraj_nazev = TEXT1,\n                     kraj_kod = CHODNOTA1,\n                     uzemi_kod = CHODNOTA2)) |>\n  left_join(obceorp |>\n              select(orp_nazev = TEXT1,\n                     orp_kod = CHODNOTA1,\n                     uzemi_kod = CHODNOTA2))"
+    "text": "Toto je pouze ukázka, jak lze podobnou analýzu udělat tak, že kód je reprodukovatelný a generuje přímo grafy a čísla do textu.\nVyužíváme data ČSÚ ze SLDB o obydlenosti bytů v obcích (Český statistický úřad 2021)\nKód\nbyty &lt;- czso::czso_get_table(\"sldb2021_byty_obydlenost\")\nvzdel &lt;- czso::czso_get_table(\"sldb2021_vzdelani\")\nobcekraje &lt;- czso::czso_get_codelist(\"cis108vaz43\")\nobceorp &lt;- czso::czso_get_codelist(\"cis65vaz43\")\nobyv &lt;- czso::czso_get_table(\"130149\") |&gt;\n  filter(rok == max(rok), is.na(pohlavi_txt)) |&gt;\n  select(uzemi_kod = vuzemi_kod, pocob = hodnota)\nKód\nbyty_podily &lt;- byty |&gt;\n  filter(uzemi_cis == \"43\", !is.na(obydlenost_txt)) |&gt;\n  select(hodnota, obydlenost_txt, uzemi_txt, uzemi_kod) |&gt;\n  pivot_wider(names_from = obydlenost_txt, values_from = hodnota) |&gt;\n  mutate(celkem = `obvykle obydlen` + `obvykle neobydlen`,\n         obydlenost_share = `obvykle obydlen`/celkem) |&gt;\n  left_join(obyv) |&gt;\n  mutate(pocob_kat = cut(pocob, breaks = c(0, 500, 1000, 10000, \n                                           100000, 1000000, 1e7),\n                         labels = c(\"do 500\", \"500-1000\", \"1000-10000\",\n                                    \"10000-100000\", \"nad 100 tis.\", \"nad 1 mil.\"))) |&gt;\n  left_join(obcekraje |&gt;\n              select(kraj_nazev = TEXT1,\n                     kraj_kod = CHODNOTA1,\n                     uzemi_kod = CHODNOTA2)) |&gt;\n  left_join(obceorp |&gt;\n              select(orp_nazev = TEXT1,\n                     orp_kod = CHODNOTA1,\n                     uzemi_kod = CHODNOTA2))"
   },
   {
     "objectID": "report.html#základní-náhled",
     "href": "report.html#základní-náhled",
     "title": "Neobydlené byty: vstupní analýza",
     "section": "Základní náhled",
-    "text": "Základní náhled\n\n\nKód\nbyty_podily |>\n  # filter(kraj_kod %in% c(\"CZ020\", \"CZ054\", \"CZ080\")) |>\n  ggplot(aes(1 - obydlenost_share, pocob)) +\n  geom_point(alpha = .2) +\n  coord_flip() +\n  labs(title = \"Podíl obydlených bytů a velikost obce\",\n       x = \"Podíl obydlených bytů\", y = \"Počet obyvatel obce (log. měřítko)\") +\n  scale_x_percent_cz() +\n  scale_y_log10() +\n  theme_ptrr(\"scatter\")\n\n\n\n\n\nMediánový podíl obydlených bytů je 76 %.11 Toto číslo se do věty doplňuje automaticky z živých dat\n\n\nKód\nbyty_podily |>\n  drop_na(pocob_kat) |>\n  count(pocob_kat, wt = 1 - mean(obydlenost_share)) |>\n  ggplot(aes(pocob_kat, n)) +\n  scale_y_percent_cz() +\n  theme_ptrr() +\n  geom_col() +\n  labs(title = \"Podíl neobydlených bytů podle velikostní skupiny obce\")\n\n\n\n\n\nZde je deset obcí s nejvyšší obydleností bytů:\n\n\nKód\nbyty_podily |> \n  slice_max(obydlenost_share, n = 10) |> \n  select(uzemi_txt, `obvykle obydlen`, `obvykle neobydlen`, obydlenost_share, kraj_nazev, pocob) |> \n  gt::gt()\n\n\n\n\n\n\n\n\n\nuzemi_txt\nobvykle obydlen\nobvykle neobydlen\nobydlenost_share\nkraj_nazev\npocob\n\n\n\n\nHněvnice\n49\n0\n1.0000000\nPlzeňský kraj\n114\n\n\nDobříč\n234\n0\n1.0000000\nStředočeský kraj\n499\n\n\nZhoř\n63\n0\n1.0000000\nPlzeňský kraj\n165\n\n\nVřesová\n106\n0\n1.0000000\nKarlovarský kraj\n409\n\n\nVšehrdy\n67\n0\n1.0000000\nÚstecký kraj\n156\n\n\nOdrovice\n97\n0\n1.0000000\nJihomoravský kraj\n247\n\n\nZlátenka\n19\n0\n1.0000000\nKraj Vysočina\n45\n\n\nUhersko\n143\n1\n0.9930556\nPardubický kraj\n292\n\n\nDroužkovice\n337\n4\n0.9882698\nÚstecký kraj\n821\n\n\nModletice\n256\n4\n0.9846154\nStředočeský kraj\n528"
+    "text": "Základní náhled\n\n\nKód\nbyty_podily |&gt;\n  # filter(kraj_kod %in% c(\"CZ020\", \"CZ054\", \"CZ080\")) |&gt;\n  ggplot(aes(1 - obydlenost_share, pocob)) +\n  geom_point(alpha = .2) +\n  coord_flip() +\n  labs(title = \"Podíl obydlených bytů a velikost obce\",\n       x = \"Podíl obydlených bytů\", y = \"Počet obyvatel obce (log. měřítko)\") +\n  scale_x_percent_cz() +\n  scale_y_log10() +\n  theme_ptrr(\"scatter\")\n\n\n\n\n\nMediánový podíl obydlených bytů je 76 %.11 Toto číslo se do věty doplňuje automaticky z živých dat\n\n\nKód\nbyty_podily |&gt;\n  drop_na(pocob_kat) |&gt;\n  count(pocob_kat, wt = 1 - mean(obydlenost_share)) |&gt;\n  ggplot(aes(pocob_kat, n)) +\n  scale_y_percent_cz() +\n  theme_ptrr() +\n  geom_col() +\n  labs(title = \"Podíl neobydlených bytů podle velikostní skupiny obce\")\n\n\n\n\n\nZde je deset obcí s nejvyšší obydleností bytů:\n\n\nKód\nbyty_podily |&gt; \n  slice_max(obydlenost_share, n = 10) |&gt; \n  select(uzemi_txt, `obvykle obydlen`, `obvykle neobydlen`, obydlenost_share, kraj_nazev, pocob) |&gt; \n  gt::gt()\n\n\n\n\n\n\n\n\n\nuzemi_txt\nobvykle obydlen\nobvykle neobydlen\nobydlenost_share\nkraj_nazev\npocob\n\n\n\n\nHněvnice\n49\n0\n1.0000000\nPlzeňský kraj\n114\n\n\nDobříč\n234\n0\n1.0000000\nStředočeský kraj\n499\n\n\nZhoř\n63\n0\n1.0000000\nPlzeňský kraj\n165\n\n\nVřesová\n106\n0\n1.0000000\nKarlovarský kraj\n409\n\n\nVšehrdy\n67\n0\n1.0000000\nÚstecký kraj\n156\n\n\nOdrovice\n97\n0\n1.0000000\nJihomoravský kraj\n247\n\n\nZlátenka\n19\n0\n1.0000000\nKraj Vysočina\n45\n\n\nUhersko\n143\n1\n0.9930556\nPardubický kraj\n292\n\n\nDroužkovice\n337\n4\n0.9882698\nÚstecký kraj\n821\n\n\nModletice\n256\n4\n0.9846154\nStředočeský kraj\n528"
   },
   {
     "objectID": "report.html#podle-krajů",
     "href": "report.html#podle-krajů",
     "title": "Neobydlené byty: vstupní analýza",
     "section": "Podle krajů",
-    "text": "Podle krajů\n\n\nKód\nbyty_podily |>\n  drop_na(pocob_kat) |>\n  count(kraj_nazev, wt = 1 - mean(obydlenost_share)) |>\n  mutate(kraj_nazev = as.factor(kraj_nazev) |> fct_reorder(n)) |> \n  ggplot(aes(n, kraj_nazev)) +\n  scale_x_percent_cz() +\n  geom_col() +\n  theme_ptrr(\"x\")\n\n\n\n\n\n\nPodle krajů a velikosti obce\n\n\nKód\nbyty_podily |> \n  drop_na(pocob_kat) |>\n  filter(kraj_kod != \"CZ010\") |> \n  count(pocob_kat, kraj_nazev) |> \n  group_by(kraj_nazev) |> \n  mutate(podil = n/sum(n)) |> \n  ggplot(aes(pocob_kat, kraj_nazev)) +\n  theme_ptrr(\"none\") +\n  scale_fill_viridis_b(n.breaks = 6, labels = label_percent_cz()) +\n  guides(fill = guide_bins(reverse = T)) +\n  geom_tile(aes(fill = podil), colour = \"white\", size = .6)\n\n\n\n\n\n\n\nJak je obydlenost bytů v obcích rozložena v krajích?\n\n\nKód\nbyty_podily |>\n  drop_na(pocob_kat) |>\n  filter(pocob < 1e6) |>\n  ggplot(aes(obydlenost_share)) +\n  geom_histogram(aes(fill = pocob_kat)) +\n  facet_wrap(~ kraj_nazev) +\n  theme_ptrr(multiplot = TRUE)\n\n\n\n\n\n\n\nKoreluje průměrná velikost obce v kraji a celková obydlenost bytů v kraji?\n\n\nKód\nbyty_podily |> \n  filter(kraj_kod != \"CZ010\") |> \n  mutate(kraj_nazev_short = str_remove(kraj_nazev, \"\\\\s?[Kk]raj\\\\s?\")) |> \n  group_by(kraj_nazev_short) |> \n  summarise(pocob_median = median(pocob), \n            mean_obydl = mean(obydlenost_share),\n            obydl_mean = sum(`obvykle neobydlen`)/sum(celkem)) |> \n  ggplot(aes(pocob_median, mean_obydl)) +\n  geom_smooth(method = \"lm\", colour = \"darkblue\", fill = ptrr:::ptclr_d, \n              formula = y ~ x) +\n  geom_point(colour = \"blue\") +\n  geom_label(aes(label = kraj_nazev_short), nudge_y = .01) +\n  scale_y_percent_cz() +\n  theme_ptrr(gridlines = \"both\")"
+    "text": "Podle krajů\n\n\nKód\nbyty_podily |&gt;\n  drop_na(pocob_kat) |&gt;\n  count(kraj_nazev, wt = 1 - mean(obydlenost_share)) |&gt;\n  mutate(kraj_nazev = as.factor(kraj_nazev) |&gt; fct_reorder(n)) |&gt; \n  ggplot(aes(n, kraj_nazev)) +\n  scale_x_percent_cz() +\n  geom_col() +\n  theme_ptrr(\"x\")\n\n\n\n\n\n\nPodle krajů a velikosti obce\n\n\nKód\nbyty_podily |&gt; \n  drop_na(pocob_kat) |&gt;\n  filter(kraj_kod != \"CZ010\") |&gt; \n  count(pocob_kat, kraj_nazev) |&gt; \n  group_by(kraj_nazev) |&gt; \n  mutate(podil = n/sum(n)) |&gt; \n  ggplot(aes(pocob_kat, kraj_nazev)) +\n  theme_ptrr(\"none\") +\n  scale_fill_viridis_b(n.breaks = 6, labels = label_percent_cz()) +\n  guides(fill = guide_bins(reverse = T)) +\n  geom_tile(aes(fill = podil), colour = \"white\", size = .6)\n\n\n\n\n\n\n\nJak je obydlenost bytů v obcích rozložena v krajích?\n\n\nKód\nbyty_podily |&gt;\n  drop_na(pocob_kat) |&gt;\n  filter(pocob &lt; 1e6) |&gt;\n  ggplot(aes(obydlenost_share)) +\n  geom_histogram(aes(fill = pocob_kat)) +\n  facet_wrap(~ kraj_nazev) +\n  theme_ptrr(multiplot = TRUE)\n\n\n\n\n\n\n\nKoreluje průměrná velikost obce v kraji a celková obydlenost bytů v kraji?\n\n\nKód\nbyty_podily |&gt; \n  filter(kraj_kod != \"CZ010\") |&gt; \n  mutate(kraj_nazev_short = str_remove(kraj_nazev, \"\\\\s?[Kk]raj\\\\s?\")) |&gt; \n  group_by(kraj_nazev_short) |&gt; \n  summarise(pocob_median = median(pocob), \n            mean_obydl = mean(obydlenost_share),\n            obydl_mean = sum(`obvykle neobydlen`)/sum(celkem)) |&gt; \n  ggplot(aes(pocob_median, mean_obydl)) +\n  geom_smooth(method = \"lm\", colour = \"darkblue\", fill = ptrr:::ptclr_d, \n              formula = y ~ x) +\n  geom_point(colour = \"blue\") +\n  geom_label(aes(label = kraj_nazev_short), nudge_y = .01) +\n  scale_y_percent_cz() +\n  theme_ptrr(gridlines = \"both\")"
   },
   {
     "objectID": "report.html#vliv-kraje-vs.-velikosti-obce",
     "href": "report.html#vliv-kraje-vs.-velikosti-obce",
     "title": "Neobydlené byty: vstupní analýza",
     "section": "Vliv kraje vs. velikosti obce",
-    "text": "Vliv kraje vs. velikosti obce\nAbychom odhadli samostatný „vliv“ kraje na obydlenost bytů v obci, odhadneme lineární model vztahu mezi velikostí obce a obydleností.\n\n\nKód\nbyty_podily0 <- byty_podily |> \n  filter(!is.na(pocob), \n         pocob > 0,\n         kraj_kod != \"CZ010\") |> \n  mutate(pocob_log = log(pocob))\n\nmdl <- lm(obydlenost_share ~ pocob_log, data = byty_podily0)\n\nsummary(mdl)\n\n\n#> \n#> Call:\n#> lm(formula = obydlenost_share ~ pocob_log, data = byty_podily0)\n#> \n#> Residuals:\n#>      Min       1Q   Median       3Q      Max \n#> -0.58920 -0.05371  0.00893  0.06005  0.37909 \n#> \n#> Coefficients:\n#>              Estimate Std. Error t value            Pr(>|t|)    \n#> (Intercept) 0.4268069  0.0062190   68.63 <0.0000000000000002 ***\n#> pocob_log   0.0509893  0.0009846   51.79 <0.0000000000000002 ***\n#> ---\n#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n#> \n#> Residual standard error: 0.09353 on 6251 degrees of freedom\n#> Multiple R-squared:  0.3002, Adjusted R-squared:  0.3001 \n#> F-statistic:  2682 on 1 and 6251 DF,  p-value: < 0.00000000000000022\n\n\nKód\nmdl_tidy <- broom::tidy(mdl)\nbyty_podily_au <- broom::augment(mdl, data = byty_podily0)\n\n\nModel zachycuje cca 30 % variability obydlenosti bytů v obcích.\nGraf níže ukazuje, jak se obydlenost bytů v obcích v jednotlivých krajích liší od očekávání, tj. od toho, jaká by měla být s ohledem na velikostní složení obcí.\n\n\nKód\nbyty_podily_au |> \n  mutate(kraj_nazev = as.factor(kraj_nazev) |> fct_reorder(.resid)) |> \n  ggplot(aes(.resid, y = kraj_nazev)) +\n  # geom_jitter(alpha = .2) +\n  geom_vline(xintercept = 0) +\n  geom_violin(colour = \"darkblue\", fill = ptrr:::ptclr_l, alpha = .8) +\n  scale_x_percent_cz() +\n  theme_ptrr(\"both\") +\n  labs(title = \"Rozdíl reality a predikce modelu\")\n\n\n\n\n\nV některých krajích je tedy systematicky nižší obydlenost bytů, než by odpovídalo velikostnímu složení obcí v daném kraji."
+    "text": "Vliv kraje vs. velikosti obce\nAbychom odhadli samostatný „vliv“ kraje na obydlenost bytů v obci, odhadneme lineární model vztahu mezi velikostí obce a obydleností.\n\n\nKód\nbyty_podily0 &lt;- byty_podily |&gt; \n  filter(!is.na(pocob), \n         pocob &gt; 0,\n         kraj_kod != \"CZ010\") |&gt; \n  mutate(pocob_log = log(pocob))\n\nmdl &lt;- lm(obydlenost_share ~ pocob_log, data = byty_podily0)\n\nsummary(mdl)\n\n\n#&gt; \n#&gt; Call:\n#&gt; lm(formula = obydlenost_share ~ pocob_log, data = byty_podily0)\n#&gt; \n#&gt; Residuals:\n#&gt;      Min       1Q   Median       3Q      Max \n#&gt; -0.58920 -0.05371  0.00893  0.06005  0.37909 \n#&gt; \n#&gt; Coefficients:\n#&gt;              Estimate Std. Error t value            Pr(&gt;|t|)    \n#&gt; (Intercept) 0.4268069  0.0062190   68.63 &lt;0.0000000000000002 ***\n#&gt; pocob_log   0.0509893  0.0009846   51.79 &lt;0.0000000000000002 ***\n#&gt; ---\n#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n#&gt; \n#&gt; Residual standard error: 0.09353 on 6251 degrees of freedom\n#&gt; Multiple R-squared:  0.3002, Adjusted R-squared:  0.3001 \n#&gt; F-statistic:  2682 on 1 and 6251 DF,  p-value: &lt; 0.00000000000000022\n\n\nKód\nmdl_tidy &lt;- broom::tidy(mdl)\nbyty_podily_au &lt;- broom::augment(mdl, data = byty_podily0)\n\n\nModel zachycuje cca 30 % variability obydlenosti bytů v obcích.\nGraf níže ukazuje, jak se obydlenost bytů v obcích v jednotlivých krajích liší od očekávání, tj. od toho, jaká by měla být s ohledem na velikostní složení obcí.\n\n\nKód\nbyty_podily_au |&gt; \n  mutate(kraj_nazev = as.factor(kraj_nazev) |&gt; fct_reorder(.resid)) |&gt; \n  ggplot(aes(.resid, y = kraj_nazev)) +\n  # geom_jitter(alpha = .2) +\n  geom_vline(xintercept = 0) +\n  geom_violin(colour = \"darkblue\", fill = ptrr:::ptclr_l, alpha = .8) +\n  scale_x_percent_cz() +\n  theme_ptrr(\"both\") +\n  labs(title = \"Rozdíl reality a predikce modelu\")\n\n\n\n\n\nV některých krajích je tedy systematicky nižší obydlenost bytů, než by odpovídalo velikostnímu složení obcí v daném kraji."
   },
   {
     "objectID": "slides/index.html#hledá-se-obec-s-největším-podílem-neobydlených-bytů-v-každém-orp-čr.",
@@ -313,5 +313,96 @@
     "title": "Analýza dat",
     "section": "Proč jste tu dnes vy a co si chcete odnést??",
     "text": "Proč jste tu dnes vy a co si chcete odnést??"
+  },
+  {
+    "objectID": "one-pager.html",
+    "href": "one-pager.html",
+    "title": "Práce s (kvantitativními) daty",
+    "section": "",
+    "text": "Všechny podklady k této části kurzu na webu."
+  },
+  {
+    "objectID": "one-pager.html#jak-vypadá-datová-analýza-dnes",
+    "href": "one-pager.html#jak-vypadá-datová-analýza-dnes",
+    "title": "Práce s (kvantitativními) daty",
+    "section": "Jak vypadá datová analýza dnes",
+    "text": "Jak vypadá datová analýza dnes\nKlade se důraz na uživatele a porozumění jeho potřebám. Důvěru uživatelů výstupů analytik získává svou schopností reagovat na jejich potřeby, transparentností a integritou postupu a komunikací výsledků.\nPracuje se v kódu, vytváří se tzv. reprodukovatelné workflow.\nPracuje se iterativně, práce řídí agilně, vytváří se spíš produkty než projekty.\nČastěji vznikají webové a interaktivní produkty, zároveň slábne předěl mezi analytickým postupem a výstupem."
+  },
+  {
+    "objectID": "one-pager.html#projektová-a-pracovní-rovina",
+    "href": "one-pager.html#projektová-a-pracovní-rovina",
+    "title": "Jak na práci s daty",
+    "section": "",
+    "text": "ustálení základních postupů a standardů - pro sebe nebo v týmu - vám umožní soustředit se na důležitá obsahová/analytická rozhodnutí namísto těch triviálních a sníží vám bariéru k tomu tyto praktické principy dodržovat\nmezi ty patří\n\npředem daný způsob dokumentace projektu, dat, postupu (readme, krycí list datového souboru)\norganizace a názvy souborů v projektové složce\nnázvy proměnných\numožnit sám sobě snadný způsob, jak okamžitě zachycovat poznámky z postupu práce - cokoli zjistíte a později byste zapomněli, hned někam zapište."
+  },
+  {
+    "objectID": "one-pager.html#datová-rovina",
+    "href": "one-pager.html#datová-rovina",
+    "title": "Jak na práci s daty",
+    "section": "",
+    "text": "Při hledání dat je vhodné postupovat systematicky a brát v potaz, kde se jaká data berou a jak spolu souvisí data z různých zdrojů\n\nnapř. ČSÚ některá data publikuje jako otevřená data; mnohá data ČSÚ jsou prezentována i v katalogu Eurostatu, často v analyticky přívětivější formě nebo v alternativních agregacích, které se vám mohou hodit.\n\nPro analytickou práci je vhodné využívat data v otevřených, standardizovaných formátech: u ČSÚ a Eurostatu otevřená data\nVhodnou první cestou k datům ČSÚ a Eurostatu jsou jejich katalogy\nData o životním prostředí z zdravotnictví hledejte u jiných zdrojů (CENIA resp. ÚZIS), jsou spravována jinak než jiná veřejná data\nČíselníky typicky spravuje ČSÚ, používejte ty správné a čerstvé. Najdete je v databázi metainformací. Prostorová data hledejte na ČÚZK - většina už je dostupná v otevřené formě.\nSpolu s daty stahujte (a čtětě!) dokumentaci, abyste rozuměli, jak data vznikla, co v nich je a není, v jakém aspektu se na ně dá a nedáb spolehnout.\nPokud data sbíráte nebo vytváříte nové datové sady spojováním a transformací jiných, stáváte se de facto správci dat (ne v právním slova smyslu, ale v praktickém). Dokumentujte, jak data vznikla, odkud pocházejí, jak je použít"
+  },
+  {
+    "objectID": "one-pager.html#technická-rovina",
+    "href": "one-pager.html#technická-rovina",
+    "title": "Jak na práci s daty",
+    "section": "",
+    "text": "Využití nástroje PowerQuery vám pomůže\n\nuvést do praxe principy moderní práce s daty: postup, dokumentace, transparentnost postupu, reprodukovatelnost a zkontrolovatelnost, automatizace, nedestruktivní přístup ke zdrojovým datům\nosvojit si postupy užitečné při přechodu k práce s daty v programovacích nástrojích a v databázích\nprovést některé operace, které v Excelu nejdou\nnaladit se na logiku práce s daty v PowerBI\nvyužít datové zdroje ve formátech, které z Excelu nejsou dostupné\nvíce se soustředit na to, co data říkají, než jak s nimi operovat\n\nNa pokročilé vizualizace, složitější statistické modelování, ještě větší nebo komplexnější data nebo složitější projekty je vhodné použít jiné nástroje"
+  },
+  {
+    "objectID": "reflexe.html#do-skript",
+    "href": "reflexe.html#do-skript",
+    "title": "Běh 2",
+    "section": "Do skript",
+    "text": "Do skript\n\noops you made a database\njste správci dat\nExcel is not a DB tool"
+  },
+  {
+    "objectID": "reflexe.html#do-zdrojů-nebo-rovnou-slidů",
+    "href": "reflexe.html#do-zdrojů-nebo-rovnou-slidů",
+    "title": "Běh 2",
+    "section": "Do zdrojů nebo rovnou slidů",
+    "text": "Do zdrojů nebo rovnou slidů\n\nstruktura území\nMOS a KROK"
+  },
+  {
+    "objectID": "reflexe.html#upravit---zkušenost-čes",
+    "href": "reflexe.html#upravit---zkušenost-čes",
+    "title": "Běh 2",
+    "section": "upravit - zkušenost ČES",
+    "text": "upravit - zkušenost ČES\n\nněkde na konci mít key messages, aby se dala závěrečná reflexe vztáhnout k celku, nejen k tomu, co zažili bezprostředně v poslední části"
+  },
+  {
+    "objectID": "index.html#ke-stažení",
+    "href": "index.html#ke-stažení",
+    "title": "Pilotní vzdělávací kurz pro analytiky 2022",
+    "section": "",
+    "text": "Prezentace\nSoubory pro práci\nOne-pager pro účastníky: shrnutí hlavních tezí této části kurzu (web, PDF, Word)"
+  },
+  {
+    "objectID": "one-pager.html#jak-o-tom-přemýšlet-mentální-model-postupu-práce-s-daty",
+    "href": "one-pager.html#jak-o-tom-přemýšlet-mentální-model-postupu-práce-s-daty",
+    "title": "Práce s (kvantitativními) daty",
+    "section": "Jak o tom přemýšlet: mentální model postupu práce s daty",
+    "text": "Jak o tom přemýšlet: mentální model postupu práce s daty\n\nZdroj: https://r4ds.hadley.nz/whole-game.html\nPráce s daty má své fáze, ale je to také iterativní proces. Čištění a transformace dat jsou součástí analýzy. Vizualizace dat slouží nejen ke komunikaci, ale i k analýze – porozumění dat.\nK analýzám se často musíme vracet, proto je třeba dokumentovat data a postup.\nSpolupracujete buď z kolegy, nebo s vaším budoucím já: jedni i druzí vám budou vděční, pokud budete dobře dokumentovat, kde se vzala jaká data, co jsme s nimi udělali a jak a proč."
+  },
+  {
+    "objectID": "one-pager.html#jak-to-uřídit-a-vyznat-se-v-tom",
+    "href": "one-pager.html#jak-to-uřídit-a-vyznat-se-v-tom",
+    "title": "Práce s (kvantitativními) daty",
+    "section": "Jak to uřídit a vyznat se v tom",
+    "text": "Jak to uřídit a vyznat se v tom\nKdyž si ustálíte základní postupy a standardy – pro sebe nebo v týmu –, zůstane vám víc mentální kapacity na obsahová/analytická rozhodnutí namísto těch triviálních. Také si tím snížíte bariéru k tomu tyto praktické principy dodržovat. Rozhodněte si předem a dodržujte:\n\npředem daný způsob organizace a dokumentace projektu, dat, postupu (readme, krycí list datového souboru)\norganizace a názvy souborů v projektové složce\nnázvy proměnných/sloupců\nzpůsob, jak okamžitě zachycovat poznámky z postupu práce; cokoli byste později zapomněli, hned zapište.\npostup pro uzavření/předání analýzy (dokument, schůzka, …): přiměje vás vše zachytit a zdokumentovat"
+  },
+  {
+    "objectID": "one-pager.html#kde-vzít-data",
+    "href": "one-pager.html#kde-vzít-data",
+    "title": "Práce s (kvantitativními) daty",
+    "section": "Kde vzít data",
+    "text": "Kde vzít data\nČSÚ některá data poskytuje i jako otevřená data; mnohá data ČSÚ jsou prezentována i v katalogu Eurostatu, často v analyticky přívětivější formě nebo v alternativních agregacích, které se vám mohou hodit.\nPro analytickou práci využívejte data ve standardizovaných formátech: u ČSÚ a Eurostatu otevřená data. Využijte katalogy ČSÚ a Eurostatu či Národní katalog otevřených dat. Data o životním prostředí a zdrav(otnictv)í hledejte u (CENIA resp. ÚZIS).\nČíselníky a jiná metadata typicky spravuje ČSÚ (Databáze metainformací); používejte ty správné, aktuální a od zdroje. Prostorová data hledejte na ČÚZK; velká část už je dostupná v otevřené formě.\nSpolu s daty stahujte (a čtětě!) dokumentaci a metadata, abyste rozuměli, jak data vznikla, co v nich je a není, na co se v nich dá a nedá spolehnout.\nPokud pracujete s daty o území, může vám pomoct:\n\nDatabáze KROK: krajská data zkompilovaná do jedné velké sady ve formě otevřených dat\nDatabáze MOShttps://www.czso.cz/csu/czso/databaze-mos-otevrena-data: obecní data zkompilovaná do jedné velké sady ve formě otevřených dat\nStruktura území: v excelové i strojově čitelné formě (otevřená data)\n\nPokud sbíráte data nebo vytváříte nové datové sady spojováním a transformací jiných, stáváte se de facto správci dat (v praktickém smyslu, ne právním). Dokumentujte, jak data vznikla, odkud pocházejí, co v nich je, jak je použít. Tak, abyste je mohli snadno a bez velkého vysvětlování někomu předat.\nPokud pro vás analytickou práci dělá někdo jiný - dodavatel, resortní výzkumák, jiný tým - je rozumné po něm chtít dokumentaci a předávku dat a projektu na podobné úrovni."
+  },
+  {
+    "objectID": "one-pager.html#proč-na-to-zkusit-vzít-powerquery-a-kdy-vzít-do-ruky-něco-jiného",
+    "href": "one-pager.html#proč-na-to-zkusit-vzít-powerquery-a-kdy-vzít-do-ruky-něco-jiného",
+    "title": "Práce s (kvantitativními) daty",
+    "section": "Proč na to zkusit vzít PowerQuery (a kdy vzít do ruky něco jiného)",
+    "text": "Proč na to zkusit vzít PowerQuery (a kdy vzít do ruky něco jiného)\nPowerQuery v Excelu vám – oproti standardnímu Excelu – pomůže\n\nuvést do praxe principy moderní práce s daty: dokumentace, transparentnost postupu, reprodukovatelnost a zkontrolovatelnost, automatizace, nedestruktivní přístup ke zdrojovým datům\nosvojit si postupy užitečné při přechodu k práci v programovacích a databázových nástrojích\nprovést některé operace, které v Excelu nejdou\nnaladit se na logiku práce s daty v PowerBI\nvyužít datové zdroje ve formátech, které z Excelu nejsou dostupné\nvíce se soustředit na to, co data říkají, než jak s nimi operovat\n\nNa složitější věci budete potřebovat jiné nástroje: na vizualizace zkuste RawGraphs, Datawrapper, PowerBI či Tableau; do složitější statistiky, větších nebo komplexnějších dat a větších projektů se pusťte spíš v R/Pythonu nebo Stata a o kód se starejte v gitu. To jsou také technologie, které má smysl se učit, pokud vám Excel nestačí."
   }
 ]
