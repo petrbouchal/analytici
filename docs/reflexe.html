@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="cs" xml:lang="cs"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.203">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
@@ -56,7 +56,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "dalších výsledků v tomto dokumentu",
     "search-clear-button-title": "Vymazat",
     "search-detached-cancel-button-title": "Zrušit",
-    "search-submit-button-title": "Odeslat"
+    "search-submit-button-title": "Odeslat",
+    "search-label": "Hledat"
   }
 }</script>
 
@@ -74,8 +75,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Analytici 2022</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Hledat"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Přepnout navigaci" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -130,8 +131,15 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#z-běhu-2-2022-11-05" id="toc-z-běhu-2-2022-11-05" class="nav-link" data-scroll-target="#z-běhu-2-2022-11-05">Z běhu 2 2022-11-05</a></li>
   <li><a href="#běh-3" id="toc-běh-3" class="nav-link" data-scroll-target="#běh-3">Běh 3</a></li>
   <li><a href="#běh-4" id="toc-běh-4" class="nav-link" data-scroll-target="#běh-4">Běh 4</a></li>
+  <li><a href="#běh-5" id="toc-běh-5" class="nav-link" data-scroll-target="#běh-5">Běh 5</a></li>
+  <li><a href="#běh-9---brno-květen-2023" id="toc-běh-9---brno-květen-2023" class="nav-link" data-scroll-target="#běh-9---brno-květen-2023">Běh 9 - Brno květen 2023</a>
+  <ul class="collapse">
+  <li><a href="#do-skript" id="toc-do-skript" class="nav-link" data-scroll-target="#do-skript">Do skript</a></li>
+  <li><a href="#do-zdrojů-nebo-rovnou-slidů" id="toc-do-zdrojů-nebo-rovnou-slidů" class="nav-link" data-scroll-target="#do-zdrojů-nebo-rovnou-slidů">Do zdrojů nebo rovnou slidů</a></li>
+  <li><a href="#upravit---zkušenost-čes" id="toc-upravit---zkušenost-čes" class="nav-link" data-scroll-target="#upravit---zkušenost-čes">upravit - zkušenost ČES</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/petrbouchal/msmt/edit/main/reflexe.md" class="toc-action">Upravit stránku</a></p><p><a href="https://github.com/petrbouchal/msmt/issues/new" class="toc-action">Nahlásit problém</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/petrbouchal/analytici/edit/main/reflexe.md" class="toc-action">Upravit stránku</a></p><p><a href="https://github.com/petrbouchal/analytici/issues/new" class="toc-action">Nahlásit problém</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -143,8 +151,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Na začátku ukázat, kam se dobereme</p>
 <p>Sesekat tak, aby</p>
 <p>vyhodit slide o veřejných hodnotách, nějak integrovat jinam?</p>
-<p>Přidat Anscombe Quartet</p>
-<p>Přidat koncept mental bandwidth: aby se mohli soustředit na přemýšlení, ne na vyznání se v procesu - investovat na začátku - offloadovat metadata do zaznamenané podoby - offloadovat znalost o postupu do</p>
+<p>Přidat Anscombe Quartet [x]</p>
+<p>Přidat koncept mental bandwidth: aby se mohli soustředit na přemýšlení, ne na vyznání se v procesu - investovat na začátku - offloadovat metadata do zaznamenané podoby - offloadovat znalost o postupu do záznamu - offloadovat rozhodování</p>
 <p>Kde vzít data?</p>
 </section>
 <section id="z-běhu-2-2022-11-05" class="level1">
@@ -167,7 +175,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>navázat na proč-co-jak</li>
 <li>zeštíhlit slides k moderní analýze dat, důvěře atd. - opakuje se to</li>
-<li>další zdroje dat: ČNB, národní a regionální účty, ECFIN - tj. makro
+<li>další zdroje dat: ČNB, národní a regionální účty, ECFIN - tj. makro cosi od Dana Kný
 <ul>
 <li>OD katalog ČSÚ</li>
 </ul></li>
@@ -181,10 +189,51 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>proč nepředělat pořadí tak, abych na ně na začátku 40 minut nemluvil, a neházet principy a postupy jako důsledek toho, co uvidí na příkladu? Např. otevřou soubor, chybí dokumentace =&gt; princip</li>
 <li>tabulkovej král - doplnit do zdrojů</li>
-<li></li>
+</ul>
+</section>
+<section id="běh-5" class="level1">
+<h1>Běh 5</h1>
+<ul>
+<li>nic moc, jen že platí výše</li>
+</ul>
+</section>
+<section id="běh-9---brno-květen-2023" class="level1">
+<h1>Běh 9 - Brno květen 2023</h1>
+<ul>
+<li>doplnit slide o tom, že jste správci dat</li>
+<li>doplnit info (slides nebo skripta), že tyto věci ohledně datového projektu můžete chtít i od dodavatelů atd.</li>
+<li>do skladování dat v Excelu:
+<ul>
+<li>excel is not a database tool</li>
+<li>data v komentářích nejsou data
+<ul>
+<li>ale: pokud je to praktický produkt pro někoho, to je OK, ale neměly by tam být informace zásadní pro pochopení analytického postupu</li>
+</ul></li>
+</ul></li>
+</ul>
+<section id="do-skript" class="level2">
+<h2 class="anchored" data-anchor-id="do-skript">Do skript</h2>
+<ul>
+<li>oops you made a database</li>
+<li>jste správci dat</li>
+<li>Excel is not a DB tool</li>
+</ul>
+</section>
+<section id="do-zdrojů-nebo-rovnou-slidů" class="level2">
+<h2 class="anchored" data-anchor-id="do-zdrojů-nebo-rovnou-slidů">Do zdrojů nebo rovnou slidů</h2>
+<ul>
+<li>struktura území</li>
+<li>MOS a KROK</li>
+</ul>
+</section>
+<section id="upravit---zkušenost-čes" class="level2">
+<h2 class="anchored" data-anchor-id="upravit---zkušenost-čes">upravit - zkušenost ČES</h2>
+<ul>
+<li>někde na konci mít key messages, aby se dala závěrečná reflexe vztáhnout k celku, nejen k tomu, co zažili bezprostředně v poslední části</li>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -215,9 +264,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -411,7 +474,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -424,7 +487,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center">Petr Bouchal pro Ministerstvo vnitra, 2023</div>
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">Petr Bouchal pro Ministerstvo vnitra, 2023</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 

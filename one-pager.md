@@ -54,8 +54,7 @@ Spolu s daty stahujte (a čtětě!) dokumentaci a metadata, abyste rozuměli, ja
 
 Pokud pracujete s daty o území, může vám pomoct:
 
-- [Databáze KROK](https://www.czso.cz/csu/czso/databaze-krok-otevrena-data): krajská data zkompilovaná do jedné velké sady ve formě otevřených dat
-- [Databáze MOS]()https://www.czso.cz/csu/czso/databaze-mos-otevrena-data: obecní data zkompilovaná do jedné velké sady ve formě otevřených dat
+- Databáze [KROK](https://www.czso.cz/csu/czso/databaze-krok-otevrena-data)/[MOS](https://www.czso.cz/csu/czso/databaze-mos-otevrena-data): krajská/obecní data zkompilovaná do jedné velké sady ve formě otevřených dat
 - [Struktura území](https://www.czso.cz/csu/czso/uzemi-sidelni-struktura): v excelové i strojově čitelné formě (otevřená data)
 
 Pokud sbíráte data nebo vytváříte nové datové sady spojováním a transformací jiných, stáváte se [de facto správci dat](https://www.gov.uk/guidance/creating-and-sharing-spreadsheets) (v praktickém smyslu, ne právním). Dokumentujte, jak data vznikla, odkud pocházejí, co v nich je, jak je použít. Tak, abyste je mohli snadno a bez velkého vysvětlování někomu předat.

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="cs" xml:lang="cs"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.203">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,15 +17,16 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -39,8 +40,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -75,7 +75,8 @@ div.csl-indent {
     "search-more-matches-text": "dalších výsledků v tomto dokumentu",
     "search-clear-button-title": "Vymazat",
     "search-detached-cancel-button-title": "Zrušit",
-    "search-submit-button-title": "Odeslat"
+    "search-submit-button-title": "Odeslat",
+    "search-label": "Hledat"
   }
 }</script>
 
@@ -93,8 +94,8 @@ div.csl-indent {
     <span class="navbar-title">Analytici 2022</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Hledat"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Přepnout navigaci" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -179,7 +180,7 @@ div.csl-indent {
   <li><a href="#all-links-to-sort" id="toc-all-links-to-sort" class="nav-link" data-scroll-target="#all-links-to-sort">All links to sort</a></li>
   <li><a href="#zdroje-1" id="toc-zdroje-1" class="nav-link" data-scroll-target="#zdroje-1">Zdroje</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/petrbouchal/msmt/edit/main/zdroje.qmd" class="toc-action">Upravit stránku</a></p><p><a href="https://github.com/petrbouchal/msmt/issues/new" class="toc-action">Nahlásit problém</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/petrbouchal/analytici/edit/main/zdroje.qmd" class="toc-action">Upravit stránku</a></p><p><a href="https://github.com/petrbouchal/analytici/issues/new" class="toc-action">Nahlásit problém</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -239,12 +240,12 @@ div.csl-indent {
 <section id="načtení-dat" class="level3">
 <h3 class="anchored" data-anchor-id="načtení-dat">Načtení dat</h3>
 <p><a href="https://support.microsoft.com/en-us/office/import-or-export-text-txt-or-csv-files-5250ac4c-663c-47ce-937b-339e391393ba#ID0EBBN=Newer_versions">Vysvětlení rozdílu</a> načtení dat „přímo“ versus přes PowerQuery - dokument od Microsoftu</p>
-<div class="callout callout-style-default callout-note callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Poznámka
 </div>
 </div>
@@ -317,12 +318,12 @@ Poznámka
 <li>místo Zpět (Ctrl+Z) jednoduše zrušte poslední krok v pravé liště</li>
 <li>v novějších verzích Excelu jde zobrazit celá síť vztahů mezi Dotazy (jejich propojení, vzájemné odvození): <code>Zobrazit &gt; Diagram</code></li>
 </ul>
-<div class="callout callout-style-default callout-tip callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 PowerQuery a PowerPivot
 </div>
 </div>
@@ -381,23 +382,23 @@ PowerQuery a PowerPivot
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Zdroje</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-analysisfunctioncentralteamonsCreatingSharingSpreadsheets2021" class="csl-entry" role="doc-biblioentry">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Zdroje</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-analysisfunctioncentralteamonsCreatingSharingSpreadsheets2021" class="csl-entry" role="listitem">
 Analysis Function Central Team, ONS. 2021a. <span>„Creating and Sharing Spreadsheets"</span>. <a href="https://www.gov.uk/guidance/creating-and-sharing-spreadsheets">https://www.gov.uk/guidance/creating-and-sharing-spreadsheets</a>.
 </div>
-<div id="ref-analysisfunctioncentralteamonsReleasingStatisticsSpreadsheets2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-analysisfunctioncentralteamonsReleasingStatisticsSpreadsheets2021" class="csl-entry" role="listitem">
 Analysis Function Central Team, ONS. 2021b. <span>„Releasing Statistics in Spreadsheets"</span>. <a href="https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/#section-14">https://analysisfunction.civilservice.gov.uk/policy-store/releasing-statistics-in-spreadsheets/#section-14</a>.
 </div>
-<div id="ref-bromanDataOrganizationSpreadsheets2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-bromanDataOrganizationSpreadsheets2018" class="csl-entry" role="listitem">
 Broman, Karl W., a Kara H. Woo. 2018. <span>„Data Organization in Spreadsheets"</span>. <em>The American Statistician</em> 72 (1): 2–10. <a href="https://doi.org/10.1080/00031305.2017.1375989">https://doi.org/10.1080/00031305.2017.1375989</a>.
 </div>
-<div id="ref-kadukTarasKadukPower2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-kadukTarasKadukPower2018" class="csl-entry" role="listitem">
 Kaduk, Taras. 2018. <span>„Taras Kaduk: Power Query: Excel’s gateway to reproducible analysis"</span>, březen. <a href="https://taraskaduk.com/posts/2018-03-29-power-query/">https://taraskaduk.com/posts/2018-03-29-power-query/</a>.
 </div>
-<div id="ref-QualityAssuranceCode2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-QualityAssuranceCode2022" class="csl-entry" role="listitem">
 <span>„Quality assurance of code for analysis and research"</span>. 2022. <a href="https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html">https://best-practice-and-impact.github.io/qa-of-code-guidance/intro.html</a>.
 </div>
-<div id="ref-AquaBookGuidance2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-AquaBookGuidance2015" class="csl-entry" role="listitem">
 <span>„The <span>Aqua Book</span>: Guidance on Producing Quality Analysis for Government"</span>. 2015. <em>GOV.UK</em>. <a href="https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government">https://www.gov.uk/government/publications/the-aqua-book-guidance-on-producing-quality-analysis-for-government</a>.
 </div>
 </div></section></div></main> <!-- /main -->
@@ -428,9 +429,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -624,7 +639,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -637,7 +652,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center">Petr Bouchal pro Ministerstvo vnitra, 2023</div>
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">Petr Bouchal pro Ministerstvo vnitra, 2023</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 

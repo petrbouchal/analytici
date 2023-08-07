@@ -5,7 +5,7 @@ project:
 website:
   title: "Analytici 2022"
   page-footer: "Petr Bouchal pro Ministerstvo vnitra, 2023"
-  repo-url: https://github.com/petrbouchal/msmt
+  repo-url: https://github.com/petrbouchal/analytici
   repo-actions: [edit, issue]
   page-navigation: true
   search:
