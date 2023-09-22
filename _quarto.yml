@@ -1,6 +1,7 @@
 project:
   type: website
   output-dir: docs
+  resources: one-pager.pdf
 
 website:
   title: "Analytici 2022"
