@@ -1,7 +1,7 @@
 ---
 title: "Analýza dat"
 subtitle: "Pilotní program vzdělávání analytiků 2022"
-author: květen 2023
+author: září 2023
 format: 
   revealjs:
     theme: [dark, slides.scss]
