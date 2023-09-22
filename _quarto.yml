@@ -23,7 +23,7 @@ website:
       - zdroje.qmd
     right:
       - icon: github
-        href: https://github.com/petrbouchal/msmt
+        href: https://github.com/petrbouchal/analytici
       - icon: asterisk
         href: https://petrbouchal.xyz
       - text: " "
