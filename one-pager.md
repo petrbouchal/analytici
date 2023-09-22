@@ -1,6 +1,6 @@
 ---
 title: Práce s (kvantitativními) daty
-subtitle: Hlavní teze z bloku vzdělávacího kurzu pro analytiky veřejné správy
+subtitle: Hlavní teze z bloku vzdělávacího programu pro analytiky veřejné správy
 format: 
   docx:
     reference-doc: template.docx
@@ -8,7 +8,7 @@ format:
     default
 ---
 
-[Všechny podklady k této části kurzu na webu](https://petrbouchal.xyz/analytici/).
+[Všechny podklady k této části programu na webu](https://petrbouchal.xyz/analytici/).
 
 ## Jak vypadá datová analýza dnes
 

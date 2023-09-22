@@ -1,5 +1,5 @@
 ---
-title: "Pilotní vzdělávací kurz pro analytiky 2022"
+title: "Pilotní vzdělávací program pro analytiky 2022"
 ---
 
 ## Ke stažení {#ke-stažení}
@@ -8,7 +8,7 @@ title: "Pilotní vzdělávací kurz pro analytiky 2022"
 
 [Soubory pro práci](https://github.com/petrbouchal/analytici/releases/download/v2/analyza.zip)
 
-One-pager pro účastníky: shrnutí hlavních tezí této části kurzu ([web](https://petrbouchal.xyz/analytici/one-pager.html), [PDF](https://petrbouchal.xyz/analytici/one-pager.pdf), [Word](https://petrbouchal.xyz/analytici/one-pager.docx))
+One-pager pro účastníky: shrnutí hlavních tezí této části programu ([web](https://petrbouchal.xyz/analytici/one-pager.html), [PDF](https://petrbouchal.xyz/analytici/one-pager.pdf), [Word](https://petrbouchal.xyz/analytici/one-pager.docx))
 
 ## Odkazy pro práci {#odkazy-pro-práci}
 

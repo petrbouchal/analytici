@@ -4,7 +4,7 @@ editor: source
 bibliography: references.bib
 ---
 
-# Jak použít materiály z kurzu
+# Jak použít materiály z programu
 
 # Proces analytické práce
 
